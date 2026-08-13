@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Food — Talisman, Karen · Nairobi</title>
+<meta name="description" content="Grown on our farm, smoked over one slow fire, and cooked the long way. Read our menus, meet our farmers, and see how a Talisman plate comes together.">
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/plated-dish.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/talisman.css">
+</head>
+<body class="grain">
+<script>
+document.documentElement.classList.add('js');
+setTimeout(function () {
+  if (!window.__talismanReady) document.documentElement.classList.remove('js');
+}, 2500);
+</script>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="Talisman — home">
+      <img class="nav__logo" src="assets/img/logo.png" alt="" width="268" height="163">
+      <span class="nav__wordmark">TALISMAN</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="our-story.html">Our Story</a>
+      <a class="nav__link" href="menu.html" aria-current="page">Menu</a>
+      <a class="nav__link" href="events.html">Events</a>
+    </nav>
+    <a class="nav__cta" href="index.html#visit">Plan your visit</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="nav-sheet" id="nav-sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="nav-sheet__close" type="button" aria-label="Close menu">&times;</button>
+  <nav class="nav-sheet__links" aria-label="Mobile">
+    <a class="nav-sheet__link" href="index.html">Home</a>
+    <a class="nav-sheet__link" href="our-story.html">Our Story</a>
+    <a class="nav-sheet__link" href="menu.html" aria-current="page">Menu</a>
+    <a class="nav-sheet__link" href="events.html">Events</a>
+    <a class="nav-sheet__link" href="index.html#visit"><em>Plan your visit</em></a>
+  </nav>
+  <div class="nav-sheet__foot">
+    <p class="eyebrow">Ngong Road · Karen · Nairobi</p>
+    <p style="margin-top:8px"><a href="tel:+254705999997">+254 705 999 997</a></p>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="bhero bhero--page">
+  <img class="bhero__media" src="assets/img/plated-dish.jpg" alt="A finished dish, plated and ready to leave the pass" width="1066" height="1600" fetchpriority="high">
+  <div class="bhero__scrim"></div>
+  <div class="bhero__body">
+    <p class="bhero__kicker">Our Food</p>
+    <h1 class="bhero__title">The farm decides.<br><em>The kitchen answers.</em></h1>
+    <p class="bhero__sub">Harvested at 05:30, on the plate by lunch. What follows changes with the rains — and we think that is the best thing about it.</p>
+  </div>
+</section>
+
+<!-- ══════════════════ SUMMARY ══════════════════ -->
+<section class="section" id="summary">
+  <div class="wrap">
+    <div class="explore">
+      <div class="explore__head" data-reveal>
+        <p class="eyebrow eyebrow--wine">In short</p>
+        <h2>A kitchen that cooks<br><em>the long way round.</em></h2>
+        <p style="margin-top:26px">
+          <button class="btn btn--primary" type="button" data-menu-open aria-expanded="false" aria-controls="menu-viewer">
+            View our menus
+          </button>
+        </p>
+      </div>
+      <div class="explore__body" data-reveal>
+        <p class="lead">
+          Most of what you eat here was growing a few hours ago. The salmon is smoked in our own
+          smokehouse over one slow fire. The bread is baked in the morning. Everything else we buy
+          from people we know by name — and nothing on the plate travels very far to reach it.
+        </p>
+        <ul class="featuretags">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            05:30 — the farm is harvested
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 01-10 0c0-3 2-5 5-9z"/></svg>
+            One fire — smoked and roasted
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            Six sections on the table
+          </li>
+        </ul>
+        <p style="margin-top:24px;font-size:var(--t-small);color:var(--ink-3)">
+          The full menus live below — main dishes, beverages, and the bar — and you can read every
+          one of them here, without leaving the page.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ IN-PAGE PDF VIEWER ══════════════════ -->
+<section class="section section--cream section--collapsible" id="menus">
+  <div class="wrap">
+    <div class="viewer" id="menu-viewer" data-viewer hidden>
+
+      <div class="viewer__head">
+        <div>
+          <p class="eyebrow eyebrow--wine">The menus</p>
+          <h2 style="margin-top:10px;font-size:clamp(1.75rem,3.4vw,2.5rem)">Read them here</h2>
+        </div>
+        <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+      </div>
+
+      <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
+        <button class="viewer__tab" role="tab" id="tab-main" aria-selected="true" aria-controls="viewer-stage"
+                data-pdf="assets/menus/talisman-main-menu.pdf" data-title="Main menu">
+          Main Dishes
+        </button>
+        <button class="viewer__tab" role="tab" id="tab-bev" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-beverages.pdf" data-title="Beverages menu">
+          Beverages
+        </button>
+        <button class="viewer__tab" role="tab" id="tab-bar" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-bar-menu.pdf" data-title="Bar menu">
+          Bar Menu
+        </button>
+      </div>
+
+      <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-main" tabindex="0">
+        <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
+        <div class="viewer__fallback" data-viewer-fallback hidden>
+          <p>Your browser can’t display PDFs inline.</p>
+          <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-main-menu.pdf" target="_blank" rel="noopener">
+            Open the menu
+          </a>
+        </div>
+      </div>
+
+      <div class="viewer__foot">
+        <p class="viewer__note">Menus change with the season and with the rains. Please tell us about allergies when you book.</p>
+        <a class="link-arrow" data-viewer-download href="assets/menus/talisman-main-menu.pdf" download>Download this menu</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CHAPTER I — OUR FARMERS ══════════════════ -->
+<section class="section" id="farmers">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media" data-reveal>
+        <div class="framed">
+          <span class="framed__rule" aria-hidden="true"></span>
+          <img class="framed__back" src="assets/img/garden-bowl.jpg" alt="A bowl of leaves and edible flowers grown for the Talisman kitchen" loading="lazy" width="1066" height="1600">
+          <img class="framed__front" src="assets/img/garden-day.jpg" alt="The Talisman garden, laid for lunch beneath the trees" loading="lazy" width="1333" height="2000">
+        </div>
+      </div>
+      <div class="split__body" data-reveal>
+        <p class="eyebrow eyebrow--wine">Chapter I</p>
+        <h2>Our Farmers</h2>
+        <p style="margin-top:26px">
+          We grow a great deal of what we serve, but not all of it — and the rest comes from
+          smallholders around Karen, Limuru and the Rift who have been supplying this kitchen for years.
+        </p>
+        <p style="margin-top:16px">
+          We buy whole crops rather than cherry-picking, we pay on delivery, and we plant around what
+          they tell us grows well. It means the menu bends to the season instead of the other way
+          round — and it means the people who grow your food are not strangers to us.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CHAPTER II — SOLID BAND ══════════════════ -->
+<section class="solidband">
+  <div class="wrap">
+    <div class="split split--band">
+      <div class="split__body" data-reveal>
+        <p class="eyebrow">Chapter II</p>
+        <h2>Sourced, then<br><em>slowly prepared.</em></h2>
+        <p style="margin-top:24px">
+          Our salmon arrives whole and is cured and smoked here, in our own smokehouse, over one fire
+          kept deliberately low. It takes as long as it takes — usually most of a day.
+        </p>
+        <p style="margin-top:16px">
+          The same patience runs through the rest of it. Stocks reduced overnight, lamb held eight hours
+          over the coals, bread proved slowly and baked at dawn. Nothing here is rushed, because the
+          things worth eating rarely can be.
+        </p>
+
+        <ul class="featuregrid">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 01-10 0c0-3 2-5 5-9z"/></svg>
+            <span><strong>One fire</strong> Kept deliberately low</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span><strong>Eight hours</strong> Lamb over the coals</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="split__media" data-reveal>
+        <div class="framed framed--light">
+          <span class="framed__rule" aria-hidden="true"></span>
+          <img class="framed__back" src="assets/img/salmon-dish.jpg" alt="Salmon, cured and smoked in-house, plated with garden herbs" loading="lazy" width="1066" height="1600">
+          <img class="framed__front" src="assets/img/dessert-glass.jpg" alt="A dessert served in a tall glass at Talisman" loading="lazy" width="1066" height="1600">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CHAPTER III — BY THE TIME IT REACHES YOU ══════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="center" style="max-width:44ch;margin-inline:auto;margin-bottom:clamp(32px,5vw,56px)">
+      <p class="eyebrow eyebrow--wine" data-reveal>Chapter III</p>
+      <h2 data-reveal style="margin-top:14px">By the time it<br><em>reaches your table.</em></h2>
+    </div>
+
+    <div class="trio">
+      <figure class="trio__side" data-reveal data-tilt>
+        <img src="assets/img/bartender.jpg" alt="The bar in full flow at Talisman" loading="lazy" width="1066" height="1600">
+      </figure>
+
+      <div class="trio__card" data-reveal>
+        <p>
+          A single plate here has passed through a great many careful hands — picked, sorted, trimmed,
+          cured, smoked, roasted, rested, tasted and tasted again.
+        </p>
+        <p style="margin-top:16px">
+          None of that is visible when it arrives, and it shouldn’t be. What you should notice is
+          simply that it tastes like someone meant it. That is the whole ambition: food made
+          unhurriedly, by people who cook the way they would at home, for a table they care about.
+        </p>
+        <p style="margin-top:28px"><a class="btn btn--onband" href="index.html#visit">Request a table</a></p>
+      </div>
+
+      <figure class="trio__side" data-reveal data-tilt>
+        <img src="assets/img/cocktail-red.jpg" alt="A cocktail in the garden at Talisman" loading="lazy" width="1066" height="1600">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FULL-BLEED GARDEN ══════════════════ -->
+<section class="fullbleed on-dark" id="garden">
+  <img class="fullbleed__media" data-parallax="band" src="assets/img/garden-night.jpg"
+       alt="The Talisman garden after dark, lanterns lit among the trees" loading="lazy" width="2400" height="1600">
+  <div class="fullbleed__scrim"></div>
+  <div class="fullbleed__body">
+    <p class="eyebrow" data-reveal>And then, the garden</p>
+    <h2 data-reveal>Eat it where<br><em>it grew.</em></h2>
+    <p data-reveal class="lead" style="margin:24px auto 0;max-width:38rem">
+      Every one of these dishes is best eaten outside, under the trees, with the afternoon going
+      long. Take a table on the lawn, let the children loose in the garden, and stay as late as
+      you like — nobody here will hurry you.
+    </p>
+    <div data-reveal class="hero__actions" style="margin-top:38px">
+      <a class="btn btn--primary" href="index.html#visit">Request a table</a>
+      <a class="btn btn--ghost" href="events.html">Book the long table</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/img/logo.png" alt="" width="268" height="163">
+          <span class="site-footer__wordmark">TALISMAN</span>
+        </div>
+        <p style="font-size:var(--t-small)">A garden, a farm, a fireplace<br>and long evenings on Ngong Road.</p>
+      </div>
+      <div>
+        <p class="site-footer__title">Find us</p>
+        <p style="font-size:var(--t-small)">Ngong Road, Karen<br>Nairobi, Kenya</p>
+      </div>
+      <div>
+        <p class="site-footer__title">Hours</p>
+        <p style="font-size:var(--t-small)">Tuesday – Sunday<br>8:00 am – 11:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+      </div>
+      <div>
+        <p class="site-footer__title">Say hello</p>
+        <p style="font-size:var(--t-small)">
+          <a href="tel:+254705999997">+254 705 999 997</a><br>
+          <a href="mailto:hello@talisman.co.ke">hello@talisman.co.ke</a><br>
+          <a href="https://instagram.com/talisman.nairobi" target="_blank" rel="noopener">@talisman.nairobi</a>
+        </p>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; <span data-year>2026</span> Talisman, Karen.</span>
+      <nav aria-label="Footer">
+        <a href="our-story.html">Our Story</a> ·
+        <a href="menu.html">Menu</a> ·
+        <a href="events.html">Events</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/talisman.js" defer></script>
+</body>
+</html>

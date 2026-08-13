@@ -1,0 +1,15 @@
+# Original camera files — 2.2GB of 20–33MP originals.
+# Web-ready derivatives live in assets/img/ and are committed.
+assets/April Shoot 2026/
+assets/June Shoot (Bar Launch) 2026/
+assets/March Shoot 2026/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local scratch
+__probe.html
+__debug.html
+__harness.html
