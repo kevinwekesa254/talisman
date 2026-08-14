@@ -357,8 +357,59 @@
       if (e.key === 'Escape' && !viewer.hidden) close();
     });
 
-    // Deep link straight to a menu, e.g. /menu.html#menus
-    if (location.hash === '#menus' || location.hash === '#menu-viewer') open();
+    // Deep links. #food and #beverages come from the nav dropdown and should
+    // open the viewer already showing the right menu.
+    var byHash = {
+      '#menus': tabs[0], '#menu-viewer': tabs[0],
+      '#food': $('#tab-main', viewer),
+      '#beverages': $('#tab-bev', viewer),
+      '#bar': $('#tab-bar', viewer)
+    };
+    function fromHash() {
+      var tab = byHash[location.hash];
+      if (!tab) return;
+      if (viewer.hidden) open();
+      select(tab);
+      viewer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+  })();
+
+  /* ---- 10. Nav dropdown --------------------------------------------------- */
+  (function navDropdown() {
+    var groups = $$('[data-nav-group]');
+    if (!groups.length) return;
+
+    groups.forEach(function (group) {
+      var toggle = $('[data-nav-toggle]', group);
+      var sub = $('[data-nav-sub]', group);
+      if (!toggle || !sub) return;
+
+      function open()  { group.classList.add('is-open');  toggle.setAttribute('aria-expanded', 'true'); }
+      function close() { group.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        group.classList.contains('is-open') ? close() : open();
+      });
+
+      // Arrow-down from the trigger moves into the submenu
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); open(); var f = $('a', sub); if (f) f.focus(); }
+      });
+      sub.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { close(); toggle.focus(); }
+      });
+
+      // CSS opens on hover/focus-within too; these keep ARIA in step with it
+      group.addEventListener('mouseenter', function () { toggle.setAttribute('aria-expanded', 'true'); });
+      group.addEventListener('mouseleave', function () { if (!group.classList.contains('is-open')) toggle.setAttribute('aria-expanded', 'false'); });
+
+      document.addEventListener('click', function (e) { if (!group.contains(e.target)) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      $$('a', sub).forEach(function (a) { a.addEventListener('click', close); });
+    });
   })();
 
   /* ---- 9. Numbered gallery carousel --------------------------------------- */
@@ -405,6 +456,6 @@
     sync();
   })();
 
-  /* ---- 10. Footer year ---------------------------------------------------- */
+  /* ---- 11. Footer year ---------------------------------------------------- */
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();

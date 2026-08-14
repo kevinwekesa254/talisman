@@ -30,9 +30,18 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
+      <div class="nav__group" data-nav-group>
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+          Menu
+          <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
+        </button>
+        <div class="nav__sub" data-nav-sub>
+          <a href="menu.html#food">Food</a>
+          <a href="menu.html#beverages">Beverages</a>
+        </div>
+      </div>
+      <a class="nav__link" href="events.html" aria-current="page">Art &amp; Events</a>
       <a class="nav__link" href="our-story.html">Our Story</a>
-      <a class="nav__link" href="menu.html">Menu</a>
-      <a class="nav__link" href="events.html" aria-current="page">Events</a>
     </nav>
     <a class="nav__cta" href="#enquire">Plan your visit</a>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
@@ -45,9 +54,13 @@ setTimeout(function () {
   <button class="nav-sheet__close" type="button" aria-label="Close menu">&times;</button>
   <nav class="nav-sheet__links" aria-label="Mobile">
     <a class="nav-sheet__link" href="index.html">Home</a>
-    <a class="nav-sheet__link" href="our-story.html">Our Story</a>
     <a class="nav-sheet__link" href="menu.html">Menu</a>
-    <a class="nav-sheet__link" href="events.html" aria-current="page">Events</a>
+    <div class="nav-sheet__sub">
+      <a href="menu.html#food">Food</a>
+      <a href="menu.html#beverages">Beverages</a>
+    </div>
+    <a class="nav-sheet__link" href="events.html" aria-current="page">Art &amp; Events</a>
+    <a class="nav-sheet__link" href="our-story.html">Our Story</a>
     <a class="nav-sheet__link" href="#enquire"><em>Plan your visit</em></a>
   </nav>
   <div class="nav-sheet__foot">
