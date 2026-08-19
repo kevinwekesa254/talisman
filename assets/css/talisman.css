@@ -47,7 +47,7 @@
 
   /* Layout */
   --gutter:  clamp(20px, 5vw, 64px);
-  --section: clamp(72px, 11vw, 150px);
+  --section: clamp(36px, 5.5vw, 75px);
   --maxw:    1320px;
   --measure: 62ch;
 
@@ -149,7 +149,7 @@ button { background: none; border: 0; cursor: pointer; }
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .wrap--narrow { max-width: 940px; }
 .section { padding-block: var(--section); }
-.section--tight { padding-block: clamp(48px, 7vw, 90px); }
+.section--tight { padding-block: clamp(24px, 3.5vw, 45px); }
 .section--cream { background: var(--cream); }
 .section--sand  { background: var(--sand); }
 
@@ -1902,3 +1902,84 @@ input[type="date"].field__input { display: block; }
 @media (max-width: 760px) {
   .families__scrim { background: linear-gradient(180deg, rgba(14,10,8,.55) 0%, rgba(14,10,8,.72) 55%, rgba(14,10,8,.88) 100%); }
 }
+
+
+/* =========================================================================
+   29. HOME REFINEMENTS
+   ========================================================================= */
+
+/* ---- 29.1 Single image, no inset ---------------------------------------- */
+.blockmedia--solo { padding-bottom: clamp(18px, 2.4vw, 30px); }
+.blockmedia--solo .blockmedia__main { aspect-ratio: 5 / 4; }
+
+/* ---- 29.2 Food & Beverages row -----------------------------------------
+   Two photographs and the copy panel share one row and one height, so the
+   text block lines up with the images rather than floating against them. */
+.fbrow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  align-items: stretch;
+}
+.fbrow > figure {
+  margin: 0; position: relative; overflow: hidden; background: var(--sand);
+  min-height: clamp(320px, 34vw, 460px);
+}
+.fbrow > figure img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; transition: transform 1.2s var(--ease-out);
+}
+.fbrow > figure:hover img { transform: scale(1.05); }
+.fbrow figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 60px var(--s-5) var(--s-4);
+  background: linear-gradient(180deg, transparent, rgba(18,13,10,.76));
+  color: #F5F1E8; font: italic 400 1.0625rem/1.4 var(--serif);
+}
+.fbrow__panel {
+  background: var(--sand);
+  padding: clamp(24px, 2.8vw, 36px);
+  display: flex; flex-direction: column; justify-content: center; gap: var(--s-5);
+}
+@media (max-width: 900px) {
+  .fbrow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fbrow__panel { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .fbrow { grid-template-columns: minmax(0, 1fr); }
+  .fbrow__panel { grid-column: auto; }
+}
+
+/* ---- 29.3 Feature cards inside one container ---------------------------- */
+.features--boxed {
+  border: 1px solid var(--linen);
+  background: var(--paper);
+  padding: clamp(20px, 2.6vw, 34px);
+  gap: clamp(20px, 2.6vw, 34px);
+}
+/* The divider is drawn in the gap, not as padding — padding would narrow the
+   2nd and 3rd columns and, at a fixed aspect-ratio, drop their images (and so
+   their headings) out of line with the first. */
+.features--boxed .feature { position: relative; }
+.features--boxed .feature + .feature::before {
+  content: "";
+  position: absolute; top: 0; bottom: 0;
+  left: calc(clamp(20px, 2.6vw, 34px) / -2);
+  width: 1px; background: var(--linen);
+}
+@media (max-width: 860px) {
+  .features--boxed .feature + .feature::before {
+    top: calc(clamp(20px, 2.6vw, 34px) / -2); bottom: auto;
+    left: 0; right: 0; width: auto; height: 1px;
+  }
+}
+
+/* ---- 29.4 Families band, centred ---------------------------------------- */
+.families--centre { text-align: center; }
+.families--centre .families__scrim {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(14,10,8,.66), transparent 78%),
+    linear-gradient(180deg, rgba(14,10,8,.52), rgba(14,10,8,.34) 45%, rgba(14,10,8,.68));
+}
+.families--centre .families__body { max-width: 860px; }
+.families--centre .families__body p { margin-inline: auto; max-width: 56ch; }
