@@ -1983,3 +1983,10 @@ input[type="date"].field__input { display: block; }
 }
 .families--centre .families__body { max-width: 860px; }
 .families--centre .families__body p { margin-inline: auto; max-width: 56ch; }
+
+
+/* ---- 29.5 Dimmed families band -----------------------------------------
+   The photograph drops to 20% over the night ground so the headline and copy
+   carry full contrast rather than fighting a busy image. */
+.families--dim .families__media { opacity: .20; }
+.families--dim .families__scrim { background: rgba(14,10,8,.25); }
