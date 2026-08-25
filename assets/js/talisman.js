@@ -362,9 +362,24 @@
     var byHash = {
       '#menus': tabs[0], '#menu-viewer': tabs[0],
       '#food': $('#tab-main', viewer),
-      '#beverages': $('#tab-bev', viewer),
+      '#beverages': $('#tab-wine', viewer) || $('#tab-bev', viewer),
+      '#wine': $('#tab-wine', viewer),
+      '#coffee': $('#tab-coffee', viewer),
+      '#cocktails': $('#tab-bev', viewer),
       '#bar': $('#tab-bar', viewer)
     };
+
+    /* Cards elsewhere on the page open the viewer already on their own tab. */
+    $$('[data-menu-tab]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var tab = $('#' + link.getAttribute('data-menu-tab'), viewer);
+        if (!tab) return;
+        e.preventDefault();
+        if (viewer.hidden) open();
+        select(tab);
+        viewer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
     function fromHash() {
       var tab = byHash[location.hash];
       if (!tab) return;

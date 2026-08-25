@@ -78,48 +78,40 @@ setTimeout(function () {
   <div class="bhero__body">
     <p class="bhero__kicker">Our Food</p>
     <h1 class="bhero__title">The farm decides.<br><em>The kitchen answers.</em></h1>
-    <p class="bhero__sub">Harvested at 05:30, on the plate by lunch. What follows changes with the rains — and we think that is the best thing about it.</p>
+    <p class="bhero__sub">Harvested at 05:30, on the plate by lunch. What follows changes with the rains &mdash; and we think that is the best thing about it.</p>
   </div>
 </section>
 
-<!-- ══════════════════ SUMMARY ══════════════════ -->
-<section class="section" id="summary">
+<!-- ══════════════════ THREE SERVICES ══════════════════ -->
+<section class="section" id="food">
   <div class="wrap">
-    <div class="explore">
-      <div class="explore__head" data-reveal>
-        <p class="eyebrow eyebrow--wine">In short</p>
-        <h2>A kitchen that cooks<br><em>the long way round.</em></h2>
-        <p style="margin-top:26px">
-          <button class="btn btn--primary" type="button" data-menu-open aria-expanded="false" aria-controls="menu-viewer">
-            View our menus
-          </button>
-        </p>
-      </div>
-      <div class="explore__body" data-reveal>
-        <p class="lead">
-          Most of what you eat here was growing a few hours ago. The salmon is smoked in our own
-          smokehouse over one slow fire. The bread is baked in the morning. Everything else we buy
-          from people we know by name — and nothing on the plate travels very far to reach it.
-        </p>
-        <ul class="featuretags">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            05:30 — the farm is harvested
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 01-10 0c0-3 2-5 5-9z"/></svg>
-            One fire — smoked and roasted
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-            Six sections on the table
-          </li>
-        </ul>
-        <p style="margin-top:24px;font-size:var(--t-small);color:var(--ink-3)">
-          The full menus live below — main dishes, beverages, and the bar — and you can read every
-          one of them here, without leaving the page.
-        </p>
-      </div>
+    <div class="introcards">
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/brunch-table.jpg" alt="A brunch spread laid out on the table at Talisman" loading="lazy" width="1600" height="2000"></figure>
+        <div class="introcard__body">
+          <h3>Breakfast</h3>
+          <p>Eggs, sourdough and strong coffee, from eight in the morning under the trees.</p>
+          <a class="link-arrow" href="#menus" data-menu-open>See the menu</a>
+        </div>
+      </article>
+
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/food-bright.jpg" alt="A garden bowl and warm samosas set out on wood" loading="lazy" width="1600" height="1067"></figure>
+        <div class="introcard__body">
+          <h3>Specials</h3>
+          <p>What the farm sent up this week, cooked over one slow fire and written fresh each day.</p>
+          <a class="link-arrow" href="#menus" data-menu-open>See the menu</a>
+        </div>
+      </article>
+
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/dessert.jpg" alt="Sticky toffee pudding and chocolate tart on a long plate" loading="lazy" width="1600" height="2000"></figure>
+        <div class="introcard__body">
+          <h3>Afternoon Tea</h3>
+          <p>Cake, scones and a pot for the table, in the green, while the afternoon goes long.</p>
+          <a class="link-arrow" href="#menus" data-menu-open>See the menu</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -142,20 +134,28 @@ setTimeout(function () {
                 data-pdf="assets/menus/talisman-main-menu.pdf" data-title="Main menu">
           Main Dishes
         </button>
+        <button class="viewer__tab" role="tab" id="tab-wine" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-wine.pdf" data-title="Wine list">
+          Wine
+        </button>
+        <button class="viewer__tab" role="tab" id="tab-coffee" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-coffee.pdf" data-title="Coffee menu">
+          Coffee
+        </button>
         <button class="viewer__tab" role="tab" id="tab-bev" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-                data-pdf="assets/menus/talisman-beverages.pdf" data-title="Beverages menu">
-          Beverages
+                data-pdf="assets/menus/talisman-cocktails.pdf" data-title="Cocktail menu">
+          Cocktails
         </button>
         <button class="viewer__tab" role="tab" id="tab-bar" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
                 data-pdf="assets/menus/talisman-bar-menu.pdf" data-title="Bar menu">
-          Bar Menu
+          Bar
         </button>
       </div>
 
       <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-main" tabindex="0">
         <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
         <div class="viewer__fallback" data-viewer-fallback hidden>
-          <p>Your browser can’t display PDFs inline.</p>
+          <p>Your browser can&rsquo;t display PDFs inline.</p>
           <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-main-menu.pdf" target="_blank" rel="noopener">
             Open the menu
           </a>
@@ -171,103 +171,94 @@ setTimeout(function () {
   </div>
 </section>
 
-<!-- ══════════════════ CHAPTER I — OUR FARMERS ══════════════════ -->
+<!-- ══════════════════ INGREDIENTS & FARMERS ══════════════════ -->
 <section class="section" id="farmers">
   <div class="wrap">
     <div class="split">
       <div class="split__media" data-reveal>
-        <div class="framed">
-          <span class="framed__rule" aria-hidden="true"></span>
-          <img class="framed__back" src="assets/img/garden-bowl.jpg" alt="A bowl of leaves and edible flowers grown for the Talisman kitchen" loading="lazy" width="1066" height="1600">
-          <img class="framed__front" src="assets/img/garden-day.jpg" alt="The Talisman garden, laid for lunch beneath the trees" loading="lazy" width="1333" height="2000">
-        </div>
+        <figure class="solomedia">
+          <img src="assets/img/garden-bowl.jpg" alt="A bowl of leaves and edible flowers grown for the Talisman kitchen" loading="lazy" width="1066" height="1600">
+        </figure>
       </div>
       <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Chapter I</p>
-        <h2>Our Farmers</h2>
+        <p class="eyebrow eyebrow--wine">Ingredients &amp; Farmers</p>
+        <h2>We know who<br><em>grows it.</em></h2>
         <p style="margin-top:26px">
-          We grow a great deal of what we serve, but not all of it — and the rest comes from
-          smallholders around Karen, Limuru and the Rift who have been supplying this kitchen for years.
+          A great deal of what we serve comes off our own farm &mdash; herbs, greens and roots harvested at
+          05:30 and in the kitchen by lunch. The rest comes from smallholders around Karen, Limuru and
+          the Rift who have been supplying this kitchen for years.
         </p>
         <p style="margin-top:16px">
           We buy whole crops rather than cherry-picking, we pay on delivery, and we plant around what
-          they tell us grows well. It means the menu bends to the season instead of the other way
-          round — and it means the people who grow your food are not strangers to us.
+          they tell us grows well. It means the menu bends to the season instead of the other way round.
+          It also means the people who grow your food are not strangers to us.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ CHAPTER II — SOLID BAND ══════════════════ -->
-<section class="solidband">
+<!-- ══════════════════ PREPARATION ══════════════════ -->
+<section class="section section--cream" id="preparation">
   <div class="wrap">
-    <div class="split split--band">
+    <div class="split">
       <div class="split__body" data-reveal>
-        <p class="eyebrow">Chapter II</p>
-        <h2>Sourced, then<br><em>slowly prepared.</em></h2>
-        <p style="margin-top:24px">
-          Our salmon arrives whole and is cured and smoked here, in our own smokehouse, over one fire
-          kept deliberately low. It takes as long as it takes — usually most of a day.
+        <p class="eyebrow eyebrow--wine">Preparation</p>
+        <h2>One fire,<br><em>kept deliberately low.</em></h2>
+        <p style="margin-top:26px">
+          Our salmon arrives whole. It is cured here, hung in our own smokehouse over smouldering herbs,
+          and left alone for the best part of a day. There is no way to hurry it and no reason to try.
         </p>
         <p style="margin-top:16px">
-          The same patience runs through the rest of it. Stocks reduced overnight, lamb held eight hours
-          over the coals, bread proved slowly and baked at dawn. Nothing here is rushed, because the
-          things worth eating rarely can be.
+          The same patience runs through the rest of the kitchen &mdash; stocks reduced overnight, lamb held
+          eight hours over the coals, bread proved slowly and baked at dawn. None of it is visible on the
+          plate, and it shouldn&rsquo;t be. You should simply notice that it tastes like someone meant it.
         </p>
-
-        <ul class="featuregrid">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c3 4 5 6 5 9a5 5 0 01-10 0c0-3 2-5 5-9z"/></svg>
-            <span><strong>One fire</strong> Kept deliberately low</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <span><strong>Eight hours</strong> Lamb over the coals</span>
-          </li>
-        </ul>
       </div>
-
       <div class="split__media" data-reveal>
-        <div class="framed framed--light">
-          <span class="framed__rule" aria-hidden="true"></span>
-          <img class="framed__back" src="assets/img/salmon-dish.jpg" alt="Salmon, cured and smoked in-house, plated with garden herbs" loading="lazy" width="1066" height="1600">
-          <img class="framed__front" src="assets/img/dessert-glass.jpg" alt="A dessert served in a tall glass at Talisman" loading="lazy" width="1066" height="1600">
-        </div>
+        <!-- SLOT: smokehouse — replace with the high-resolution smoking-salmon photograph -->
+        <figure class="solomedia solomedia--tall">
+          <img src="assets/img/salmon-dish.jpg" alt="Salmon, cured and smoked in-house over a slow fire" loading="lazy" width="1066" height="1600">
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ CHAPTER III — BY THE TIME IT REACHES YOU ══════════════════ -->
-<section class="section">
+<!-- ══════════════════ BEVERAGES ══════════════════ -->
+<section class="section" id="beverages">
   <div class="wrap">
-    <div class="center" style="max-width:44ch;margin-inline:auto;margin-bottom:clamp(32px,5vw,56px)">
-      <p class="eyebrow eyebrow--wine" data-reveal>Chapter III</p>
-      <h2 data-reveal style="margin-top:14px">By the time it<br><em>reaches your table.</em></h2>
+    <div class="section-head">
+      <h2 data-reveal>Beverages<span class="subhead">wine, coffee and cocktails</span></h2>
     </div>
 
-    <div class="trio">
-      <figure class="trio__side" data-reveal data-tilt>
-        <img src="assets/img/bartender.jpg" alt="The bar in full flow at Talisman" loading="lazy" width="1066" height="1600">
-      </figure>
+    <div class="introcards">
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/wine-garden.jpg" alt="Wine poured beside bread and cheese at Talisman" loading="lazy" width="1600" height="1600"></figure>
+        <div class="introcard__body">
+          <h3>Wine</h3>
+          <p>A short, opinionated list &mdash; mostly South African and French, chosen to sit well outdoors.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-wine">Open the wine list</a>
+        </div>
+      </article>
 
-      <div class="trio__card" data-reveal>
-        <p>
-          A single plate here has passed through a great many careful hands — picked, sorted, trimmed,
-          cured, smoked, roasted, rested, tasted and tasted again.
-        </p>
-        <p style="margin-top:16px">
-          None of that is visible when it arrives, and it shouldn’t be. What you should notice is
-          simply that it tastes like someone meant it. That is the whole ambition: food made
-          unhurriedly, by people who cook the way they would at home, for a table they care about.
-        </p>
-        <p style="margin-top:28px"><a class="btn btn--onband" href="index.html#visit">Request a table</a></p>
-      </div>
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/fireside-drink.jpg" alt="Coffee served beside the fireplace at Talisman" loading="lazy" width="1600" height="2000"></figure>
+        <div class="introcard__body">
+          <h3>Coffee</h3>
+          <p>Kenyan single-origin, roasted locally and served properly &mdash; espresso to a pot for the table.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-coffee">Open the coffee menu</a>
+        </div>
+      </article>
 
-      <figure class="trio__side" data-reveal data-tilt>
-        <img src="assets/img/cocktail-red.jpg" alt="A cocktail in the garden at Talisman" loading="lazy" width="1066" height="1600">
-      </figure>
+      <article class="introcard" data-reveal>
+        <figure class="introcard__media"><img src="assets/img/gold-martini.jpg" alt="A gold-rimmed Dawa held against the greenery" loading="lazy" width="1600" height="2000"></figure>
+        <div class="introcard__body">
+          <h3>Cocktails</h3>
+          <p>The Dawa, dressed for the occasion &mdash; and mint and lemongrass cut from the garden you are in.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-bev">Open the cocktail menu</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -278,16 +269,14 @@ setTimeout(function () {
        alt="The Talisman garden after dark, lanterns lit among the trees" loading="lazy" width="2400" height="1600">
   <div class="fullbleed__scrim"></div>
   <div class="fullbleed__body">
-    <p class="eyebrow" data-reveal>And then, the garden</p>
     <h2 data-reveal>Eat it where<br><em>it grew.</em></h2>
     <p data-reveal class="lead" style="margin:24px auto 0;max-width:38rem">
-      Every one of these dishes is best eaten outside, under the trees, with the afternoon going
-      long. Take a table on the lawn, let the children loose in the garden, and stay as late as
-      you like — nobody here will hurry you.
+      Best eaten outside, under the trees, with the afternoon going long. Take a table on the lawn and
+      stay as late as you like &mdash; nobody here will hurry you.
     </p>
     <div data-reveal class="hero__actions" style="margin-top:38px">
       <a class="btn btn--primary" href="index.html#visit">Request a table</a>
-      <a class="btn btn--ghost" href="events.html">Book the long table</a>
+      <a class="btn btn--ghost" href="events.html">Art &amp; Events</a>
     </div>
   </div>
 </section>

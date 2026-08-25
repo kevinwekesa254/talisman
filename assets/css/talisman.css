@@ -1990,3 +1990,32 @@ input[type="date"].field__input { display: block; }
    carry full contrast rather than fighting a busy image. */
 .families--dim .families__media { opacity: .20; }
 .families--dim .families__scrim { background: rgba(14,10,8,.25); }
+
+/* =========================================================================
+   30. MENU / STORY COMPONENTS
+   ========================================================================= */
+
+/* ---- 30.1 Three-column intro boxes (image + title + one-liner) ---------- */
+.introcards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 30px); }
+.introcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--linen); }
+.introcard__media { margin: 0; overflow: hidden; background: var(--sand); aspect-ratio: 4 / 3; }
+.introcard__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.introcard:hover .introcard__media img { transform: scale(1.05); }
+.introcard__body { padding: clamp(20px, 2.4vw, 30px); display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.introcard__body h3 { font-size: clamp(1.25rem, 2vw, 1.625rem); }
+.introcard__body p { font-size: var(--t-small); line-height: 1.7; color: var(--ink-2); }
+.introcard__body .link-arrow { margin-top: auto; padding-top: var(--s-3); }
+@media (max-width: 860px) { .introcards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 580px) { .introcards { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- 30.2 Plain single image for split sections -------------------------
+   Replaces the outlined/inset collage: one photograph, no rule, no overlap. */
+.solomedia { margin: 0; overflow: hidden; background: var(--sand); }
+.solomedia img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 5; }
+.solomedia--wide img { aspect-ratio: 3 / 2; }
+.solomedia--tall img { aspect-ratio: 3 / 4; }
+
+/* ---- 30.3 Monochrome treatment (Our Story) ------------------------------ */
+.mono img, img.mono { filter: grayscale(1) contrast(1.06); transition: filter var(--d-slow) var(--ease); }
+.mono:hover img, img.mono:hover { filter: grayscale(1) contrast(1.12); }
+.bhero--mono .bhero__media { filter: grayscale(1) contrast(1.05); }
