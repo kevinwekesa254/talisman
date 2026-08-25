@@ -29,6 +29,8 @@
   /* Type */
   --serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
   --sans:  'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Brand script — swap this one line to change it everywhere */
+  --script: 'Great Vibes', 'Snell Roundhand', 'Apple Chancery', cursive;
 
   /* Fluid type scale */
   --t-display: clamp(2.625rem, 6.6vw, 5.75rem);
@@ -2019,3 +2021,24 @@ input[type="date"].field__input { display: block; }
 .mono img, img.mono { filter: grayscale(1) contrast(1.06); transition: filter var(--d-slow) var(--ease); }
 .mono:hover img, img.mono:hover { filter: grayscale(1) contrast(1.12); }
 .bhero--mono .bhero__media { filter: grayscale(1) contrast(1.05); }
+
+
+/* =========================================================================
+   31. BRAND SCRIPT
+   Used as an accent, never for body copy or long headings — a script at
+   paragraph length is unreadable, and at heading length it stops being
+   special. Applied to the establishment line, section subheads, and
+   anywhere `.script` is added by hand.
+   ========================================================================= */
+.script,
+.bhero__est,
+.subhead {
+  font-family: var(--script);
+  font-style: normal;          /* the face is already cursive; italic double-slants it */
+  letter-spacing: .01em;
+}
+
+/* Great Vibes sits small for its point size and rides high on the baseline,
+   so accent lines need a nudge up in size and a little breathing room. */
+.bhero__est { font-size: clamp(1.5rem, 2.6vw, 2.125rem); line-height: 1.1; }
+.subhead    { font-size: .78em; line-height: 1.35; margin-top: .12em; }
