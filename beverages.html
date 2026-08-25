@@ -73,19 +73,13 @@ setTimeout(function () {
 <!-- ══════════════════ THE THREE ══════════════════ -->
 <section class="section section--pagetop" id="beverages">
   <div class="wrap">
-    <div class="pagetitle" data-reveal>
-      <p class="eyebrow eyebrow--wine">Beverages</p>
-      <h1>Wine, coffee<br><em>and cocktails.</em></h1>
-      <p>The mint, lime and lemongrass come from the garden you are sitting in.</p>
-    </div>
-
     <div class="introcards">
       <article class="introcard" data-reveal>
         <figure class="introcard__media"><img src="assets/img/wine-garden.jpg" alt="Wine poured beside bread and cheese at Talisman" loading="lazy" width="1600" height="1600"></figure>
         <div class="introcard__body">
           <h3>Wine</h3>
           <p>A short, opinionated list &mdash; mostly South African and French, chosen to sit well outdoors.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-wine">See the wine list</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-wine">See the wine list</a>
         </div>
       </article>
 
@@ -94,7 +88,7 @@ setTimeout(function () {
         <div class="introcard__body">
           <h3>Coffee</h3>
           <p>Kenyan single-origin, roasted locally and served properly &mdash; espresso to a pot for the table.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-coffee">See the coffee menu</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-coffee">See the coffee menu</a>
         </div>
       </article>
 
@@ -103,27 +97,58 @@ setTimeout(function () {
         <div class="introcard__body">
           <h3>Cocktails</h3>
           <p>The Dawa, dressed for the occasion &mdash; and mint and lemongrass cut from the garden you are in.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-cocktails">See the cocktail menu</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-cocktails">See the cocktail menu</a>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ IN-PAGE PDF VIEWER (beverages only) ══════════════════ -->
-<section class="section section--cream section--collapsible" id="menus">
+<!-- ══════════════════ THE BAR ══════════════════ -->
+<section class="section" id="bar">
   <div class="wrap">
-    <div class="viewer" id="menu-viewer" data-viewer hidden>
-
-      <div class="viewer__head">
-        <div>
-          <p class="eyebrow eyebrow--wine">The beverage menus</p>
-          <h2 style="margin-top:10px;font-size:clamp(1.75rem,3.4vw,2.5rem)">Read them here</h2>
-        </div>
-        <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+    <div class="split">
+      <div class="split__media" data-reveal>
+        <!-- SLOT: bar — replace with the photograph of the guest with a glass of wine at the bar -->
+        <figure class="solomedia">
+          <img src="assets/img/guests-laughing.jpg" alt="Guests with a glass of wine at the Talisman bar" loading="lazy" width="1066" height="1600">
+        </figure>
       </div>
+      <div class="split__body" data-reveal>
+        <p class="eyebrow eyebrow--wine">The Bar</p>
+        <h1>Once the meal<br><em>is over.</em></h1>
+        <p style="margin-top:26px">
+          When the plates have gone, come and wind down at the bar. A glass of something good, the fire
+          going, and no particular reason to leave &mdash; it is the best hour of the evening and the one most
+          people forget to plan for.
+        </p>
+        <p style="margin-top:16px">
+          The mint, lemongrass and lime go into the glass within minutes of leaving the bed they grew in.
+          Beyond that: a short wine list chosen to sit well outdoors, coffee roasted here in Kenya, and a
+          shelf of whisky, gin and rum worth asking to see.
+        </p>
+        <p style="margin-top:32px"><a class="btn btn--primary" href="menu.html">See the food menus</a></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
+</main>
+
+<!-- ══════════════════ MENU DIALOG ══════════════════ -->
+<div class="viewer" id="menu-viewer" data-viewer hidden>
+  <div class="viewer__backdrop" data-viewer-backdrop></div>
+  <div class="viewer__panel" role="dialog" aria-modal="true" aria-label="Beverage menus">
+
+    <div class="viewer__head">
+      <div>
+        <p class="eyebrow eyebrow--wine">The beverage menus</p>
+        <h2 style="margin-top:8px;font-size:clamp(1.5rem,2.8vw,2rem)">Read them here</h2>
+      </div>
+      <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+    </div>
+
+    <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
         <button class="viewer__tab" role="tab" id="tab-wine" aria-selected="true" aria-controls="viewer-stage"
                 data-pdf="assets/menus/talisman-wine.pdf" data-title="Wine list">
           Wine
@@ -136,73 +161,23 @@ setTimeout(function () {
                 data-pdf="assets/menus/talisman-cocktails.pdf" data-title="Cocktail menu">
           Cocktails
         </button>
-      </div>
-
-      <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-wine" tabindex="0">
-        <iframe class="viewer__frame" data-viewer-frame title="Talisman beverage menu" src="about:blank"></iframe>
-        <div class="viewer__fallback" data-viewer-fallback hidden>
-          <p>Your browser can&rsquo;t display PDFs inline.</p>
-          <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-wine.pdf" target="_blank" rel="noopener">
-            Open the menu
-          </a>
-        </div>
-      </div>
-
-      <div class="viewer__foot">
-        <p class="viewer__note">The full cellar list lives at the table &mdash; tell us what you are eating and we will find the one.</p>
-        <a class="link-arrow" data-viewer-download href="assets/menus/talisman-wine.pdf" download>Download this menu</a>
-      </div>
-
     </div>
-  </div>
-</section>
 
-<!-- ══════════════════ THE BAR ══════════════════ -->
-<section class="section" id="bar">
-  <div class="wrap">
-    <div class="split">
-      <div class="split__media" data-reveal>
-        <figure class="solomedia">
-          <img src="assets/img/bar-ingredients.png" alt="Bottles and fresh fruit set out on the bar at Talisman" loading="lazy" width="1200" height="1600">
-        </figure>
-      </div>
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">The Bar</p>
-        <h2>Cut from<br><em>the garden.</em></h2>
-        <p style="margin-top:26px">
-          The mint, lemongrass and lime go into the glass within a few minutes of leaving the bed they
-          grew in. The Dawa &mdash; vodka, honey, lime and crushed ice, in a gold-rimmed glass &mdash; is the house
-          drink and the correct first order.
-        </p>
-        <p style="margin-top:16px">
-          Beyond that: a short wine list chosen to sit well outdoors, coffee roasted here in Kenya, and
-          a shelf of whisky, gin and rum worth asking to see.
-        </p>
-        <p style="margin-top:32px"><a class="btn btn--primary" href="menu.html">See the food menus</a></p>
+    <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-wine" tabindex="0">
+      <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
+      <div class="viewer__fallback" data-viewer-fallback hidden>
+        <p>Your browser can&rsquo;t display PDFs inline.</p>
+        <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-wine.pdf" target="_blank" rel="noopener">Open the menu</a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ══════════════════ FULL-BLEED GARDEN ══════════════════ -->
-<section class="fullbleed on-dark" id="garden">
-  <img class="fullbleed__media" data-parallax="band" src="assets/img/cocktail-greens.jpg"
-       alt="A cocktail resting among the garden greenery at Talisman" loading="lazy" width="1200" height="1600">
-  <div class="fullbleed__scrim"></div>
-  <div class="fullbleed__body">
-    <h2 data-reveal>Sundowners,<br><em>under the palms.</em></h2>
-    <p data-reveal class="lead" style="margin:24px auto 0;max-width:38rem">
-      Best taken outside as the light goes, with something from the fire on its way. Take a table on
-      the lawn and stay as late as you like.
-    </p>
-    <div data-reveal class="hero__actions" style="margin-top:38px">
-      <a class="btn btn--primary" href="index.html#visit">Request a table</a>
-      <a class="btn btn--ghost" href="events.html">Art &amp; Events</a>
+    <div class="viewer__foot">
+      <p class="viewer__note">The full cellar list lives at the table &mdash; tell us what you are eating and we will find the one.</p>
+      <a class="link-arrow" data-viewer-download href="assets/menus/talisman-wine.pdf" download>Download this menu</a>
     </div>
-  </div>
-</section>
 
-</main>
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">

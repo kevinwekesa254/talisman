@@ -332,24 +332,40 @@
       });
     });
 
+    var lastFocus = null;
+
     function open() {
       if (!viewer.hidden) return;
+      lastFocus = document.activeElement;
       viewer.hidden = false;
-      viewer.classList.add('is-opening');
+      document.body.classList.add('is-locked');   // page must not scroll behind the dialog
       openBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'true'); });
-      select(tabs[0]);                       // PDF is only fetched on first open
-      viewer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-      window.setTimeout(function () { tabs[0].focus({ preventScroll: true }); }, reduced ? 0 : 450);
+      if (!$('.viewer__tab[aria-selected="true"]', viewer)) select(tabs[0]);
+      window.setTimeout(function () {
+        var sel = $('.viewer__tab[aria-selected="true"]', viewer) || tabs[0];
+        sel.focus({ preventScroll: true });
+      }, 40);
     }
     function close() {
+      if (viewer.hidden) return;
       viewer.hidden = true;
-      viewer.classList.remove('is-opening');
+      document.body.classList.remove('is-locked');
       frame.removeAttribute('src');          // stop the embedded viewer
-      openBtns.forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-      });
-      if (openBtns[0]) openBtns[0].focus();
+      openBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
+
+    // Backdrop click and a focus trap, as any modal needs
+    var backdrop = $('[data-viewer-backdrop]', viewer);
+    if (backdrop) backdrop.addEventListener('click', close);
+    viewer.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = $$('button, a[href], iframe', viewer).filter(function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
 
     openBtns.forEach(function (b) { b.addEventListener('click', open); });
     if (closeBtn) closeBtn.addEventListener('click', close);
@@ -375,17 +391,15 @@
         var tab = $('#' + link.getAttribute('data-menu-tab'), viewer);
         if (!tab) return;
         e.preventDefault();
-        if (viewer.hidden) open();
         select(tab);
-        viewer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        if (viewer.hidden) open();
       });
     });
     function fromHash() {
       var tab = byHash[location.hash];
       if (!tab) return;
-      if (viewer.hidden) open();
       select(tab);
-      viewer.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+      if (viewer.hidden) open();
     }
     fromHash();
     window.addEventListener('hashchange', fromHash);

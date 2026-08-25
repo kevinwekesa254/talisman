@@ -2056,3 +2056,85 @@ input[type="date"].field__input { display: block; }
 
 /* The mobile sheet's "Menu" is a grouping label, not a destination. */
 .nav-sheet__link--label { color: var(--ink-3); cursor: default; }
+
+/* =========================================================================
+   33. MENU VIEWER AS A MODAL
+   Previously the viewer expanded inline, pushing the page down. It now sits
+   over the page as a dialog, so opening a menu costs no layout.
+   ========================================================================= */
+.viewer {
+  position: fixed; inset: 0; z-index: var(--z-sheet);
+  display: grid; place-items: center;
+  padding: clamp(10px, 2.5vw, 40px);
+}
+.viewer[hidden] { display: none; }
+.viewer__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(14,10,8,.74);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  animation: fadeIn .25s var(--ease) both;
+}
+.viewer__panel {
+  position: relative;
+  width: 100%; max-width: 980px; max-height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--linen);
+  box-shadow: 0 40px 90px -20px rgba(14,10,8,.55);
+  padding: clamp(18px, 2.6vw, 32px);
+  overflow: hidden;
+  animation: viewerPop .34s var(--ease-out) both;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes viewerPop { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+
+/* The stage takes what is left, but an iframe with no height collapses to its
+   150px default — so give it a real floor as well as the flex grow. */
+.viewer__stage { flex: 1 1 auto; height: auto; min-height: min(62vh, 640px); }
+@media (max-height: 700px) { .viewer__stage { min-height: 54vh; } }
+.viewer__head { margin-bottom: var(--s-4); }
+.viewer__tabs { padding-bottom: var(--s-3); margin-bottom: var(--s-4); }
+.viewer__foot { margin-top: var(--s-4); }
+
+@media (max-width: 620px) {
+  .viewer__panel { padding: 14px; }
+  .viewer__foot { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+  .viewer__note { font-size: .8125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .viewer__backdrop, .viewer__panel { animation: none; }
+}
+
+/* =========================================================================
+   34. LINE TIMELINE
+   A continuous rule from inception to today, with each moment pinned to it.
+   ========================================================================= */
+.timeline { position: relative; list-style: none; padding: 0; margin: 0; }
+.timeline::before {
+  content: "";
+  position: absolute; left: 7px; top: 6px; bottom: 6px;
+  width: 1px; background: var(--linen);
+}
+.timeline > li {
+  position: relative;
+  padding-left: clamp(34px, 4vw, 52px);
+  padding-bottom: clamp(28px, 4vw, 44px);
+}
+.timeline > li:last-child { padding-bottom: 0; }
+.timeline > li::before {
+  content: "";
+  position: absolute; left: 0; top: 6px;
+  width: 15px; height: 15px; border-radius: 999px;
+  background: var(--paper);
+  border: 2px solid var(--gold);
+}
+.timeline > li:first-child::before,
+.timeline > li:last-child::before { background: var(--wine); border-color: var(--wine); }
+.timeline__when {
+  display: block;
+  font: 500 var(--t-eyebrow)/1 var(--sans);
+  letter-spacing: .22em; text-transform: uppercase; color: var(--wine);
+}
+.timeline__title { margin-top: 10px; font: 500 clamp(1.25rem, 2.1vw, 1.625rem)/1.25 var(--serif); color: var(--ink); }
+.timeline__body { margin-top: 10px; font-size: var(--t-small); line-height: 1.75; max-width: 62ch; }
+.section--cream .timeline > li::before { background: var(--cream); }

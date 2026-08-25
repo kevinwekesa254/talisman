@@ -73,19 +73,13 @@ setTimeout(function () {
 <!-- ══════════════════ SERVICES ══════════════════ -->
 <section class="section section--pagetop" id="food">
   <div class="wrap">
-    <div class="pagetitle" data-reveal>
-      <p class="eyebrow eyebrow--wine">Our Food</p>
-      <h1>The farm decides.<br><em>The kitchen answers.</em></h1>
-      <p>Harvested at 05:30, on the plate by lunch. What follows changes with the rains.</p>
-    </div>
-
     <div class="introcards">
       <article class="introcard" data-reveal>
         <figure class="introcard__media"><img src="assets/img/brunch-table.jpg" alt="A brunch spread laid out on the table at Talisman" loading="lazy" width="1600" height="2000"></figure>
         <div class="introcard__body">
           <h3>Breakfast</h3>
           <p>Eggs, sourdough and strong coffee, from eight in the morning under the trees.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-breakfast">See the menu</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-breakfast">See the menu</a>
         </div>
       </article>
 
@@ -94,7 +88,7 @@ setTimeout(function () {
         <div class="introcard__body">
           <h3>Specials</h3>
           <p>What the farm sent up this week, cooked over one slow fire and written fresh each day.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-main">See the menu</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-main">See the menu</a>
         </div>
       </article>
 
@@ -103,56 +97,9 @@ setTimeout(function () {
         <div class="introcard__body">
           <h3>Afternoon Tea</h3>
           <p>Cake, scones and a pot for the table, in the green, while the afternoon goes long.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-tea">See the menu</a>
+          <a class="link-arrow" href="#menu-viewer" data-menu-tab="tab-tea">See the menu</a>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ IN-PAGE PDF VIEWER (food only) ══════════════════ -->
-<section class="section section--cream section--collapsible" id="menus">
-  <div class="wrap">
-    <div class="viewer" id="menu-viewer" data-viewer hidden>
-
-      <div class="viewer__head">
-        <div>
-          <p class="eyebrow eyebrow--wine">The food menus</p>
-          <h2 style="margin-top:10px;font-size:clamp(1.75rem,3.4vw,2.5rem)">Read them here</h2>
-        </div>
-        <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
-      </div>
-
-      <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
-        <button class="viewer__tab" role="tab" id="tab-breakfast" aria-selected="true" aria-controls="viewer-stage"
-                data-pdf="assets/menus/talisman-breakfast.pdf" data-title="Breakfast menu">
-          Breakfast
-        </button>
-        <button class="viewer__tab" role="tab" id="tab-main" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-                data-pdf="assets/menus/talisman-main-menu.pdf" data-title="Main menu">
-          Specials
-        </button>
-        <button class="viewer__tab" role="tab" id="tab-tea" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-                data-pdf="assets/menus/talisman-afternoon-tea.pdf" data-title="Afternoon tea menu">
-          Afternoon Tea
-        </button>
-      </div>
-
-      <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-breakfast" tabindex="0">
-        <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
-        <div class="viewer__fallback" data-viewer-fallback hidden>
-          <p>Your browser can&rsquo;t display PDFs inline.</p>
-          <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-breakfast.pdf" target="_blank" rel="noopener">
-            Open the menu
-          </a>
-        </div>
-      </div>
-
-      <div class="viewer__foot">
-        <p class="viewer__note">Menus change with the season and with the rains. Please tell us about allergies when you book.</p>
-        <a class="link-arrow" data-viewer-download href="assets/menus/talisman-breakfast.pdf" download>Download this menu</a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -168,7 +115,7 @@ setTimeout(function () {
       </div>
       <div class="split__body" data-reveal>
         <p class="eyebrow eyebrow--wine">Ingredients &amp; Farmers</p>
-        <h2>We know who<br><em>grows it.</em></h2>
+        <h1>We know who<br><em>grows it.</em></h1>
         <p style="margin-top:26px">
           A great deal of what we serve comes off our own farm &mdash; herbs, greens and roots harvested at
           05:30 and in the kitchen by lunch. The rest comes from smallholders around Karen, Limuru and
@@ -211,25 +158,79 @@ setTimeout(function () {
   </div>
 </section>
 
-<!-- ══════════════════ FULL-BLEED GARDEN ══════════════════ -->
-<section class="fullbleed on-dark" id="garden">
-  <img class="fullbleed__media" data-parallax="band" src="assets/img/garden-night.jpg"
-       alt="The Talisman garden after dark, lanterns lit among the trees" loading="lazy" width="2400" height="1600">
-  <div class="fullbleed__scrim"></div>
-  <div class="fullbleed__body">
-    <h2 data-reveal>Eat it where<br><em>it grew.</em></h2>
-    <p data-reveal class="lead" style="margin:24px auto 0;max-width:38rem">
-      Best eaten outside, under the trees, with the afternoon going long. Take a table on the lawn and
-      stay as late as you like &mdash; nobody here will hurry you.
-    </p>
-    <div data-reveal class="hero__actions" style="margin-top:38px">
-      <a class="btn btn--primary" href="index.html#visit">Request a table</a>
-      <a class="btn btn--ghost" href="beverages.html">Beverages</a>
+<!-- ══════════════════ AFTERNOON TEA ══════════════════ -->
+<section class="section" id="afternoon-tea">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__media" data-reveal>
+        <figure class="solomedia">
+          <img src="assets/img/dessert-glass.jpg" alt="A dessert served in a tall glass at Talisman" loading="lazy" width="1066" height="1600">
+        </figure>
+      </div>
+      <div class="split__body" data-reveal>
+        <p class="eyebrow eyebrow--wine">Afternoon Tea</p>
+        <h2>Three o&rsquo;clock,<br><em>in the green.</em></h2>
+        <p style="margin-top:26px">
+          Finger sandwiches, warm scones with cream and preserve, and a tier of cakes from the pastry
+          kitchen &mdash; with a pot of tea or coffee each. Served from three until half past five, at a table
+          under the trees.
+        </p>
+        <p style="margin-top:16px">
+          It is meant to be taken slowly and shared, which is the only way anybody manages to finish it.
+        </p>
+        <p style="margin-top:32px">
+          <button class="btn btn--primary" type="button" data-menu-tab="tab-tea">See the afternoon tea menu</button>
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 </main>
+
+<!-- ══════════════════ MENU DIALOG ══════════════════ -->
+<div class="viewer" id="menu-viewer" data-viewer hidden>
+  <div class="viewer__backdrop" data-viewer-backdrop></div>
+  <div class="viewer__panel" role="dialog" aria-modal="true" aria-label="Food menus">
+
+    <div class="viewer__head">
+      <div>
+        <p class="eyebrow eyebrow--wine">The food menus</p>
+        <h2 style="margin-top:8px;font-size:clamp(1.5rem,2.8vw,2rem)">Read them here</h2>
+      </div>
+      <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+    </div>
+
+    <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
+        <button class="viewer__tab" role="tab" id="tab-breakfast" aria-selected="true" aria-controls="viewer-stage"
+                data-pdf="assets/menus/talisman-breakfast.pdf" data-title="Breakfast menu">
+          Breakfast
+        </button>
+        <button class="viewer__tab" role="tab" id="tab-main" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-main-menu.pdf" data-title="Main menu">
+          Specials
+        </button>
+        <button class="viewer__tab" role="tab" id="tab-tea" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-afternoon-tea.pdf" data-title="Afternoon tea menu">
+          Afternoon Tea
+        </button>
+    </div>
+
+    <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-breakfast" tabindex="0">
+      <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
+      <div class="viewer__fallback" data-viewer-fallback hidden>
+        <p>Your browser can&rsquo;t display PDFs inline.</p>
+        <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-breakfast.pdf" target="_blank" rel="noopener">Open the menu</a>
+      </div>
+    </div>
+
+    <div class="viewer__foot">
+      <p class="viewer__note">Menus change with the season and with the rains. Please tell us about allergies when you book.</p>
+      <a class="link-arrow" data-viewer-download href="assets/menus/talisman-breakfast.pdf" download>Download this menu</a>
+    </div>
+
+  </div>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">

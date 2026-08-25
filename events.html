@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Events &amp; Live Nights — Talisman, Karen · Nairobi</title>
-<meta name="description" content="Jazz by the fire, garden weddings, birthdays and long tables. What's on at Talisman in Karen, and how to hire the garden for your own evening.">
+<meta name="description" content="A hub for art and culture in Karen — a new artist on the walls every month, live music and DJ nights, film screenings, book launches and private hire.">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,41 +92,58 @@ setTimeout(function () {
 <!-- ══════════════════ THE ART ══════════════════ -->
 <section class="section" id="art">
   <div class="wrap">
-    <div class="split">
-      <div class="split__media" data-reveal>
-        <figure class="solomedia solomedia--wide">
-          <img src="assets/img/art-guests.jpg" alt="Guests in front of a painting at Talisman" loading="lazy" width="1600" height="1067">
-        </figure>
-      </div>
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">The Art</p>
-        <h2>New walls,<br><em>every month.</em></h2>
-        <p style="margin-top:26px">
-          The walls here are rehung with a different artist every month. One month it is oils and
-          portraiture, the next photography or something a good deal stranger &mdash; and the room changes
-          character completely each time.
-        </p>
-        <p style="margin-top:16px">
-          Everything hanging is the work of a living artist and almost all of it is for sale. Opening
-          nights are open to anyone who happens to be here; no invitation, no guest list. Ask any of the
-          team and they will tell you whose work you are eating under.
-        </p>
-      </div>
+    <div class="center" style="max-width:46ch;margin-inline:auto;margin-bottom:clamp(28px,4vw,48px)">
+      <p class="eyebrow eyebrow--wine" data-reveal>The Art</p>
+      <h2 data-reveal style="margin-top:14px">New walls,<br><em>every month.</em></h2>
+      <p data-reveal class="lead" style="margin-top:20px">
+        The walls here are rehung with a different artist every month. Everything is the work of a
+        living artist, and almost all of it is for sale.
+      </p>
     </div>
 
-    <div class="quad" style="margin-top:clamp(24px,3.4vw,44px)">
-      <figure class="quad__i" data-reveal data-tilt>
-        <img src="assets/img/stained-glass.jpg" alt="Stained glass throwing colour across the dining room wall" loading="lazy" width="1800" height="1200">
-      </figure>
-      <figure class="quad__i" data-reveal data-tilt>
-        <img src="assets/img/art-interior.jpg" alt="Carved pillars, stained glass and collected pieces in the dining room" loading="lazy" width="1600" height="1067">
-      </figure>
-      <figure class="quad__i" data-reveal data-tilt>
-        <img src="assets/img/band-lion.jpg" alt="A performance beneath the lion painting at Talisman" loading="lazy" width="1800" height="1200">
-      </figure>
-      <figure class="quad__i" data-reveal data-tilt>
-        <img src="assets/img/lamp-interior.jpg" alt="Lamplight through hand-pierced brass against a painted wall" loading="lazy" width="1066" height="1600">
-      </figure>
+    <div class="gallery" data-gallery>
+      <div class="gallery__track" data-gallery-track>
+        <figure class="gallery__item">
+          <p class="gallery__num">01 / 06</p>
+          <img src="assets/img/art-guests.jpg" alt="Guests in front of a painting at Talisman" loading="lazy" width="1600" height="1067">
+          <figcaption>Opening nights are open to whoever is here</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <p class="gallery__num">02 / 06</p>
+          <img src="assets/img/brass-lantern.jpg" alt="A hand-pierced brass lantern hanging against a painted wall" loading="lazy" width="1200" height="1600">
+          <figcaption>A different painter on the walls each month</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <p class="gallery__num">03 / 06</p>
+          <img src="assets/img/art-interior.jpg" alt="Carved pillars, stained glass and collected pieces in the dining room" loading="lazy" width="1600" height="1067">
+          <figcaption>Thirty years of collecting, kept on show</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <p class="gallery__num">04 / 06</p>
+          <img src="assets/img/stained-glass.jpg" alt="Stained glass throwing colour across the dining room wall" loading="lazy" width="1800" height="1200">
+          <figcaption>Colour thrown across the walls all afternoon</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <p class="gallery__num">05 / 06</p>
+          <img src="assets/img/lamp-interior.jpg" alt="Lamplight through hand-pierced brass against a painted wall" loading="lazy" width="1066" height="1600">
+          <figcaption>Lamplight through hand-pierced brass</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <p class="gallery__num">06 / 06</p>
+          <img src="assets/img/live-jazz-2.jpg" alt="Musicians performing beneath the wall art at Talisman" loading="lazy" width="1600" height="2000">
+          <figcaption>Music, played under whatever is hanging</figcaption>
+        </figure>
+      </div>
+
+      <div class="gallery__controls">
+        <button class="gallery__arrow" type="button" data-gallery-prev aria-label="Previous images">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m0 0l6-6m-6 6l6 6"/></svg>
+        </button>
+        <div class="gallery__bar"><span data-gallery-bar></span></div>
+        <button class="gallery__arrow" type="button" data-gallery-next aria-label="Next images">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -140,35 +157,20 @@ setTimeout(function () {
         <h2 style="margin-top:16px">The band starts<br><em>when the plates clear.</em></h2>
         <p class="lead" style="margin-top:24px">
           Jazz and soul by the fireplace, close enough to feel. No stage, no tickets &mdash; just musicians
-          in the room and an evening that refuses to end. Once the tables clear, the DJs take it on.
+          in the room and an evening that refuses to end. Once the tables clear, the DJs take it on and
+          the garden keeps going.
         </p>
-        <div class="schedule" style="margin-top:36px">
-          <div class="schedule__row">
-            <span class="schedule__name">Jazz by the fire</span>
-            <span class="schedule__when">Friday evenings</span>
-          </div>
-          <div class="schedule__row">
-            <span class="schedule__name">Soul &amp; blues sessions</span>
-            <span class="schedule__when">Last Saturdays</span>
-          </div>
-          <div class="schedule__row">
-            <span class="schedule__name">DJ nights, until late</span>
-            <span class="schedule__when">Monthly</span>
-          </div>
-          <div class="schedule__row" style="border-bottom:0">
-            <span class="schedule__name">Garden brunch, unplugged</span>
-            <span class="schedule__when">Sundays</span>
-          </div>
-        </div>
+        <p style="margin-top:32px">
+          <a class="btn btn--onband" href="https://instagram.com/talisman.nairobi" target="_blank" rel="noopener">Dates on Instagram</a>
+        </p>
       </div>
 
       <div class="stack-pair" data-reveal>
-        <figure class="figure" data-tilt style="aspect-ratio:3/4">
+        <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
           <img src="assets/img/live-jazz-1.jpg" alt="A vocalist performing with the band at Talisman" loading="lazy" width="1600" height="2000">
         </figure>
-        <!-- SLOT: guitarist — replace with the fireside guitarist photograph -->
-        <figure class="figure" data-tilt style="aspect-ratio:3/4">
-          <img src="assets/img/live-jazz-2.jpg" alt="A vocalist and harmonica player mid-set" loading="lazy" width="1600" height="2000">
+        <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
+          <img src="assets/img/band-lion.jpg" alt="A guitarist playing at Talisman" loading="lazy" width="1800" height="1200">
         </figure>
       </div>
     </div>
