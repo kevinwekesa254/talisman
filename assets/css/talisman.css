@@ -335,7 +335,7 @@ em, .accent { font-style: italic; color: var(--wine); }
 
 /* Mobile sheet */
 .nav-sheet {
-  position: fixed; inset: 0; z-index: var(--z-sheet);
+  position: fixed; inset: 0; z-index: 9400;   /* above the grain film */
   background: var(--paper);
   display: flex; flex-direction: column;
   padding: calc(var(--nav-h) + 28px) var(--gutter) var(--s-8);
@@ -767,7 +767,9 @@ select.field__input {
 .grain::after {
   content: "";
   position: fixed; inset: 0;
-  z-index: 9999;
+  /* Below dialogs — at 9999 this film sat on top of the menu modal and
+     washed it out. Texture belongs under anything you have to read. */
+  z-index: 9000;
   pointer-events: none;
   opacity: .028;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -1011,19 +1013,10 @@ input[type="date"].field__input { display: block; }
 }
 .summary-grid__label { font-size: var(--t-small); line-height: 1.7; color: var(--ink-2); }
 
-/* ---- 24.2 In-page PDF viewer -------------------------------------------- */
-.viewer {
-  background: var(--paper);
-  border: 1px solid var(--linen);
-  box-shadow: var(--e-3);
-  padding: clamp(20px, 3vw, 34px);
-  scroll-margin-top: calc(var(--nav-h) + 40px);
-}
+/* ---- 24.2 In-page PDF viewer --------------------------------------------
+   The viewer is a full-screen dialog (see §33). Its surface styling lives on
+   .viewer__panel — putting a background here painted the whole overlay cream. */
 .viewer[hidden] { display: none; }
-
-/* Opening is a state change, so it gets a transition rather than a snap */
-.viewer.is-opening { animation: viewerIn .5s var(--ease-out) both; }
-@keyframes viewerIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
 .viewer__head {
   display: flex; align-items: flex-start; justify-content: space-between;
@@ -1059,8 +1052,10 @@ input[type="date"].field__input { display: block; }
 
 .viewer__stage {
   position: relative;
-  background: var(--sand);
-  border: 1px solid var(--linen);
+  background: #fff;                /* opaque under the PDF, or the blur bleeds through */
+  border: 1px solid rgba(27,22,20,.10);
+  border-radius: 12px;
+  overflow: hidden;
   /* Tall enough to read a page without the frame becoming its own scroll trap */
   height: clamp(460px, 78vh, 900px);
 }
@@ -2049,7 +2044,9 @@ input[type="date"].field__input { display: block; }
    the first section has to clear it. These pages also carry `nav--light`,
    since there is no dark hero for the transparent nav to sit over.
    ========================================================================= */
-.section--pagetop { padding-top: calc(var(--nav-h) + clamp(40px, 6vw, 80px)); }
+/* The floating nav's underside sits at roughly --nav-h + its own top offset;
+   this lands the first section about 30px below it. */
+.section--pagetop { padding-top: calc(var(--nav-h) + 46px); }
 .pagetitle { margin-bottom: clamp(28px, 4vw, 48px); max-width: 46ch; }
 .pagetitle h1 { font-size: clamp(2.25rem, 4.6vw, 3.5rem); line-height: 1.1; }
 .pagetitle p { margin-top: var(--s-4); font-size: var(--t-lead); line-height: 1.75; color: var(--ink-2); }
@@ -2063,7 +2060,7 @@ input[type="date"].field__input { display: block; }
    over the page as a dialog, so opening a menu costs no layout.
    ========================================================================= */
 .viewer {
-  position: fixed; inset: 0; z-index: var(--z-sheet);
+  position: fixed; inset: 0; z-index: 9500;   /* above the grain film */
   display: grid; place-items: center;
   padding: clamp(10px, 2.5vw, 40px);
 }
@@ -2078,8 +2075,12 @@ input[type="date"].field__input { display: block; }
   position: relative;
   width: 100%; max-width: 980px; max-height: 100%;
   display: flex; flex-direction: column;
-  background: var(--paper);
-  border: 1px solid var(--linen);
+  /* Same frosted glass as the floating nav */
+  background: rgba(251,248,241,.86);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(27,22,20,.10);
+  border-radius: 20px;
   box-shadow: 0 40px 90px -20px rgba(14,10,8,.55);
   padding: clamp(18px, 2.6vw, 32px);
   overflow: hidden;
@@ -2138,3 +2139,29 @@ input[type="date"].field__input { display: block; }
 .timeline__title { margin-top: 10px; font: 500 clamp(1.25rem, 2.1vw, 1.625rem)/1.25 var(--serif); color: var(--ink); }
 .timeline__body { margin-top: 10px; font-size: var(--t-small); line-height: 1.75; max-width: 62ch; }
 .section--cream .timeline > li::before { background: var(--cream); }
+
+/* =========================================================================
+   35. ALTERNATING TIMELINE
+   The line runs down the centre and the entries fall either side of it, so
+   the right-hand half of the row is used instead of sitting empty.
+   ========================================================================= */
+@media (min-width: 861px) {
+  .timeline--alt { padding-top: var(--s-4); }
+  .timeline--alt::before { left: 50%; transform: translateX(-50%); }
+  .timeline--alt > li {
+    width: 50%;
+    padding-left: 0;
+    padding-bottom: clamp(30px, 4vw, 52px);
+  }
+  /* odd entries sit left of the line, even entries right */
+  .timeline--alt > li:nth-child(odd) {
+    margin-left: 0; padding-right: clamp(34px, 4vw, 56px); text-align: right;
+  }
+  .timeline--alt > li:nth-child(even) {
+    margin-left: 50%; padding-left: clamp(34px, 4vw, 56px); text-align: left;
+  }
+  .timeline--alt > li:nth-child(odd)::before  { left: auto; right: -7px; }
+  .timeline--alt > li:nth-child(even)::before { left: -8px; }
+  .timeline--alt .timeline__body { max-width: none; }
+  .timeline--alt > li:nth-child(odd) .timeline__body { margin-left: auto; }
+}
