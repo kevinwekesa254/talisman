@@ -2042,3 +2042,17 @@ input[type="date"].field__input { display: block; }
    so accent lines need a nudge up in size and a little breathing room. */
 .bhero__est { font-size: clamp(1.5rem, 2.6vw, 2.125rem); line-height: 1.1; }
 .subhead    { font-size: .78em; line-height: 1.35; margin-top: .12em; }
+
+/* =========================================================================
+   32. HERO-LESS PAGE TOP
+   Pages that open straight onto content still sit under the fixed nav, so
+   the first section has to clear it. These pages also carry `nav--light`,
+   since there is no dark hero for the transparent nav to sit over.
+   ========================================================================= */
+.section--pagetop { padding-top: calc(var(--nav-h) + clamp(40px, 6vw, 80px)); }
+.pagetitle { margin-bottom: clamp(28px, 4vw, 48px); max-width: 46ch; }
+.pagetitle h1 { font-size: clamp(2.25rem, 4.6vw, 3.5rem); line-height: 1.1; }
+.pagetitle p { margin-top: var(--s-4); font-size: var(--t-lead); line-height: 1.75; color: var(--ink-2); }
+
+/* The mobile sheet's "Menu" is a grouping label, not a destination. */
+.nav-sheet__link--label { color: var(--ink-3); cursor: default; }

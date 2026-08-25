@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Food — Talisman, Karen · Nairobi</title>
-<meta name="description" content="Grown on our farm, smoked over one slow fire, and cooked the long way. Read our menus, meet our farmers, and see how a Talisman plate comes together.">
+<title>Beverages — Talisman, Karen · Nairobi</title>
+<meta name="description" content="A short, opinionated wine list, Kenyan single-origin coffee, and cocktails cut from the garden you are sitting in.">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,8 @@ setTimeout(function () {
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
         <div class="nav__sub" data-nav-sub>
-          <a href="menu.html" aria-current="page">Food</a>
-          <a href="beverages.html">Beverages</a>
+          <a href="menu.html">Food</a>
+          <a href="beverages.html" aria-current="page">Beverages</a>
         </div>
       </div>
       <a class="nav__link" href="events.html">Art &amp; Events</a>
@@ -55,8 +55,8 @@ setTimeout(function () {
     <a class="nav-sheet__link" href="index.html">Home</a>
     <span class="nav-sheet__link nav-sheet__link--label">Menu</span>
     <div class="nav-sheet__sub">
-      <a href="menu.html" aria-current="page">Food</a>
-      <a href="beverages.html">Beverages</a>
+      <a href="menu.html">Food</a>
+      <a href="beverages.html" aria-current="page">Beverages</a>
     </div>
     <a class="nav-sheet__link" href="events.html">Art &amp; Events</a>
     <a class="nav-sheet__link" href="our-story.html">Our Story</a>
@@ -70,142 +70,115 @@ setTimeout(function () {
 
 <main id="main">
 
-<!-- ══════════════════ SERVICES ══════════════════ -->
-<section class="section section--pagetop" id="food">
+<!-- ══════════════════ THE THREE ══════════════════ -->
+<section class="section section--pagetop" id="beverages">
   <div class="wrap">
     <div class="pagetitle" data-reveal>
-      <p class="eyebrow eyebrow--wine">Our Food</p>
-      <h1>The farm decides.<br><em>The kitchen answers.</em></h1>
-      <p>Harvested at 05:30, on the plate by lunch. What follows changes with the rains.</p>
+      <p class="eyebrow eyebrow--wine">Beverages</p>
+      <h1>Wine, coffee<br><em>and cocktails.</em></h1>
+      <p>The mint, lime and lemongrass come from the garden you are sitting in.</p>
     </div>
 
     <div class="introcards">
       <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/brunch-table.jpg" alt="A brunch spread laid out on the table at Talisman" loading="lazy" width="1600" height="2000"></figure>
+        <figure class="introcard__media"><img src="assets/img/wine-garden.jpg" alt="Wine poured beside bread and cheese at Talisman" loading="lazy" width="1600" height="1600"></figure>
         <div class="introcard__body">
-          <h3>Breakfast</h3>
-          <p>Eggs, sourdough and strong coffee, from eight in the morning under the trees.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-breakfast">See the menu</a>
+          <h3>Wine</h3>
+          <p>A short, opinionated list &mdash; mostly South African and French, chosen to sit well outdoors.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-wine">See the wine list</a>
         </div>
       </article>
 
       <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/food-bright.jpg" alt="A garden bowl and warm samosas set out on wood" loading="lazy" width="1600" height="1067"></figure>
+        <figure class="introcard__media"><img src="assets/img/fireside-drink.jpg" alt="Coffee served beside the fireplace at Talisman" loading="lazy" width="1600" height="2000"></figure>
         <div class="introcard__body">
-          <h3>Specials</h3>
-          <p>What the farm sent up this week, cooked over one slow fire and written fresh each day.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-main">See the menu</a>
+          <h3>Coffee</h3>
+          <p>Kenyan single-origin, roasted locally and served properly &mdash; espresso to a pot for the table.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-coffee">See the coffee menu</a>
         </div>
       </article>
 
       <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/dessert.jpg" alt="Sticky toffee pudding and chocolate tart on a long plate" loading="lazy" width="1600" height="2000"></figure>
+        <figure class="introcard__media"><img src="assets/img/gold-martini.jpg" alt="A gold-rimmed Dawa held against the greenery" loading="lazy" width="1600" height="2000"></figure>
         <div class="introcard__body">
-          <h3>Afternoon Tea</h3>
-          <p>Cake, scones and a pot for the table, in the green, while the afternoon goes long.</p>
-          <a class="link-arrow" href="#menus" data-menu-tab="tab-tea">See the menu</a>
+          <h3>Cocktails</h3>
+          <p>The Dawa, dressed for the occasion &mdash; and mint and lemongrass cut from the garden you are in.</p>
+          <a class="link-arrow" href="#menus" data-menu-tab="tab-cocktails">See the cocktail menu</a>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ IN-PAGE PDF VIEWER (food only) ══════════════════ -->
+<!-- ══════════════════ IN-PAGE PDF VIEWER (beverages only) ══════════════════ -->
 <section class="section section--cream section--collapsible" id="menus">
   <div class="wrap">
     <div class="viewer" id="menu-viewer" data-viewer hidden>
 
       <div class="viewer__head">
         <div>
-          <p class="eyebrow eyebrow--wine">The food menus</p>
+          <p class="eyebrow eyebrow--wine">The beverage menus</p>
           <h2 style="margin-top:10px;font-size:clamp(1.75rem,3.4vw,2.5rem)">Read them here</h2>
         </div>
         <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
       </div>
 
       <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
-        <button class="viewer__tab" role="tab" id="tab-breakfast" aria-selected="true" aria-controls="viewer-stage"
-                data-pdf="assets/menus/talisman-breakfast.pdf" data-title="Breakfast menu">
-          Breakfast
+        <button class="viewer__tab" role="tab" id="tab-wine" aria-selected="true" aria-controls="viewer-stage"
+                data-pdf="assets/menus/talisman-wine.pdf" data-title="Wine list">
+          Wine
         </button>
-        <button class="viewer__tab" role="tab" id="tab-main" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-                data-pdf="assets/menus/talisman-main-menu.pdf" data-title="Main menu">
-          Specials
+        <button class="viewer__tab" role="tab" id="tab-coffee" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-coffee.pdf" data-title="Coffee menu">
+          Coffee
         </button>
-        <button class="viewer__tab" role="tab" id="tab-tea" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-                data-pdf="assets/menus/talisman-afternoon-tea.pdf" data-title="Afternoon tea menu">
-          Afternoon Tea
+        <button class="viewer__tab" role="tab" id="tab-cocktails" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
+                data-pdf="assets/menus/talisman-cocktails.pdf" data-title="Cocktail menu">
+          Cocktails
         </button>
       </div>
 
-      <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-breakfast" tabindex="0">
-        <iframe class="viewer__frame" data-viewer-frame title="Talisman menu" src="about:blank"></iframe>
+      <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-wine" tabindex="0">
+        <iframe class="viewer__frame" data-viewer-frame title="Talisman beverage menu" src="about:blank"></iframe>
         <div class="viewer__fallback" data-viewer-fallback hidden>
           <p>Your browser can&rsquo;t display PDFs inline.</p>
-          <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-breakfast.pdf" target="_blank" rel="noopener">
+          <a class="btn btn--ghost" data-viewer-fallback-link href="assets/menus/talisman-wine.pdf" target="_blank" rel="noopener">
             Open the menu
           </a>
         </div>
       </div>
 
       <div class="viewer__foot">
-        <p class="viewer__note">Menus change with the season and with the rains. Please tell us about allergies when you book.</p>
-        <a class="link-arrow" data-viewer-download href="assets/menus/talisman-breakfast.pdf" download>Download this menu</a>
+        <p class="viewer__note">The full cellar list lives at the table &mdash; tell us what you are eating and we will find the one.</p>
+        <a class="link-arrow" data-viewer-download href="assets/menus/talisman-wine.pdf" download>Download this menu</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ INGREDIENTS & FARMERS ══════════════════ -->
-<section class="section" id="farmers">
+<!-- ══════════════════ THE BAR ══════════════════ -->
+<section class="section" id="bar">
   <div class="wrap">
     <div class="split">
       <div class="split__media" data-reveal>
         <figure class="solomedia">
-          <img src="assets/img/garden-bowl.jpg" alt="A bowl of leaves and edible flowers grown for the Talisman kitchen" loading="lazy" width="1066" height="1600">
+          <img src="assets/img/bar-ingredients.png" alt="Bottles and fresh fruit set out on the bar at Talisman" loading="lazy" width="1200" height="1600">
         </figure>
       </div>
       <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Ingredients &amp; Farmers</p>
-        <h2>We know who<br><em>grows it.</em></h2>
+        <p class="eyebrow eyebrow--wine">The Bar</p>
+        <h2>Cut from<br><em>the garden.</em></h2>
         <p style="margin-top:26px">
-          A great deal of what we serve comes off our own farm &mdash; herbs, greens and roots harvested at
-          05:30 and in the kitchen by lunch. The rest comes from smallholders around Karen, Limuru and
-          the Rift who have been supplying this kitchen for years.
+          The mint, lemongrass and lime go into the glass within a few minutes of leaving the bed they
+          grew in. The Dawa &mdash; vodka, honey, lime and crushed ice, in a gold-rimmed glass &mdash; is the house
+          drink and the correct first order.
         </p>
         <p style="margin-top:16px">
-          We buy whole crops rather than cherry-picking, we pay on delivery, and we plant around what
-          they tell us grows well. It means the menu bends to the season instead of the other way round.
-          It also means the people who grow your food are not strangers to us.
+          Beyond that: a short wine list chosen to sit well outdoors, coffee roasted here in Kenya, and
+          a shelf of whisky, gin and rum worth asking to see.
         </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ PREPARATION ══════════════════ -->
-<section class="section section--cream" id="preparation">
-  <div class="wrap">
-    <div class="split">
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Preparation</p>
-        <h2>One fire,<br><em>kept deliberately low.</em></h2>
-        <p style="margin-top:26px">
-          Our salmon arrives whole. It is cured here, hung in our own smokehouse over smouldering herbs,
-          and left alone for the best part of a day. There is no way to hurry it and no reason to try.
-        </p>
-        <p style="margin-top:16px">
-          The same patience runs through the rest of the kitchen &mdash; stocks reduced overnight, lamb held
-          eight hours over the coals, bread proved slowly and baked at dawn. None of it is visible on the
-          plate, and it shouldn&rsquo;t be. You should simply notice that it tastes like someone meant it.
-        </p>
-      </div>
-      <div class="split__media" data-reveal>
-        <!-- SLOT: smokehouse — replace with the high-resolution smoking-salmon photograph -->
-        <figure class="solomedia solomedia--tall">
-          <img src="assets/img/salmon-dish.jpg" alt="Salmon, cured and smoked in-house over a slow fire" loading="lazy" width="1066" height="1600">
-        </figure>
+        <p style="margin-top:32px"><a class="btn btn--primary" href="menu.html">See the food menus</a></p>
       </div>
     </div>
   </div>
@@ -213,18 +186,18 @@ setTimeout(function () {
 
 <!-- ══════════════════ FULL-BLEED GARDEN ══════════════════ -->
 <section class="fullbleed on-dark" id="garden">
-  <img class="fullbleed__media" data-parallax="band" src="assets/img/garden-night.jpg"
-       alt="The Talisman garden after dark, lanterns lit among the trees" loading="lazy" width="2400" height="1600">
+  <img class="fullbleed__media" data-parallax="band" src="assets/img/cocktail-greens.jpg"
+       alt="A cocktail resting among the garden greenery at Talisman" loading="lazy" width="1200" height="1600">
   <div class="fullbleed__scrim"></div>
   <div class="fullbleed__body">
-    <h2 data-reveal>Eat it where<br><em>it grew.</em></h2>
+    <h2 data-reveal>Sundowners,<br><em>under the palms.</em></h2>
     <p data-reveal class="lead" style="margin:24px auto 0;max-width:38rem">
-      Best eaten outside, under the trees, with the afternoon going long. Take a table on the lawn and
-      stay as late as you like &mdash; nobody here will hurry you.
+      Best taken outside as the light goes, with something from the fire on its way. Take a table on
+      the lawn and stay as late as you like.
     </p>
     <div data-reveal class="hero__actions" style="margin-top:38px">
       <a class="btn btn--primary" href="index.html#visit">Request a table</a>
-      <a class="btn btn--ghost" href="beverages.html">Beverages</a>
+      <a class="btn btn--ghost" href="events.html">Art &amp; Events</a>
     </div>
   </div>
 </section>
