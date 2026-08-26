@@ -2073,7 +2073,11 @@ input[type="date"].field__input { display: block; }
 }
 .viewer__panel {
   position: relative;
-  width: 100%; max-width: 980px; max-height: 100%;
+  width: 100%; max-width: 980px;
+  /* A definite height, not just a cap: flex children can only share out space
+     that actually exists. With max-height alone the stage's floor pushed the
+     panel past the viewport and overflow:hidden sliced the PDF in half. */
+  height: min(100%, 900px);
   display: flex; flex-direction: column;
   /* Same frosted glass as the floating nav */
   background: rgba(251,248,241,.86);
@@ -2091,8 +2095,10 @@ input[type="date"].field__input { display: block; }
 
 /* The stage takes what is left, but an iframe with no height collapses to its
    150px default — so give it a real floor as well as the flex grow. */
-.viewer__stage { flex: 1 1 auto; height: auto; min-height: min(62vh, 640px); }
-@media (max-height: 700px) { .viewer__stage { min-height: 54vh; } }
+/* Takes exactly what is left over, and may shrink — min-height:0 is required
+   or a flex item refuses to go below its content size. */
+.viewer__stage { flex: 1 1 auto; min-height: 0; }
+.viewer__frame { width: 100%; height: 100%; display: block; border: 0; }
 .viewer__head { margin-bottom: var(--s-4); }
 .viewer__tabs { padding-bottom: var(--s-3); margin-bottom: var(--s-4); }
 .viewer__foot { margin-top: var(--s-4); }
