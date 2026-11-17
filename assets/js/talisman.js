@@ -32,7 +32,7 @@
     var el = $('.nav');
     if (!el || el.classList.contains('nav--light')) return;
     var trigger = function () {
-      var hero = $('.hero, .pagehead');
+      var hero = $('.bhero, .hero, .pagehead');
       return hero ? Math.max(hero.offsetHeight - 120, 80) : 80;
     };
     var point = trigger();

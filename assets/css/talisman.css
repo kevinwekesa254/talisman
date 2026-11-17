@@ -49,7 +49,7 @@
 
   /* Layout */
   --gutter:  clamp(20px, 5vw, 64px);
-  --section: clamp(36px, 5.5vw, 75px);
+  --section: clamp(44px, 5.1vw, 77px);
   --maxw:    1320px;
   --measure: 62ch;
 
@@ -87,8 +87,8 @@ body {
   color: var(--ink-2);
   font-family: var(--sans);
   font-size: var(--t-body);
-  font-weight: 300;
-  line-height: 1.8;
+  font-weight: 400;
+  line-height: 1.72;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -867,7 +867,7 @@ h2 { letter-spacing: -.008em; }
 
 /* ---- 21.2 Ultrawide — stop the measure from stretching ------------------ */
 @media (min-width: 1600px) {
-  :root { --maxw: 1440px; --section: 160px; }
+  :root { --maxw: 1440px; --section: 96px; }
 }
 
 /* ---- 21.3 Laptop ---------------------------------------------------------*/
@@ -880,7 +880,7 @@ h2 { letter-spacing: -.008em; }
    Nav has already collapsed at 1080. Three-up grids become two-up here
    rather than dropping straight to one column. */
 @media (max-width: 1024px) {
-  :root { --section: clamp(64px, 9vw, 110px); }
+  :root { --section: clamp(38px, 5.4vw, 66px); }
   .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .panel { min-height: 0; }
   .band { min-height: clamp(380px, 52vh, 520px); }
@@ -888,7 +888,7 @@ h2 { letter-spacing: -.008em; }
 
 /* ---- 21.5 Large phone / small tablet ------------------------------------ */
 @media (max-width: 760px) {
-  :root { --nav-h: 60px; --section: clamp(56px, 12vw, 88px); }
+  :root { --nav-h: 60px; --section: clamp(34px, 7.2vw, 53px); }
 
   /* Every multi-column grid folds to a single column, including the inline
      grid-template-columns set on individual sections. */
@@ -1135,7 +1135,7 @@ input[type="date"].field__input { display: block; }
    Without :has() support it simply stays collapsed — still correct, just tighter. */
 .section--collapsible { padding-block: 0; background: transparent; }
 .section--collapsible:has([data-viewer]:not([hidden])) {
-  padding-block: clamp(56px, 8vw, 110px);
+  padding-block: clamp(34px, 4.8vw, 66px);
   background: var(--cream);
 }
 .section--collapsible:has([data-viewer]:not([hidden]))::before {
@@ -1892,7 +1892,7 @@ input[type="date"].field__input { display: block; }
 .families__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .families__scrim { position: absolute; inset: 0; z-index: -1;
   background: linear-gradient(90deg, rgba(14,10,8,.86) 0%, rgba(14,10,8,.62) 38%, rgba(14,10,8,.16) 72%, transparent 92%); }
-.families__body { width: 100%; max-width: var(--maxw); margin-inline: auto; padding: clamp(48px,7vw,90px) var(--gutter); }
+.families__body { width: 100%; max-width: var(--maxw); margin-inline: auto; padding: clamp(29px,4.2vw,54px) var(--gutter); }
 .families__body h2 { color: #F5F1E8; font-size: clamp(2rem, 4.4vw, 3.5rem); }
 .families__body h2 em { color: var(--gold-pale); }
 .families__body p { margin-top: var(--s-5); max-width: 46ch; color: rgba(245,241,232,.9); font-size: var(--t-lead); line-height: 1.75; }
@@ -2171,3 +2171,158 @@ input[type="date"].field__input { display: block; }
   .timeline--alt .timeline__body { max-width: none; }
   .timeline--alt > li:nth-child(odd) .timeline__body { margin-left: auto; }
 }
+
+/* =========================================================================
+   36. TASTE PASS (2026-11)
+   Same structure, quieter surface. Fewer shouting labels, less boxing,
+   more air, and photographs allowed to carry the dark bands.
+   Shape rule: floating chrome (nav, dropdown, viewer, gallery arrows) is
+   rounded; everything sitting on the page (buttons, images, fields) is square.
+   ========================================================================= */
+
+/* ---- 36.1 Type ----------------------------------------------------------- */
+h2 { letter-spacing: -.015em; }
+.lead { font-weight: 400; }
+p { hanging-punctuation: first; }
+
+/* Section labels: sentence case with a short gold rule, instead of
+   11px all-caps at .3em tracking above every heading. */
+.eyebrow {
+  font: 500 .875rem/1.5 var(--sans);
+  letter-spacing: .01em;
+  text-transform: none;
+  color: var(--ink-3);
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block; vertical-align: middle;
+  width: 22px; height: 1px; margin: -2px 12px 0 0;
+  background: var(--gold);
+}
+.eyebrow--wine { color: var(--wine); }
+.on-dark .eyebrow, .solidband .eyebrow { color: var(--gold-pale); }
+.nav-sheet__foot .eyebrow::before { display: none; }
+
+/* Hero kicker keeps its caps (it is the place name) but loses the airport-sign tracking */
+.bhero__kicker { letter-spacing: .32em; font-size: clamp(.6875rem, .85vw, .8125rem); }
+.bhero__sub { max-width: 40ch; }
+
+/* Buttons: slightly larger, less tracked */
+.btn { font-size: .78125rem; letter-spacing: .16em; text-indent: .16em; padding-inline: 30px; }
+.btn--primary { box-shadow: 0 8px 24px -12px rgba(107,34,42,.55); }
+.btn--primary:hover { box-shadow: 0 14px 30px -12px rgba(107,34,42,.6); }
+.btn:active { transform: translateY(1px) scale(.985); }
+.link-arrow { letter-spacing: .16em; }
+
+/* ---- 36.2 Hero actions: three real buttons, not a fake tab switcher ----- */
+.pillrow {
+  margin-top: clamp(28px, 3.6vw, 40px);
+  padding: 0; border: 0; background: none;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  gap: 10px;
+}
+.pillrow__item {
+  border: 1px solid rgba(245,241,232,.38);
+  background: rgba(14,10,8,.28);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  letter-spacing: .16em; padding: 14px 26px;
+  transition: background var(--d-base) var(--ease), color var(--d-base) var(--ease),
+              border-color var(--d-base) var(--ease), transform var(--d-base) var(--ease);
+}
+.pillrow__item:hover { border-color: rgba(245,241,232,.7); transform: translateY(-1px); }
+.pillrow__item--on { background: var(--gold); border-color: var(--gold); color: var(--night); }
+.pillrow__item--on:hover { background: var(--gold-2); border-color: var(--gold-2); color: var(--night); }
+.pillrow__item:active { transform: translateY(1px); }
+@media (max-width: 560px) {
+  .pillrow { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .pillrow__item { justify-content: center; padding-inline: 12px; }
+  .pillrow__item--on { grid-column: 1 / -1; }
+}
+
+/* ---- 36.3 Home: Food & Beverages panel heading -------------------------- */
+.fbrow__title { font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.15; }
+.fbrow__panel { background: var(--cream); box-shadow: inset 0 0 0 1px var(--linen); }
+
+/* ---- 36.4 Three boxes: un-boxed and staggered --------------------------
+   The bordered container with drawn dividers read as a template. The three
+   stay, but each is image-led and the middle one drops, so the row reads as
+   a composition. */
+.features--boxed { border: 0; background: none; padding: 0; gap: clamp(20px, 3vw, 44px); align-items: start; }
+.features--boxed .feature + .feature::before { display: none; }
+.features--boxed .feature__media { aspect-ratio: 4 / 5; }
+.features--boxed .feature h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.features--boxed .feature p { max-width: 34ch; }
+@media (min-width: 861px) {
+  .features--boxed .feature:nth-child(2) { margin-top: clamp(24px, 3.6vw, 58px); }
+}
+
+/* ---- 36.5 Families: let the photograph back in ------------------------- */
+.families--dim .families__media { opacity: .6; }
+.families--dim .families__scrim {
+  background:
+    radial-gradient(ellipse 62% 58% at 50% 50%, rgba(14,10,8,.72), transparent 82%),
+    rgba(14,10,8,.32);
+}
+
+/* ---- 36.6 Contact ------------------------------------------------------ */
+.contact__icon { background: var(--sand); color: var(--wine); }
+.contact__card { border: 0; background: #FFFDF8; box-shadow: 0 30px 70px -30px rgba(60,34,26,.28), 0 0 0 1px rgba(27,22,20,.05); }
+
+/* Form labels: readable sentence case instead of tiny tracked caps */
+.field__label { font: 500 .875rem/1.5 var(--sans); letter-spacing: 0; text-transform: none; color: var(--ink-2); }
+.field__input { background: var(--paper); border-color: #D6CCB8; border-radius: 2px; }
+.field__input::placeholder { color: rgba(74,68,60,.72); }
+
+/* ---- 36.7 Intro cards (Food / Beverages): no outline box --------------- */
+.introcards { gap: clamp(20px, 3vw, 40px); align-items: start; }
+.introcard__body .link-arrow { margin-top: var(--s-1); }
+.introcard { border: 0; background: none; }
+.introcard__media { aspect-ratio: 4 / 5; }
+.introcard__body { padding: var(--s-5) 0 0; }
+.introcard__body h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+@media (min-width: 861px) {
+  .introcard:nth-child(2) { margin-top: clamp(24px, 3.6vw, 58px); }
+}
+
+/* ---- 36.8 "What has been kept": columns under a rule, not three boxes --- */
+.cardgrid { gap: clamp(28px, 4vw, 56px); }
+.cardgrid > * { background: none; border: 0; border-top: 1px solid var(--ink); padding: var(--s-5) 0 0; }
+.section--cream .cardgrid > * { background: none; }
+.cardgrid h3 { margin-top: 0; }
+
+/* ---- 36.9 Events gallery: no counters, so give the caption the room ---- */
+.gallery__item figcaption { margin-top: var(--s-4); }
+
+/* ---- 36.10 Image hover: slower, smaller zoom ---------------------------- */
+.feature__media img, .introcard__media img, .fbrow > figure img,
+.quad__i img, .trio__side img, .pair img { transition-duration: 1.6s; }
+.feature:hover .feature__media img,
+.introcard:hover .introcard__media img { transform: scale(1.035); }
+
+/* =========================================================================
+   37. SECOND TASTE PASS (2026-11): tighter rhythm, readability, finish
+   ========================================================================= */
+
+/* Card and feature copy: one step up from --t-small so it reads at arm's length. */
+.feature p, .introcard__body p { font-size: .9375rem; max-width: 38ch; }
+.feature h3 { letter-spacing: -.01em; }
+.introcard__body .link-arrow, .feature .link-arrow { margin-top: var(--s-2); }
+
+/* Image tiles get a hairline inner edge so photos on paper don't look pasted on. */
+.features--boxed .feature__media, .introcard__media, .fbrow figure {
+  position: relative; overflow: hidden;
+}
+.features--boxed .feature__media::after, .introcard__media::after, .fbrow figure::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(27,22,20,.08);
+}
+
+/* Footer: labels sentence-case and calmer, matching the on-page eyebrows. */
+.site-footer__title {
+  font: 500 .875rem/1.5 var(--sans); letter-spacing: .01em; text-transform: none;
+  color: var(--gold-2, var(--gold));
+}
+.site-footer__bottom { color: rgba(245,241,232,.6); }
+
+/* Pull-quote band: slightly tighter leading for the two-line serif. */
+.band h2, .band__body h2 { line-height: 1.08; text-wrap: balance; }
