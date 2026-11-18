@@ -8,12 +8,13 @@
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/garden-day.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-terrace-day.jpg" fetchpriority="high">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css">
 <meta property="og:title" content="The Talisman | Karen, Nairobi">
 <meta property="og:description" content="Elegance, ambience and food cooked the long way.">
-<meta property="og:image" content="assets/img/garden-day.jpg">
+<meta property="og:image" content="assets/img/hero-terrace-day.jpg">
 <meta property="og:type" content="restaurant">
 </head>
 <body class="grain">
@@ -77,220 +78,104 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ 1 · HERO ══════════════════ -->
-<section class="bhero" id="top">
-  <img class="bhero__media" src="assets/img/table-night.jpg" alt="A family at dinner in the Talisman garden" width="1333" height="2000" fetchpriority="high">
+<section class="bhero bhero--light" id="top">
+  <img class="bhero__media" src="assets/img/hero-terrace-day.jpg" alt="The Talisman garden terrace in daylight" width="1466" height="2200" fetchpriority="high">
   <div class="bhero__scrim"></div>
 
   <div class="bhero__body">
     <p class="bhero__kicker">Ngong Road &middot; Karen &middot; Nairobi</p>
-    <p class="bhero__est">Est. 1990s</p>
-    <h1 class="bhero__title">The <em>Talisman</em></h1>
-    <p class="bhero__sub">An old house in Karen turned into one of Kenya&rsquo;s most loved restaurants. House-cured salmon, a garden farm, and thirty years of collected art.</p>
+    <p class="bhero__est">Est. 2003</p>
+    <h1 class="bhero__title bhero__title--mark"><span class="bhero__the">The</span> TALISMAN</h1>
+    <p class="bhero__sub">An old Karen house, a garden farm and a room full of art.</p>
 
     <div class="pillrow">
-      <a class="pillrow__item pillrow__item--on" href="#food">Food &amp; drink</a>
-      <a class="pillrow__item" href="#explore">Art &amp; events</a>
-      <a class="pillrow__item" href="#visit">Plan your visit</a>
+      <a class="pillrow__item pillrow__item--on" href="#visit">Plan your visit</a>
+      <a class="pillrow__item" href="menu.html">Food</a>
+      <a class="pillrow__item" href="beverages.html">Beverages</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ 2 · ABOUT ══════════════════ -->
+<!-- ══════════════════ 2 · OUR STORY ══════════════════ -->
 <section class="section" id="about">
   <div class="wrap">
     <div class="split">
       <div class="split__media" data-reveal>
-        <div class="blockmedia blockmedia--solo">
-          <img class="blockmedia__main" src="assets/img/salmon-dish.jpg" alt="Salmon plated with herbs from the Talisman garden" loading="lazy" width="1066" height="1600">
+        <div class="blockmedia">
+          <img class="blockmedia__main" src="assets/img/guests-friends.jpg" alt="Two friends sharing a laugh at Talisman" loading="lazy" width="1200" height="1800">
+          <img class="blockmedia__inset" src="assets/img/friends-cocktails.jpg" alt="A guest smiling over a cocktail" loading="lazy" width="1066" height="1421">
         </div>
       </div>
 
       <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Elegance &amp; Ambience</p>
-        <h2>An evening made<br><em>of small details.</em></h2>
-        <p style="margin-top:26px">
-          The Talisman is an old Karen house that never quite stopped being one: stained glass
-          throwing colour across the walls, collected art in every corner, and lanterns coming on as
-          the light goes. The food is cooked the long way round: herbs and greens from our own farm,
-          salmon cured and smoked here over one slow fire, bread baked at dawn. What holds it together
-          is a dedication that rarely announces itself, and a table nobody will ever ask you to give up.
+        <p class="eyebrow eyebrow--wine">Our Story</p>
+        <h2>A home for<br><em>every table.</em></h2>
+        <p style="margin-top:22px;max-width:40ch">
+          Since 2003, friends, families and neighbours from every corner of the world have gathered here.
+          Stained glass, collected art and lanterns as the light goes.
         </p>
-        <p style="margin-top:32px"><a class="btn btn--primary" href="our-story.html">Read our story</a></p>
+        <p style="margin-top:28px"><a class="btn btn--primary" href="our-story.html">Read our story</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ 3 · FOOD &amp; BEVERAGES ══════════════════ -->
+<!-- ══════════════════ 3 · ECLECTIC CUISINE ══════════════════ -->
 <section class="section" id="food">
   <div class="wrap">
-    <div class="section-head">
-      <h2 data-reveal>Food &amp; Beverages<span class="subhead">from the fire, and from the bar</span></h2>
+    <div class="section-head section-head--row">
+      <h2 data-reveal>Eclectic Cuisine<span class="subhead">from the farm, the fire and far away</span></h2>
+      <p data-reveal><a class="link-arrow" href="menu.html">See the menus</a></p>
     </div>
 
-    <div class="fbrow">
-      <figure data-reveal data-tilt>
-        <img src="assets/img/brunch-table.jpg" alt="A brunch spread laid out on the table at Talisman" loading="lazy" width="1600" height="2000">
-        <figcaption>Grown on the farm, cooked the slow way</figcaption>
+    <div class="cuisine">
+      <figure data-reveal>
+        <img src="assets/img/cuisine-salmon.jpg" alt="Seared fish on a bright vegetable purée" loading="lazy" width="1200" height="1800">
       </figure>
-      <figure data-reveal data-tilt>
-        <img src="assets/img/garden-cocktail.jpg" alt="A garden cocktail served over ice" loading="lazy" width="1600" height="1600">
-        <figcaption>Mint and lemongrass, cut at the door</figcaption>
+      <figure data-reveal>
+        <img src="assets/img/cuisine-sushi.jpg" alt="Sushi rolls with pickled ginger" loading="lazy" width="1800" height="1200">
       </figure>
-      <div class="fbrow__panel" data-reveal>
-        <div>
-          <h3 class="fbrow__title">Wine, coffee <em>&amp; cocktails</em></h3>
-          <p style="margin-top:14px">A short, opinionated wine list, coffee roasted here in Kenya, and cocktails cut from the garden you are sitting in.</p>
-          <ul class="featuretags" style="margin-top:20px">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3h8l-1 7a3 3 0 01-6 0L8 3zM12 13v8M9 21h6"/></svg>
-              Wine by the glass or bottle
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h13v5a5 5 0 01-5 5H9a5 5 0 01-5-5V8zM17 9h2a2 2 0 010 4h-2M5 3v2M9 3v2M13 3v2"/></svg>
-              Kenyan single-origin coffee
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16l-8 8v7M9 19h6"/></svg>
-              Cocktails from the garden
-            </li>
-          </ul>
-        </div>
-        <p style="margin:0"><a class="btn btn--primary" href="beverages.html">See the menus</a></p>
-      </div>
+      <figure data-reveal>
+        <img src="assets/img/cuisine-garden-bowl.jpg" alt="A garden bowl with edible flowers, served from the farm" loading="lazy" width="1800" height="1200">
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ 4 · BREAK IMAGE (parallax band) ══════════════════ -->
+<!-- ══════════════════ 4 · EVENING BANNER ══════════════════ -->
 <section class="band on-dark" id="evenings">
-  <img class="band__media" data-parallax="band" src="assets/img/evening-table.jpg"
-       alt="An evening table at Talisman, lanterns lit" loading="lazy" width="1600" height="1067">
+  <img class="band__media" data-parallax="band" src="assets/img/evening-garden-table.jpg"
+       alt="Guests dining together in the garden at night" loading="lazy" width="1466" height="2200">
   <div class="band__scrim"></div>
   <div class="band__body">
-    <h2 data-reveal style="font-size:clamp(2.125rem,5vw,4rem)">Then evening falls,<br><em>and the lanterns take over.</em></h2>
+    <h2 data-reveal style="font-size:clamp(2.125rem,5vw,4rem)">Evening falls,<br><em>and the lanterns take over.</em></h2>
   </div>
 </section>
 
-<!-- ══════════════════ 5 · THREE BOXES ══════════════════ -->
-<section class="section" id="explore">
-  <div class="wrap">
-    <div class="features features--boxed">
-      <article class="feature" data-reveal>
-        <figure class="feature__media"><img src="assets/img/plated-dish.jpg" alt="A finished dish, plated and ready to leave the pass" loading="lazy" width="1066" height="1600"></figure>
-        <h3>Our Food</h3>
-        <p>Grown on our farm, smoked over one slow fire, and cooked the long way round.</p>
-        <p class="feature__link"><a class="link-arrow" href="menu.html">See the menus</a></p>
-      </article>
-
-      <article class="feature" data-reveal>
-        <figure class="feature__media"><img src="assets/img/terrace-day.jpg" alt="A set table in a Talisman dining room" loading="lazy" width="2000" height="1333"></figure>
-        <h3>Our Story</h3>
-        <p>An old house on Ngong Road that became a garden, a farm and a fireplace.</p>
-        <p class="feature__link"><a class="link-arrow" href="our-story.html">Read our story</a></p>
-      </article>
-
-      <article class="feature" data-reveal>
-        <figure class="feature__media"><img src="assets/img/art-wall.jpg" alt="Guests beneath the changing wall art at Talisman" loading="lazy" width="1600" height="1067"></figure>
-        <h3>Art &amp; Events</h3>
-        <p>New wall art every month, live DJs and musicians in the room, never on a stage.</p>
-        <p class="feature__link"><a class="link-arrow" href="events.html">What&rsquo;s on</a></p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ 6 · FAMILIES ══════════════════ -->
-<section class="families families--centre families--dim" id="families">
-  <img class="families__media" src="assets/img/garden-evening-guests.jpg" alt="Guests sharing a meal in the Talisman garden as the evening comes in" loading="lazy" width="2000" height="1333">
-  <div class="families__scrim"></div>
-  <div class="families__body">
-    <h2 data-reveal>Families are<br><em>welcome here.</em></h2>
-    <p data-reveal>
-      Room for children to run while lunch stretches into the afternoon, and couches in the green
-      for the grown-ups. Bring everyone, and stay until the lanterns come on.
-    </p>
-  </div>
-</section>
-
-<!-- ══════════════════ 7 · PLAN YOUR VISIT ══════════════════ -->
+<!-- ══════════════════ 5 · PLAN YOUR VISIT ══════════════════ -->
 <section class="section" id="visit">
   <div class="wrap">
-    <div class="contact">
-      <div class="contact__aside" data-reveal>
-        <h2>We’d rather<br><em>speak with you.</em></h2>
-        <p style="margin-top:24px;max-width:42ch">
-          No booking engines, no bots. Leave your details and a member of our team will call you back to plan your visit. Birthdays, brunches, or just a Tuesday that deserves better.
+    <div class="visit">
+      <div class="visit__copy" data-reveal>
+        <h2>Plan your<br><em>visit.</em></h2>
+        <p style="margin-top:20px;max-width:36ch">
+          Call us to book a table, a birthday or a long lunch.
+          Tuesday to Sunday, 8:00 am to 11:00 pm.
         </p>
-
-        <ul class="contact__list">
-          <li>
-            <span class="contact__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c-4-4-7-7.2-7-11a7 7 0 0114 0c0 3.8-3 7-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            </span>
-            Ngong Road, Karen, Nairobi
-          </li>
-          <li>
-            <span class="contact__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z"/></svg>
-            </span>
-            <a href="tel:+254705999997">+254 705 999 997</a>
-          </li>
-          <li>
-            <span class="contact__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            </span>
-            Tuesday to Sunday, 8:00 am to 11:00 pm
-          </li>
+        <ul class="visit__list">
+          <li><a href="tel:+254705999997">+254 705 999 997</a></li>
+          <li>320 Ngong Road, Karen, Nairobi</li>
         </ul>
+        <p style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn--primary" href="tel:+254705999997">Call to book</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939" target="_blank" rel="noopener">Get directions</a>
+        </p>
       </div>
 
-      <div class="contact__card" data-reveal>
-        <h3>Send us a message</h3>
-
-        <form class="form" data-validate style="margin-top:26px" novalidate
-              data-success="Asante. We have your details and a member of our team will call you back to confirm your table.">
-          <div class="form__status" role="status" aria-live="polite">
-            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg>
-            <span data-status-text></span>
-          </div>
-
-          <div class="form__row">
-            <div class="field">
-              <label class="field__label" for="v-name">Full name <span class="field__req" aria-hidden="true">*</span></label>
-              <input class="field__input" id="v-name" name="name" type="text" autocomplete="name"
-                     required data-label="Full name" placeholder="Wanjiku Kamau">
-              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
-            </div>
-            <div class="field">
-              <label class="field__label" for="v-phone">Contact number <span class="field__req" aria-hidden="true">*</span></label>
-              <input class="field__input" id="v-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
-                     required data-label="Contact number" placeholder="+254 7XX XXX XXX">
-              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
-            </div>
-          </div>
-
-          <div class="form__row">
-            <div class="field">
-              <label class="field__label" for="v-date">Preferred date</label>
-              <input class="field__input" id="v-date" name="date" type="date" data-label="Preferred date">
-            </div>
-            <div class="field">
-              <label class="field__label" for="v-guests">How many of you?</label>
-              <input class="field__input" id="v-guests" name="guests" type="number" min="1" max="60" step="1"
-                     inputmode="numeric" data-label="Party size" placeholder="4">
-              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="field__label" for="v-notes">Message</label>
-            <textarea class="field__input" id="v-notes" name="notes" rows="3"
-                      placeholder="A birthday, a high chair, a table near the fire…"></textarea>
-          </div>
-
-          <button class="btn btn--primary" type="submit" style="justify-self:start">Send message</button>
-        </form>
+      <div class="visit__map" data-reveal>
+        <div class="map" id="map" data-lat="-1.3230815" data-lng="36.7031939" role="img" aria-label="Map showing The Talisman on Ngong Road, Karen">
+          <a class="map__fallback" href="https://www.google.com/maps/search/?api=1&amp;query=-1.3230815,36.7031939" target="_blank" rel="noopener">Open the map</a>
+        </div>
       </div>
     </div>
   </div>
@@ -302,15 +187,14 @@ setTimeout(function () {
   <div class="wrap">
     <div class="site-footer__grid">
       <div>
-        <div class="site-footer__brand">
+        <a class="site-footer__brand" href="index.html" aria-label="The Talisman, home">
           <img class="site-footer__logo" src="assets/img/logo.png" alt="" width="268" height="163">
           <span class="site-footer__wordmark">TALISMAN</span>
-        </div>
-        <p style="font-size:var(--t-small)">A garden, a farm, a fireplace<br>and long evenings on Ngong Road.</p>
+        </a>
       </div>
       <div>
         <p class="site-footer__title">Find us</p>
-        <p style="font-size:var(--t-small)">Ngong Road, Karen<br>Nairobi, Kenya</p>
+        <p style="font-size:var(--t-small)">320 Ngong Road, Karen<br>Nairobi, Kenya</p>
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
@@ -320,23 +204,25 @@ setTimeout(function () {
         <p class="site-footer__title">Say hello</p>
         <p style="font-size:var(--t-small)">
           <a href="tel:+254705999997">+254 705 999 997</a><br>
-          <a href="mailto:hello@talisman.co.ke">hello@talisman.co.ke</a><br>
-          <a href="https://instagram.com/talisman.nairobi" target="_blank" rel="noopener">@talisman.nairobi</a>
+          <a href="mailto:hello@talisman.co.ke">hello@talisman.co.ke</a>
         </p>
+        <div class="social">
+          <a class="social__link" href="https://www.instagram.com/talisman.nairobi/" target="_blank" rel="noopener" aria-label="The Talisman on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social__link" href="https://www.facebook.com/talismanrestaurant" target="_blank" rel="noopener" aria-label="The Talisman on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> Talisman, Karen.</span>
-      <nav aria-label="Footer">
-        <a href="menu.html">Food</a> &middot;
-        <a href="beverages.html">Beverages</a> &middot;
-        <a href="events.html">Art &amp; Events</a> &middot;
-        <a href="our-story.html">Our Story</a>
-      </nav>
+      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
     </div>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
 <script src="assets/js/talisman.js" defer></script>
 </body>
 </html>

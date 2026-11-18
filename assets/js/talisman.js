@@ -270,26 +270,16 @@
     var viewer = $('[data-viewer]');
     if (!viewer) return;
 
-    var frame    = $('[data-viewer-frame]', viewer);
+    var pages    = $('[data-viewer-pages]', viewer);
     var tabs     = $$('.viewer__tab', viewer);
     var stage    = $('.viewer__stage', viewer);
-    var fallback = $('[data-viewer-fallback]', viewer);
-    var fbLink   = $('[data-viewer-fallback-link]', viewer);
-    var download = $('[data-viewer-download]', viewer);
     var openBtns = $$('[data-menu-open]');
     var closeBtn = $('[data-menu-close]', viewer);
-    if (!frame || !tabs.length) return;
+    if (!pages || !tabs.length) return;
 
-    /* iOS Safari and some Android browsers refuse to render PDFs in an iframe
-       and silently show nothing. There is no reliable event for that, so detect
-       plugin support up front and swap in a real link instead of a blank box. */
-    var canEmbed = (function () {
-      var nav = window.navigator;
-      if (nav.pdfViewerEnabled !== undefined) return !!nav.pdfViewerEnabled;
-      if (nav.mimeTypes && nav.mimeTypes['application/pdf']) return true;
-      return !/iPad|iPhone|iPod|Android/i.test(nav.userAgent);
-    })();
-
+    /* Menus are shown as page images, not an embedded PDF: no toolbar, no
+       inner scrolling, and it works on phones that refuse inline PDFs.
+       Each page links to the PDF for anyone who wants to zoom in. */
     function select(tab) {
       tabs.forEach(function (t) {
         var on = t === tab;
@@ -298,21 +288,20 @@
       });
       var src = tab.dataset.pdf;
       var title = tab.dataset.title || 'Talisman menu';
-
-      if (canEmbed) {
-        // #view=FitH opens at page width rather than the browser's last zoom
-        frame.src = src + '#view=FitH&toolbar=1';
-        frame.title = title + ' (PDF)';
-        if (fallback) fallback.hidden = true;
-      } else {
-        frame.removeAttribute('src');
-        if (fallback) fallback.hidden = false;
-        if (fbLink) { fbLink.href = src; fbLink.textContent = 'Open the ' + title.toLowerCase(); }
-      }
-      if (download) {
-        download.href = src;
-        download.textContent = 'Download the ' + title.toLowerCase();
-      }
+      var list = (tab.dataset.pages || '').split(',').filter(Boolean);
+      pages.innerHTML = '';
+      pages.setAttribute('data-count', list.length);
+      list.forEach(function (url, i) {
+        var a = document.createElement('a');
+        a.className = 'viewer__page';
+        a.href = src; a.target = '_blank'; a.rel = 'noopener';
+        a.setAttribute('aria-label', title + ', page ' + (i + 1) + ' of ' + list.length + '. Opens full size');
+        var img = document.createElement('img');
+        img.src = url; img.alt = ''; img.decoding = 'async';
+        a.appendChild(img);
+        pages.appendChild(a);
+      });
+      pages.scrollLeft = 0;
       if (stage) stage.setAttribute('aria-labelledby', tab.id);
     }
 
@@ -350,7 +339,6 @@
       if (viewer.hidden) return;
       viewer.hidden = true;
       document.body.classList.remove('is-locked');
-      frame.removeAttribute('src');          // stop the embedded viewer
       openBtns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
@@ -360,7 +348,7 @@
     if (backdrop) backdrop.addEventListener('click', close);
     viewer.addEventListener('keydown', function (e) {
       if (e.key !== 'Tab') return;
-      var f = $$('button, a[href], iframe', viewer).filter(function (n) { return n.offsetParent !== null; });
+      var f = $$('button, a[href]', viewer).filter(function (n) { return n.offsetParent !== null; });
       if (!f.length) return;
       var first = f[0], last = f[f.length - 1];
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -483,6 +471,28 @@
     }, { passive: true });
     window.addEventListener('resize', sync);
     sync();
+  })();
+
+  /* ---- 12. Location map (Home) ---------------------------------------------
+     Light map tiles, warmed toward the brand paper in CSS, with a wine pin.
+     If the map library fails to load, the "Open the map" link stays. */
+  (function locationMap() {
+    var el = document.getElementById('map');
+    if (!el || !window.L) return;
+    var lat = parseFloat(el.dataset.lat), lng = parseFloat(el.dataset.lng);
+    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: true })
+      .setView([lat, lng], 15);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    var pin = L.divIcon({
+      className: 'map__pin',
+      html: '<span class="map__pin-dot"></span><span class="map__pin-label">The Talisman</span>',
+      iconSize: [22, 22], iconAnchor: [11, 11]
+    });
+    L.marker([lat, lng], { icon: pin, keyboard: false }).addTo(map);
+    el.classList.add('is-ready');
   })();
 
   /* ---- 11. Footer year ---------------------------------------------------- */
