@@ -86,7 +86,7 @@ setTimeout(function () {
     <p class="bhero__kicker">Ngong Road &middot; Karen &middot; Nairobi</p>
     <p class="bhero__est">Est. 2003</p>
     <h1 class="bhero__title bhero__title--mark"><span class="bhero__the">The</span> TALISMAN</h1>
-    <p class="bhero__sub">An old Karen house, a garden farm and a room full of art.</p>
+    <p class="bhero__sub">An old house in Karen turned into one of Kenya&rsquo;s most loved restaurants. House-cured salmon, a garden farm, and thirty years of collected art.</p>
 
     <div class="pillrow">
       <a class="pillrow__item pillrow__item--on" href="#visit">Plan your visit</a>
@@ -97,14 +97,13 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ 2 · OUR STORY ══════════════════ -->
-<section class="section" id="about">
+<section class="section section--story" id="about">
   <div class="wrap">
     <div class="split">
       <div class="split__media" data-reveal>
-        <div class="blockmedia">
-          <img class="blockmedia__main" src="assets/img/guests-friends.jpg" alt="Two friends sharing a laugh at Talisman" loading="lazy" width="1200" height="1800">
-          <img class="blockmedia__inset" src="assets/img/friends-cocktails.jpg" alt="A guest smiling over a cocktail" loading="lazy" width="1066" height="1421">
-        </div>
+        <figure class="solomedia">
+          <img src="assets/img/guests-friends.jpg" alt="Two friends sharing a laugh at Talisman" loading="lazy" width="1200" height="1800">
+        </figure>
       </div>
 
       <div class="split__body" data-reveal>
@@ -155,27 +154,81 @@ setTimeout(function () {
 <!-- ══════════════════ 5 · PLAN YOUR VISIT ══════════════════ -->
 <section class="section" id="visit">
   <div class="wrap">
-    <div class="visit">
-      <div class="visit__copy" data-reveal>
+    <div class="contact">
+      <div class="contact__aside" data-reveal>
         <h2>Plan your<br><em>visit.</em></h2>
-        <p style="margin-top:20px;max-width:36ch">
-          Call us to book a table, a birthday or a long lunch.
-          Tuesday to Sunday, 8:00 am to 11:00 pm.
-        </p>
-        <ul class="visit__list">
-          <li><a href="tel:+254705999997">+254 705 999 997</a></li>
-          <li>320 Ngong Road, Karen, Nairobi</li>
-        </ul>
-        <p style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="btn btn--primary" href="tel:+254705999997">Call to book</a>
-          <a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939" target="_blank" rel="noopener">Get directions</a>
-        </p>
-      </div>
 
-      <div class="visit__map" data-reveal>
-        <div class="map" id="map" data-lat="-1.3230815" data-lng="36.7031939" role="img" aria-label="Map showing The Talisman on Ngong Road, Karen">
+        <ul class="contact__list">
+          <li>
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a1 1 0 01-1.1 1A16 16 0 014 5.1 1 1 0 015 4z"/></svg>
+            </span>
+            <a href="tel:+254705999997">+254 705 999 997</a>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            Tuesday to Sunday, 8:00 am to 11:00 pm
+          </li>
+        </ul>
+
+        <div class="map" id="map" data-lat="-1.3230815" data-lng="36.7031939" role="region" aria-label="Map showing The Talisman on Ngong Road, Karen">
           <a class="map__fallback" href="https://www.google.com/maps/search/?api=1&amp;query=-1.3230815,36.7031939" target="_blank" rel="noopener">Open the map</a>
         </div>
+        <div class="map__actions">
+          <a class="btn btn--primary" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939" target="_blank" rel="noopener">Get directions</a>
+          <button class="btn btn--ghost" type="button" data-share-location>Share location</button>
+          <span class="map__toast" data-share-toast role="status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <div class="contact__card" data-reveal>
+        <h3>Send us a message</h3>
+
+        <form class="form" data-validate style="margin-top:26px" novalidate
+              data-success="Asante. We have your details and a member of our team will call you back to confirm your table.">
+          <div class="form__status" role="status" aria-live="polite">
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg>
+            <span data-status-text></span>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="v-name">Full name <span class="field__req" aria-hidden="true">*</span></label>
+              <input class="field__input" id="v-name" name="name" type="text" autocomplete="name"
+                     required data-label="Full name" placeholder="Wanjiku Kamau">
+              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
+            </div>
+            <div class="field">
+              <label class="field__label" for="v-phone">Contact number <span class="field__req" aria-hidden="true">*</span></label>
+              <input class="field__input" id="v-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
+                     required data-label="Contact number" placeholder="+254 7XX XXX XXX">
+              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="v-date">Preferred date</label>
+              <input class="field__input" id="v-date" name="date" type="date" data-label="Preferred date">
+            </div>
+            <div class="field">
+              <label class="field__label" for="v-guests">How many of you?</label>
+              <input class="field__input" id="v-guests" name="guests" type="number" min="1" max="60" step="1"
+                     inputmode="numeric" data-label="Party size" placeholder="4">
+              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="v-notes">Message</label>
+            <textarea class="field__input" id="v-notes" name="notes" rows="3"
+                      placeholder="A birthday, a high chair, a table near the fire…"></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit" style="justify-self:start">Send message</button>
+        </form>
       </div>
     </div>
   </div>
@@ -191,6 +244,14 @@ setTimeout(function () {
           <img class="site-footer__logo" src="assets/img/logo.png" alt="" width="268" height="163">
           <span class="site-footer__wordmark">TALISMAN</span>
         </a>
+        <div class="social">
+          <a class="social__link" href="https://www.instagram.com/talisman.nairobi/" target="_blank" rel="noopener" aria-label="The Talisman on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social__link" href="https://www.facebook.com/talismanrestaurant" target="_blank" rel="noopener" aria-label="The Talisman on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <p class="site-footer__title">Find us</p>
@@ -206,14 +267,6 @@ setTimeout(function () {
           <a href="tel:+254705999997">+254 705 999 997</a><br>
           <a href="mailto:hello@talisman.co.ke">hello@talisman.co.ke</a>
         </p>
-        <div class="social">
-          <a class="social__link" href="https://www.instagram.com/talisman.nairobi/" target="_blank" rel="noopener" aria-label="The Talisman on Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a class="social__link" href="https://www.facebook.com/talismanrestaurant" target="_blank" rel="noopener" aria-label="The Talisman on Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
-          </a>
-        </div>
       </div>
     </div>
     <div class="site-footer__bottom">

@@ -478,10 +478,40 @@
      If the map library fails to load, the "Open the map" link stays. */
   (function locationMap() {
     var el = document.getElementById('map');
-    if (!el || !window.L) return;
+    if (!el) return;
     var lat = parseFloat(el.dataset.lat), lng = parseFloat(el.dataset.lng);
-    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: true })
+    var place = 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng;
+    var directions = 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng;
+
+    /* Share location: the phone's own share sheet (WhatsApp, SMS…) when it
+       has one, otherwise copy the map link. Works without the map library. */
+    var shareBtn = $('[data-share-location]');
+    var toast = $('[data-share-toast]');
+    function say(msg) {
+      if (!toast) return;
+      toast.textContent = msg;
+      window.clearTimeout(toast._t);
+      toast._t = window.setTimeout(function () { toast.textContent = ''; }, 3200);
+    }
+    if (shareBtn) shareBtn.addEventListener('click', function () {
+      var data = { title: 'The Talisman, Karen', text: 'The Talisman, Ngong Road, Karen, Nairobi', url: place };
+      if (navigator.share) {
+        navigator.share(data).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(place).then(function () { say('Map link copied'); },
+          function () { window.open(place, '_blank', 'noopener'); });
+      } else {
+        window.open(place, '_blank', 'noopener');
+      }
+    });
+
+    if (!window.L) return;
+    // Fully interactive: drag, pinch and tap on phones. The wheel only zooms
+    // once the map has been clicked, so the page still scrolls past it.
+    var map = L.map(el, { scrollWheelZoom: false, zoomControl: true, attributionControl: true, tap: true })
       .setView([lat, lng], 15);
+    map.on('click focus', function () { map.scrollWheelZoom.enable(); });
+    map.on('mouseout blur', function () { map.scrollWheelZoom.disable(); });
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -491,7 +521,10 @@
       html: '<span class="map__pin-dot"></span><span class="map__pin-label">The Talisman</span>',
       iconSize: [22, 22], iconAnchor: [11, 11]
     });
-    L.marker([lat, lng], { icon: pin, keyboard: false }).addTo(map);
+    L.marker([lat, lng], { icon: pin, keyboard: false }).addTo(map)
+      .bindPopup('<strong>The Talisman</strong><br>Ngong Road, Karen<br>' +
+        '<a href="' + directions + '" target="_blank" rel="noopener">Get directions</a>',
+        { className: 'map__popup', offset: [0, -6] });
     el.classList.add('is-ready');
   })();
 
