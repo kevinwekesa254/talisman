@@ -28,7 +28,8 @@
 <link rel="preload" as="image" href="assets/img/home-hero-gazebos-m.jpg" media="(max-width: 700px)" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/talisman.css?v=20261125g">
+<link rel="stylesheet" href="assets/vendor/intl-tel-input/css/intlTelInput.min.css">
+<link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
 </head>
 <body class="grain">
 <script>
@@ -224,7 +225,7 @@ setTimeout(function () {
             <div class="field">
               <label class="field__label" for="v-phone">Contact number <span class="field__req" aria-hidden="true">*</span></label>
               <input class="field__input" id="v-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
-                     required data-label="Contact number" placeholder="+254 7XX XXX XXX">
+                     required data-label="Contact number" data-intl-tel placeholder="712 345 678">
               <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
             </div>
           </div>
@@ -300,6 +301,7 @@ setTimeout(function () {
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-<script src="assets/js/talisman.js?v=20261125g" defer></script>
+<script src="assets/vendor/intl-tel-input/js/intlTelInput.min.js" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer></script>
 </body>
 </html>

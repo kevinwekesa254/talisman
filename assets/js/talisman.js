@@ -210,6 +210,8 @@
         msg = (input.dataset.label || 'This field') + ' is required.';
       } else if (v && input.type === 'email' && !patterns.email.test(v)) {
         msg = 'Please enter a valid email, e.g. name@example.com';
+      } else if (v && input._iti && window.intlTelInput.utils && !input._iti.isValidNumber()) {
+        msg = 'Please check the number for ' + ((input._iti.getSelectedCountryData() || {}).name || 'the chosen country') + '.';
       } else if (v && input.type === 'tel' && !patterns.tel.test(v)) {
         msg = 'Please enter a reachable phone number, e.g. +254 7XX XXX XXX';
       } else if (v && input.type === 'date') {
@@ -234,6 +236,28 @@
       var inputs = $$('.field__input', form);
       var status = $('.form__status', form);
 
+      // Phone: country picker with flag and dial code, Kenya first. The full
+      // international number goes in a hidden field on submit.
+      if (window.intlTelInput) {
+        form.querySelectorAll('input[data-intl-tel]').forEach(function (input) {
+          input._iti = window.intlTelInput(input, {
+            initialCountry: 'ke',
+            separateDialCode: true,
+            countryOrder: ['ke', 'ug', 'tz', 'rw', 'gb', 'us'],
+            strictMode: true,
+            autoPlaceholder: 'aggressive',
+            loadUtils: function () { return import('/assets/vendor/intl-tel-input/js/utils.js'); }
+          });
+          var full = document.createElement('input');
+          full.type = 'hidden'; full.name = (input.name || 'phone') + '_full';
+          input.insertAdjacentElement('afterend', full);
+          input._itiFull = full;
+          input.addEventListener('countrychange', function () {
+            if (input.value.trim()) validate(input);
+          });
+        });
+      }
+
       // Dates: nothing in the past; closed days (e.g. Mondays) are flagged on change.
       form.querySelectorAll('input[type="date"]').forEach(function (input) {
         var t = new Date(), pad = function (n) { return (n < 10 ? '0' : '') + n; };
@@ -257,6 +281,7 @@
           bad[0].scrollIntoView({ block: 'center', behavior: reduced ? 'auto' : 'smooth' });
           return;
         }
+        inputs.forEach(function (i) { if (i._itiFull) i._itiFull.value = i._iti.getNumber(); });
         var btn = $('button[type="submit"]', form);
         var label = btn ? btn.textContent : '';
         if (btn) { btn.disabled = true; btn.style.opacity = '.55'; btn.textContent = 'Sending…'; }
