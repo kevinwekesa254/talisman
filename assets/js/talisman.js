@@ -212,6 +212,13 @@
         msg = 'Please enter a valid email, e.g. name@example.com';
       } else if (v && input.type === 'tel' && !patterns.tel.test(v)) {
         msg = 'Please enter a reachable phone number, e.g. +254 7XX XXX XXX';
+      } else if (v && input.type === 'date') {
+        var d = v.split('-').map(Number), day = new Date(d[0], d[1] - 1, d[2]);
+        var today = new Date(); today.setHours(0, 0, 0, 0);
+        var closed = (input.dataset.closedDays || '').split(',').filter(Boolean).map(Number);
+        if (isNaN(day)) msg = 'Please choose a date.';
+        else if (day < today) msg = 'Please choose a date from today onwards.';
+        else if (closed.indexOf(day.getDay()) !== -1) msg = 'We are closed on Mondays. Please choose Tuesday to Sunday.';
       } else if (v && input.type === 'number') {
         var n = Number(v), min = Number(input.min || -Infinity), max = Number(input.max || Infinity);
         if (isNaN(n) || n < min || n > max) msg = 'Please enter a number between ' + input.min + ' and ' + input.max + '.';
@@ -226,6 +233,13 @@
     $$('form[data-validate]').forEach(function (form) {
       var inputs = $$('.field__input', form);
       var status = $('.form__status', form);
+
+      // Dates: nothing in the past; closed days (e.g. Mondays) are flagged on change.
+      form.querySelectorAll('input[type="date"]').forEach(function (input) {
+        var t = new Date(), pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        input.min = t.getFullYear() + '-' + pad(t.getMonth() + 1) + '-' + pad(t.getDate());
+        input.addEventListener('change', function () { validate(input); });
+      });
 
       // Validate on blur, not on keystroke; re-validate live once a field is dirty.
       inputs.forEach(function (input) {
@@ -249,6 +263,7 @@
 
         // No backend yet — WordPress will wire this to Contact Form 7 / admin-ajax.
         window.setTimeout(function () {
+          if (form.dataset.redirect) { window.location.href = form.dataset.redirect; return; }
           if (status) {
             status.querySelector('[data-status-text]').textContent = form.dataset.success ||
               'Asante. We have your details and a member of our team will call you back shortly.';
