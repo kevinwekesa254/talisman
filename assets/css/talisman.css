@@ -2543,3 +2543,13 @@ img.crop-face { object-position: 50% 18%; }
 .contact__hours > span:nth-child(odd) { font-weight: 600; color: var(--ink); }
 .contact__hours small { font-size: .9em; opacity: .7; }
 .contact__list li:has(.contact__hours) { align-items: flex-start; }
+
+/* ===== 41. Safari map layering + taller home story photo ===== */
+/* iOS Safari can paint Leaflet's 3D-transformed tiles over a fixed header;
+   giving both their own compositing layer keeps the nav on top. */
+.nav { transform: translateZ(0); }
+.map { transform: translateZ(0); }
+
+/* Home "Our Story": portrait frame tall enough for the whole face. */
+.section--story .split__media > .solomedia { min-height: 0; aspect-ratio: 4 / 5; height: auto; }
+.section--story .split__media > .solomedia img { height: 100%; }
