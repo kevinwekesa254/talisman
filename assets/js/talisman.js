@@ -455,6 +455,7 @@
     if (!track) return;
 
     function page() {
+      if (root.hasAttribute('data-gallery-auto')) return track.clientWidth * 0.8;
       // One "page" is however many items are currently visible
       var item = track.firstElementChild;
       if (!item) return track.clientWidth;
@@ -463,7 +464,60 @@
       return per * (item.offsetWidth + gap);
     }
 
+    // Self-moving strip: the items are repeated once so the drift can loop
+    // without a jump. It pauses while hovered, touched or focused.
+    var auto = root.hasAttribute('data-gallery-auto') && !reduced;
+    var half = 0, pos = 0, paused = false, hold = 0, last = 0;
+    // Each painting keeps its own shape, known before the file arrives.
+    if (root.hasAttribute('data-gallery-auto')) {
+      track.querySelectorAll('img').forEach(function (img) {
+        var w = img.getAttribute('width'), h = img.getAttribute('height');
+        if (w && h) img.style.aspectRatio = w + ' / ' + h;
+      });
+    }
+    if (auto) {
+      Array.prototype.slice.call(track.children).forEach(function (item) {
+        var c = item.cloneNode(true);
+        c.setAttribute('aria-hidden', 'true');
+        track.appendChild(c);
+      });
+      var measure = function () { half = track.scrollWidth / 2; };
+      window.addEventListener('load', measure);
+      window.addEventListener('resize', measure);
+      measure();
+      var stop = function () { paused = true; };
+      var start = function () { paused = false; pos = track.scrollLeft; };
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      root.addEventListener('focusin', stop);
+      root.addEventListener('focusout', start);
+      track.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+      track.addEventListener('touchend', function () { hold = performance.now() + 2500; paused = false; pos = track.scrollLeft; }, { passive: true });
+      var tick = function (now) {
+        var dt = last ? Math.min(now - last, 64) : 16;
+        last = now;
+        if (!paused && now > hold && half > track.clientWidth) {
+          pos += dt * 0.04; // about 40px a second
+          if (pos >= half) pos -= half;
+          track.scrollLeft = pos;
+        }
+        window.requestAnimationFrame(tick);
+      };
+      window.requestAnimationFrame(tick);
+    }
+
     function sync() {
+      if (auto) {
+        if (prev) prev.disabled = false;
+        if (next) next.disabled = false;
+        if (bar && half) {
+          var vis = Math.min(track.clientWidth / half, 1);
+          var prog = (track.scrollLeft % half) / half;
+          bar.style.width = Math.max(vis * 100, 8) + '%';
+          bar.style.transform = 'translateX(' + (prog / Math.max(vis, .0001)) * 100 + '%)';
+        }
+        return;
+      }
       var max = track.scrollWidth - track.clientWidth;
       if (prev) prev.disabled = track.scrollLeft <= 2;
       if (next) next.disabled = track.scrollLeft >= max - 2;
@@ -476,6 +530,15 @@
     }
 
     function go(dir) {
+      if (auto) {
+        hold = performance.now() + 900;
+        var target = track.scrollLeft + dir * page();
+        if (target < 0) { track.scrollLeft += half; target += half; }
+        else if (target >= half) { track.scrollLeft -= half; target -= half; }
+        track.scrollTo({ left: target, behavior: 'smooth' });
+        window.setTimeout(function () { pos = track.scrollLeft; }, 900);
+        return;
+      }
       track.scrollBy({ left: dir * page(), behavior: reduced ? 'auto' : 'smooth' });
     }
     if (prev) prev.addEventListener('click', function () { go(-1); });

@@ -2612,3 +2612,17 @@ img.crop-face { object-position: 50% 18%; }
 .statuspage__lead a { color: var(--wine); }
 .statuspage__hours { margin: 14px auto 0; max-width: 60ch; font-size: var(--t-small); color: var(--ink-3); }
 .statuspage__actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+/* ===== 48. Taller bar photo; self-moving art gallery ===== */
+.split__media > .solomedia--natural.solomedia--tall { max-width: calc(min(720px, 88vh) * var(--r)); }
+
+/* Art gallery: each painting at its own shape (no cropping), drifting sideways
+   on its own and pausing while the pointer is over it. */
+.gallery--auto .gallery__track { grid-auto-columns: max-content; scroll-snap-type: none; }
+.gallery--auto .gallery__item img {
+  height: clamp(320px, 34vw, 520px); width: auto; object-fit: contain;
+}
+@media (max-width: 700px) {
+  .gallery--auto .gallery__track { grid-auto-columns: max-content; }
+  .gallery--auto .gallery__item img { height: 400px; }
+}
