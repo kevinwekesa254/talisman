@@ -8,7 +8,8 @@
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/singer-live.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/events-hero-lounge.jpg" media="(min-width: 701px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/events-hero-dancer-m.jpg" media="(max-width: 700px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css">
 </head>
@@ -73,7 +74,10 @@ setTimeout(function () {
 
 <!-- ══════════════════ HERO ══════════════════ -->
 <section class="bhero bhero--page">
-  <img class="bhero__media" src="assets/img/art-wall.jpg" alt="Guests beneath the changing wall art at Talisman" width="1600" height="1067" fetchpriority="high">
+  <picture>
+    <source media="(max-width: 700px)" srcset="assets/img/events-hero-dancer-m.jpg" width="933" height="1400">
+    <img class="bhero__media" src="assets/img/events-hero-lounge.jpg" alt="The lounge hung with bold paintings by local artists" width="2400" height="1599" fetchpriority="high">
+  </picture>
   <div class="bhero__scrim"></div>
   <div class="bhero__body">
     <p class="bhero__kicker">Art &amp; Events</p>
@@ -114,7 +118,7 @@ setTimeout(function () {
           <img src="assets/img/art-elephant-easel.jpg" alt="An elephant portrait on an easel beside the garden fountain" loading="lazy" width="1200" height="1600">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-guests.jpg" alt="Guests in front of a painting at Talisman" loading="lazy" width="1600" height="1067">
+          <img src="assets/img/art-artist-painting.jpg" alt="A local artist painting zebras on the terrace" loading="lazy" width="933" height="1400">
         </figure>
         <figure class="gallery__item">
           <img src="assets/img/art-interior.jpg" alt="Carved pillars, stained glass and collected pieces in the dining room" loading="lazy" width="1600" height="1067">
@@ -149,7 +153,7 @@ setTimeout(function () {
 
       <div class="stack-pair" data-reveal>
         <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
-          <img src="assets/img/live-jazz-1.jpg" alt="A vocalist performing with the band at Talisman" loading="lazy" width="1600" height="2000">
+          <img src="assets/img/music-guitarist-lamps.jpg" alt="A guitarist singing under the warm lamps at Talisman" loading="lazy" width="933" height="1400">
         </figure>
         <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
           <img src="assets/img/band-lion.jpg" alt="A guitarist playing at Talisman" loading="lazy" width="1800" height="1200">
@@ -167,7 +171,7 @@ setTimeout(function () {
         <img src="assets/img/guitarist-stage.jpg" alt="The guitarist playing beneath the wall art at Talisman" loading="lazy" width="1600" height="1067">
       </figure>
       <figure class="figure mono" data-reveal data-tilt>
-        <img src="assets/img/vocalist-harmonica.jpg" alt="A harmonica player performing at Talisman" loading="lazy" width="1200" height="800">
+        <img src="assets/img/nights-singers-lights.jpg" alt="Singers and saxophone under the fairy lights in the garden" loading="lazy" width="1120" height="1400">
       </figure>
       <figure class="figure mono" data-reveal data-tilt>
         <img src="assets/img/bartender.jpg" alt="The bar in full flow at Talisman" loading="lazy" width="1066" height="1600">

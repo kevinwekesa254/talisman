@@ -8,13 +8,14 @@
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/hero-terrace-day.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/home-hero-gazebos.jpg" media="(min-width: 701px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/home-hero-gazebos-m.jpg" media="(max-width: 700px)" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css">
 <meta property="og:title" content="The Talisman | Karen, Nairobi">
 <meta property="og:description" content="Elegance, ambience and food cooked the long way.">
-<meta property="og:image" content="assets/img/hero-terrace-day.jpg">
+<meta property="og:image" content="assets/img/home-hero-gazebos.jpg">
 <meta property="og:type" content="restaurant">
 </head>
 <body class="grain">
@@ -79,7 +80,10 @@ setTimeout(function () {
 
 <!-- ══════════════════ 1 · HERO ══════════════════ -->
 <section class="bhero bhero--light" id="top">
-  <img class="bhero__media" src="assets/img/hero-terrace-day.jpg" alt="The Talisman garden terrace in daylight" width="1466" height="2200" fetchpriority="high">
+  <picture>
+    <source media="(max-width: 700px)" srcset="assets/img/home-hero-gazebos-m.jpg" width="933" height="1400">
+    <img class="bhero__media" src="assets/img/home-hero-gazebos.jpg" alt="Thatched gazebos in the Talisman garden by day" width="2400" height="1599" fetchpriority="high">
+  </picture>
   <div class="bhero__scrim"></div>
 
   <div class="bhero__body">
@@ -102,7 +106,7 @@ setTimeout(function () {
     <div class="split">
       <div class="split__media" data-reveal>
         <figure class="solomedia">
-          <img src="assets/img/guests-friends.jpg" alt="Two friends sharing a laugh at Talisman" loading="lazy" width="1200" height="1800">
+          <img src="assets/img/story-guest-cocktail.jpg" alt="A guest laughing over cocktails at Talisman" loading="lazy" width="852" height="1280">
         </figure>
       </div>
 
@@ -129,13 +133,13 @@ setTimeout(function () {
 
     <div class="cuisine">
       <figure data-reveal>
-        <img src="assets/img/cuisine-salmon.jpg" alt="Seared fish on a bright vegetable purée" loading="lazy" width="1200" height="1800">
+        <img src="assets/img/cuisine-fish-wine.jpg" alt="Fish on a golden purée, served with a glass of white wine" loading="lazy" width="933" height="1400">
       </figure>
       <figure data-reveal>
-        <img src="assets/img/cuisine-sushi.jpg" alt="Sushi rolls with pickled ginger" loading="lazy" width="1800" height="1200">
+        <img src="assets/img/cuisine-sashimi.jpg" alt="Tuna sashimi with pickled ginger and wasabi" loading="lazy" width="933" height="1400">
       </figure>
       <figure data-reveal>
-        <img src="assets/img/cuisine-garden-bowl.jpg" alt="A garden bowl with edible flowers, served from the farm" loading="lazy" width="1800" height="1200">
+        <img src="assets/img/cuisine-bowl-window.jpg" alt="A leafy bowl in the window light" loading="lazy" width="868" height="1280">
       </figure>
     </div>
   </div>
@@ -143,8 +147,8 @@ setTimeout(function () {
 
 <!-- ══════════════════ 4 · EVENING BANNER ══════════════════ -->
 <section class="band on-dark" id="evenings">
-  <img class="band__media" data-parallax="band" src="assets/img/evening-garden-table.jpg"
-       alt="Guests dining together in the garden at night" loading="lazy" width="1466" height="2200">
+  <img class="band__media" data-parallax="band" src="assets/img/evening-lamplight.jpg"
+       alt="Friends dining by lamplight in the Talisman garden" loading="lazy" width="2400" height="1599">
   <div class="band__scrim"></div>
   <div class="band__body">
     <h2 data-reveal style="font-size:clamp(2.125rem,5vw,4rem)">Evening falls,<br><em>and the lanterns take over.</em></h2>
