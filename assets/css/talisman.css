@@ -2553,3 +2553,15 @@ img.crop-face { object-position: 50% 18%; }
 /* Home "Our Story": portrait frame tall enough for the whole face. */
 .section--story .split__media > .solomedia { min-height: 0; aspect-ratio: 4 / 5; height: auto; }
 .section--story .split__media > .solomedia img { height: 100%; }
+
+/* ===== 42. Split photos match the menu-card photo height ===== */
+/* Menu cards are 4:5 at a third of the content width; this tracks that
+   height (≈358px at 1024, ≈463px from 1440 up). */
+.split__media > .solomedia { min-height: clamp(320px, calc(25.2vw + 100px), 465px); }
+@media (max-width: 900px) {
+  .split__media > .solomedia { min-height: 0; aspect-ratio: 4 / 5; }
+}
+
+/* Co-founder quote: faint photo behind, 10% opacity. */
+.section--quote { position: relative; isolation: isolate; overflow: hidden; }
+.quote__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .1; z-index: -1; pointer-events: none; }
