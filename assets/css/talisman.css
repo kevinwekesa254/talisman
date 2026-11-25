@@ -2526,3 +2526,20 @@ p { hanging-punctuation: first; }
 /* Menu page: description only, centred. */
 .pageintro--centre { margin-inline: auto; text-align: center; }
 .pageintro--centre p { margin-top: 0; }
+
+/* ===== 40. Map stacking + people-safe cropping ===== */
+/* Leaflet panes sit at z-index 400–1000; keep them inside the map's own
+   stacking context so the sticky nav and sheets always stay on top. */
+.map { isolation: isolate; z-index: 0; }
+
+/* Photos with people: anchor the crop near the top so faces and heads stay
+   in frame whatever the box shape. */
+img.crop-face { object-position: 50% 18%; }
+.section--story .split__media img.crop-face { object-position: 50% 12%; }
+
+/* Beverages: no visible intro now, so give the cards room below the nav. */
+.visually-hidden + .introcards { margin-top: clamp(40px, 6vw, 88px); }
+.contact__hours { display: grid; grid-template-columns: max-content 1fr; column-gap: 20px; row-gap: 10px; line-height: 1.55; }
+.contact__hours > span:nth-child(odd) { font-weight: 600; color: var(--ink); }
+.contact__hours small { font-size: .9em; opacity: .7; }
+.contact__list li:has(.contact__hours) { align-items: flex-start; }
