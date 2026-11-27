@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "Coffee, Wine & Cocktails | The Talisman Bar, Karen, Nairobi",
+    "description": "Kenyan single-origin coffee, a short wine list and garden cocktails at The Talisman bar on Ngong Road, Karen, Nairobi. See the drinks menus.",
+    "image": "/assets/img/drink-cucumber-cocktail.jpg",
+    "noindex": false
+  },
+  "beverages": {
+    "coffee_text": "Kenyan single-origin, roasted locally.",
+    "wine_title": "Wine",
+    "wine_text": "A short list, chosen to sit well outdoors.",
+    "coffee_title": "Coffee",
+    "wine_image": {
+      "src": "/assets/img/drink-wine-pour.jpg",
+      "alt": "White wine being poured into two glasses"
+    },
+    "cocktails_title": "Cocktails",
+    "coffee_image": {
+      "src": "/assets/img/drink-espresso-machine.jpg",
+      "alt": "A fresh shot of coffee in the portafilter at the Talisman espresso machine"
+    },
+    "cocktails_image": {
+      "src": "/assets/img/drink-cucumber-cocktail.jpg",
+      "alt": "The bartender pouring a cucumber cocktail at the Talisman bar"
+    },
+    "page_heading": "Beverages",
+    "cocktails_button_label": "See the menu",
+    "coffee_button_label": "See the menu",
+    "wine_button_label": "See the menu",
+    "cocktails_text": "Mint and lemongrass from the garden."
+  },
+  "bar": {
+    "image": {
+      "src": "/assets/img/bar-wine-conversation.jpg",
+      "alt": "A guest laughing over a glass of white wine at the Talisman bar"
+    },
+    "small_label": "The Bar",
+    "heading": "Once the meal\n*is over.*",
+    "text": "Wind down at the bar with the fire going. Ask to see the whisky, gin and rum shelf.",
+    "button": {
+      "label": "See the food menus",
+      "href": "menu.html"
+    }
+  }
+}

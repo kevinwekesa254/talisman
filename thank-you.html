@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://talisman-karen.vercel.app/assets/img/home-hero-gazebos.jpg">
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
 </head>
@@ -43,12 +43,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html">Food</a>
           <a href="beverages.html">Beverages</a>
         </div>
@@ -84,16 +84,16 @@ setTimeout(function () {
 
 <main id="main">
 
-<section class="section section--pagetop statuspage">
+<section class="section section--pagetop statuspage" data-cms-section="message" data-cms-label="Thank-you message">
   <div class="wrap wrap--narrow center">
     <img src="assets/img/logo.png" alt="" width="268" height="163" class="statuspage__logo">
-    <p class="eyebrow eyebrow--wine">Request received</p>
-    <h1>Asante. <em>We have your details.</em></h1>
-    <p class="statuspage__lead">A member of our team will call you shortly to confirm your table. If your plans change, call us on <a href="tel:+254705999997">+254 705 999 997</a>.</p>
-    <p class="statuspage__hours">Tuesday to Friday, 11:00 am to 10:00 pm &middot; Saturday, 9:00 am to 9:00 pm &middot; Sunday, 9:30 am to 9:00 pm &middot; Closed Mondays</p>
+    <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">Request received</p>
+    <h1 data-cms="page_heading" data-cms-label="Page heading">Asante. <em>We have your details.</em></h1>
+    <p class="statuspage__lead" data-cms="intro" data-cms-label="Intro">A member of our team will call you shortly to confirm your table. If your plans change, call us on <a href="tel:+254705999997">+254 705 999 997</a>.</p>
+    <p class="statuspage__hours" data-cms-site="hours_inline">Tuesday to Friday, 11:00 am to 10:00 pm &middot; Saturday, 9:00 am to 9:00 pm &middot; Sunday, 9:30 am to 9:00 pm &middot; Closed Mondays</p>
     <div class="statuspage__actions">
-      <a class="btn btn--primary" href="menu.html">See the menus</a>
-      <a class="btn btn--ghost" href="index.html">Back to home</a>
+      <a class="btn btn--primary" href="menu.html" data-cms="button_1" data-cms-label="Button 1">See the menus</a>
+      <a class="btn btn--ghost" href="index.html" data-cms="button_2" data-cms-label="Button 2">Back to home</a>
     </div>
   </div>
 </section>
@@ -122,7 +122,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -133,12 +133,12 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

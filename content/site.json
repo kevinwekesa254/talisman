@@ -1,0 +1,40 @@
+{
+  "phone": "+254 705 999 997",
+  "email": "hello@talisman.co.ke",
+  "address_line_1": "320 Ngong Road, Karen",
+  "address_line_2": "Nairobi, Kenya",
+  "instagram": "https://www.instagram.com/talisman.nairobi/",
+  "facebook": "https://www.facebook.com/talismanrestaurant",
+  "hours": [
+    {
+      "label": "Tuesday to Friday",
+      "days": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "11:00",
+      "closes": "22:00"
+    },
+    {
+      "label": "Saturday",
+      "days": [
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    {
+      "label": "Sunday",
+      "days": [
+        "Sunday"
+      ],
+      "opens": "09:30",
+      "closes": "21:00"
+    }
+  ],
+  "closed_days": [
+    "Monday"
+  ]
+}

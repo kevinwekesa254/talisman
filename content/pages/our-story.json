@@ -1,0 +1,87 @@
+{
+  "seo": {
+    "title": "Our Story | The Talisman, Karen, Nairobi since 2003",
+    "description": "How The Talisman began: two traders, a talisman above a shop door and an iconic house on Ngong Road in Karen, Nairobi, open since 2003.",
+    "image": "/assets/img/story-hero-stained-glass.jpg",
+    "noindex": false
+  },
+  "top": {
+    "hero_image": {
+      "src": "/assets/img/story-hero-stained-glass.jpg",
+      "alt": "The stained-glass window above the café tables at Talisman"
+    },
+    "small_label": "Our Story",
+    "page_heading": "An iconic location,\n*and a light-bulb moment.*",
+    "intro": "Opened at the end of 2003 by two people who had never run a restaurant."
+  },
+  "how_it_began": {
+    "image": {
+      "src": "/assets/img/story-carved-door.jpg",
+      "alt": "A carved wooden door frame and lamp inside Talisman"
+    },
+    "small_label": "How it began",
+    "heading": "A talisman, bought\n*above a shop door.*",
+    "text": "Sharly and Ian Cameron traded kilims and carved furniture. In a shop in Afghanistan, Sharly spotted a talisman above the door: to ward off evil and bring good luck."
+  },
+  "how_it_grew": {
+    "heading": "How it grew",
+    "intro": "Five years, they promised. More than twenty years later, it is still here.",
+    "milestones": [
+      {
+        "when": "Before 2003",
+        "title": "Traders, not restaurateurs",
+        "text": "Carpets, kilims and carved pillars, and the talisman above a shop door."
+      },
+      {
+        "when": "June 2003",
+        "title": "The light-bulb moment",
+        "text": "Driving home with an empty fridge, they found the old plot was free."
+      },
+      {
+        "when": "End of 2003",
+        "title": "Talisman opens",
+        "text": "The pillars came out of storage. Five years, they promised each other."
+      },
+      {
+        "when": "2007",
+        "title": "Number one in Nairobi",
+        "text": "Ranked the city’s number one restaurant."
+      },
+      {
+        "when": "The handover",
+        "title": "Passed into good hands",
+        "text": "Two regulars, Satyan and Stue, bought it and run it still."
+      },
+      {
+        "when": "Today",
+        "title": "An iconic location",
+        "text": "The original fireplace and painted wall remain, with many of the first staff."
+      }
+    ]
+  },
+  "quote": {
+    "background_image": {
+      "src": "/assets/img/story-quote-dining-room.jpg",
+      "alt": ""
+    },
+    "quote": "“I still love going there, and many of the original staff are there today to welcome one and all.”",
+    "small_label": "Sharly Cameron · Co-founder"
+  },
+  "now": {
+    "heading": "Where we\n*are now.*",
+    "an_iconic_location_title": "An iconic location",
+    "an_iconic_location_text": "Still on Ngong Road, in the same house, with the fireplace and painted wall intact.",
+    "eclectic_cuisine_title": "Eclectic cuisine",
+    "eclectic_cuisine_text": "Food from our own farm and from kitchens around the world, with chef’s specials daily.",
+    "art_and_music_title": "Art & music",
+    "art_and_music_text": "Local artists on the walls and live music by the fire, all through the year.",
+    "button_1": {
+      "label": "Plan your visit",
+      "href": "index.html#visit"
+    },
+    "button_2": {
+      "label": "See the menus",
+      "href": "menu.html"
+    }
+  }
+}

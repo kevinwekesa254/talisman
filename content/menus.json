@@ -1,0 +1,65 @@
+{
+  "main": {
+    "pdf": "/assets/menus/talisman-main-menu.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/main-menu-1.jpg"
+      },
+      {
+        "image": "/assets/img/menus/main-menu-2.jpg"
+      },
+      {
+        "image": "/assets/img/menus/main-menu-3.jpg"
+      }
+    ]
+  },
+  "breakfast": {
+    "pdf": "/assets/menus/talisman-breakfast.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/breakfast-1.jpg"
+      },
+      {
+        "image": "/assets/img/menus/breakfast-2.jpg"
+      }
+    ]
+  },
+  "tea": {
+    "pdf": "/assets/menus/talisman-afternoon-tea.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/afternoon-tea-1.jpg"
+      },
+      {
+        "image": "/assets/img/menus/afternoon-tea-2.jpg"
+      }
+    ]
+  },
+  "coffee": {
+    "pdf": "/assets/menus/talisman-coffee.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/coffee-1.jpg"
+      }
+    ]
+  },
+  "wine": {
+    "pdf": "/assets/menus/talisman-wine.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/wine-1.jpg"
+      },
+      {
+        "image": "/assets/img/menus/wine-2.jpg"
+      }
+    ]
+  },
+  "cocktails": {
+    "pdf": "/assets/menus/talisman-cocktails.pdf",
+    "pages": [
+      {
+        "image": "/assets/img/menus/cocktails-1.jpg"
+      }
+    ]
+  }
+}

@@ -23,7 +23,7 @@
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebPage", "url": "https://talisman-karen.vercel.app/our-story.html", "name": "Our Story | The Talisman, Karen, Nairobi since 2003", "description": "How The Talisman began: two traders, a talisman above a shop door and an iconic house on Ngong Road in Karen, Nairobi, open since 2003.", "isPartOf": {"@id": "https://talisman-karen.vercel.app/#website"}, "about": {"@id": "https://talisman-karen.vercel.app/#restaurant"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://talisman-karen.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Our Story", "item": "https://talisman-karen.vercel.app/our-story.html"}]}]</script>
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="preload" as="image" href="assets/img/story-hero-stained-glass.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
@@ -46,12 +46,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html">Food</a>
           <a href="beverages.html">Beverages</a>
         </div>
@@ -88,30 +88,30 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ HERO ══════════════════ -->
-<section class="bhero bhero--page">
-  <img class="bhero__media" src="assets/img/story-hero-stained-glass.jpg" alt="The stained-glass window above the café tables at Talisman" width="1333" height="2000" fetchpriority="high">
+<section class="bhero bhero--page" data-cms-section="top" data-cms-label="Top of page">
+  <img class="bhero__media" src="assets/img/story-hero-stained-glass.jpg" alt="The stained-glass window above the café tables at Talisman" width="1333" height="2000" fetchpriority="high" data-cms="hero_image" data-cms-label="Hero image">
   <div class="bhero__scrim"></div>
   <div class="bhero__body">
-    <p class="bhero__kicker">Our Story</p>
-    <h1 class="bhero__title">An iconic location,<br><em>and a light-bulb moment.</em></h1>
-    <p class="bhero__sub">Opened at the end of 2003 by two people who had never run a restaurant.</p>
+    <p class="bhero__kicker" data-cms="small_label" data-cms-label="Small label">Our Story</p>
+    <h1 class="bhero__title" data-cms="page_heading" data-cms-label="Page heading">An iconic location,<br><em>and a light-bulb moment.</em></h1>
+    <p class="bhero__sub" data-cms="intro" data-cms-label="Intro">Opened at the end of 2003 by two people who had never run a restaurant.</p>
   </div>
 </section>
 
 <!-- ══════════════════ OPENING ══════════════════ -->
-<section class="section">
+<section class="section" data-cms-section="how_it_began" data-cms-label="How it began">
   <div class="wrap">
     <div class="split">
-      <div class="split__media" data-reveal>
+      <div class="split__media" data-reveal="">
         <figure class="solomedia">
-          <img src="assets/img/story-carved-door.jpg" alt="A carved wooden door frame and lamp inside Talisman" loading="lazy" width="933" height="1400">
+          <img src="assets/img/story-carved-door.jpg" alt="A carved wooden door frame and lamp inside Talisman" loading="lazy" width="933" height="1400" data-cms="image" data-cms-label="Image">
         </figure>
       </div>
 
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">How it began</p>
-        <h2>A talisman, bought<br><em>above a shop door.</em></h2>
-        <p style="margin-top:20px;max-width:40ch">
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">How it began</p>
+        <h2 data-cms="heading" data-cms-label="Heading">A talisman, bought<br><em>above a shop door.</em></h2>
+        <p style="margin-top:20px;max-width:40ch" data-cms="text" data-cms-label="Text">
           Sharly and Ian Cameron traded kilims and carved furniture. In a shop in Afghanistan,
           Sharly spotted a talisman above the door: to ward off evil and bring good luck.
         </p>
@@ -121,90 +121,89 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ TIMELINE ══════════════════ -->
-<section class="section">
+<section class="section" data-cms-section="how_it_grew" data-cms-label="How it grew">
   <div class="wrap">
     <div class="explore">
-      <div class="explore__head" data-reveal>
-        <h2>How it grew</h2>
+      <div class="explore__head" data-reveal="">
+        <h2 data-cms="heading" data-cms-label="Heading">How it grew</h2>
       </div>
-      <div class="explore__body" data-reveal>
-        <p class="lead">Five years, they promised. More than twenty years later, it is still here.</p>
+      <div class="explore__body" data-reveal="">
+        <p class="lead" data-cms="intro" data-cms-label="Intro">Five years, they promised. More than twenty years later, it is still here.</p>
       </div>
     </div>
 
-    <ol class="timeline timeline--alt" data-reveal>
+    <ol class="timeline timeline--alt" data-reveal="" data-cms-list="milestones" data-cms-label="Milestones" data-cms-item="Milestone">
       <li>
-        <span class="timeline__when">Before 2003</span>
-        <h3 class="timeline__title">Traders, not restaurateurs</h3>
-        <p class="timeline__body">Carpets, kilims and carved pillars, and the talisman above a shop door.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">Before 2003</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">Traders, not restaurateurs</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">Carpets, kilims and carved pillars, and the talisman above a shop door.</p>
       </li>
       <li>
-        <span class="timeline__when">June 2003</span>
-        <h3 class="timeline__title">The light-bulb moment</h3>
-        <p class="timeline__body">Driving home with an empty fridge, they found the old plot was free.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">June 2003</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">The light-bulb moment</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">Driving home with an empty fridge, they found the old plot was free.</p>
       </li>
       <li>
-        <span class="timeline__when">End of 2003</span>
-        <h3 class="timeline__title">Talisman opens</h3>
-        <p class="timeline__body">The pillars came out of storage. Five years, they promised each other.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">End of 2003</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">Talisman opens</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">The pillars came out of storage. Five years, they promised each other.</p>
       </li>
       <li>
-        <span class="timeline__when">2007</span>
-        <h3 class="timeline__title">Number one in Nairobi</h3>
-        <p class="timeline__body">Ranked the city&rsquo;s number one restaurant.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">2007</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">Number one in Nairobi</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">Ranked the city&rsquo;s number one restaurant.</p>
       </li>
       <li>
-        <span class="timeline__when">The handover</span>
-        <h3 class="timeline__title">Passed into good hands</h3>
-        <p class="timeline__body">Two regulars, Satyan and Stue, bought it and run it still.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">The handover</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">Passed into good hands</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">Two regulars, Satyan and Stue, bought it and run it still.</p>
       </li>
       <li>
-        <span class="timeline__when">Today</span>
-        <h3 class="timeline__title">An iconic location</h3>
-        <p class="timeline__body">The original fireplace and painted wall remain, with many of the first staff.</p>
+        <span class="timeline__when" data-cms="when" data-cms-label="When">Today</span>
+        <h3 class="timeline__title" data-cms="title" data-cms-label="Title">An iconic location</h3>
+        <p class="timeline__body" data-cms="text" data-cms-label="Text">The original fireplace and painted wall remain, with many of the first staff.</p>
       </li>
     </ol>
   </div>
 </section>
 
 <!-- ══════════════════ QUOTE ══════════════════ -->
-<section class="section section--cream section--quote">
-  <img class="quote__bg" src="assets/img/story-quote-dining-room.jpg" alt="" aria-hidden="true" loading="lazy" width="1200" height="1800">
+<section class="section section--cream section--quote" data-cms-section="quote" data-cms-label="Co-founder quote">
+  <img class="quote__bg" src="assets/img/story-quote-dining-room.jpg" alt="" aria-hidden="true" loading="lazy" width="1200" height="1800" data-cms="background_image" data-cms-label="Background image">
   <div class="wrap wrap--narrow center">
-    <img data-reveal src="assets/img/logo.png" alt="" width="268" height="163"
-         style="height:44px;width:auto;margin-inline:auto;opacity:.9">
-    <blockquote data-reveal style="margin-top:32px;font:italic 500 clamp(1.375rem,3vw,2.25rem)/1.45 var(--serif);color:var(--ink);max-width:28ch;margin-inline:auto">
+    <img data-reveal="" src="assets/img/logo.png" alt="" width="268" height="163" style="height:44px;width:auto;margin-inline:auto;opacity:.9">
+    <blockquote data-reveal="" style="margin-top:32px;font:italic 500 clamp(1.375rem,3vw,2.25rem)/1.45 var(--serif);color:var(--ink);max-width:28ch;margin-inline:auto" data-cms="quote" data-cms-label="Quote">
       &ldquo;I still love going there, and many of the original staff are there today to welcome one and all.&rdquo;
     </blockquote>
-    <p data-reveal class="eyebrow" style="margin-top:28px">Sharly Cameron &middot; Co-founder</p>
+    <p data-reveal="" class="eyebrow" style="margin-top:28px" data-cms="small_label" data-cms-label="Small label">Sharly Cameron &middot; Co-founder</p>
   </div>
 </section>
 
 <!-- ══════════════════ WHERE WE ARE NOW ══════════════════ -->
-<section class="section">
+<section class="section" data-cms-section="now" data-cms-label="Where we are now">
   <div class="wrap">
     <div class="center" style="max-width:40ch;margin-inline:auto;margin-bottom:clamp(28px,4vw,48px)">
-      <h2 data-reveal>Where we<br><em>are now.</em></h2>
+      <h2 data-reveal="" data-cms="heading" data-cms-label="Heading">Where we<br><em>are now.</em></h2>
     </div>
 
     <div class="cardgrid">
-      <article data-reveal>
-        <h3>An iconic location</h3>
-        <p style="margin-top:14px">Still on Ngong Road, in the same house, with the fireplace and painted wall intact.</p>
+      <article data-reveal="">
+        <h3 data-cms="an_iconic_location_title" data-cms-label="An iconic location · Title">An iconic location</h3>
+        <p style="margin-top:14px" data-cms="an_iconic_location_text" data-cms-label="An iconic location · Text">Still on Ngong Road, in the same house, with the fireplace and painted wall intact.</p>
       </article>
-      <article data-reveal>
-        <h3>Eclectic cuisine</h3>
-        <p style="margin-top:14px">Food from our own farm and from kitchens around the world, with chef&rsquo;s specials daily.</p>
+      <article data-reveal="">
+        <h3 data-cms="eclectic_cuisine_title" data-cms-label="Eclectic cuisine · Title">Eclectic cuisine</h3>
+        <p style="margin-top:14px" data-cms="eclectic_cuisine_text" data-cms-label="Eclectic cuisine · Text">Food from our own farm and from kitchens around the world, with chef&rsquo;s specials daily.</p>
       </article>
-      <article data-reveal>
-        <h3>Art &amp; music</h3>
-        <p style="margin-top:14px">Local artists on the walls and live music by the fire, all through the year.</p>
+      <article data-reveal="">
+        <h3 data-cms="art_and_music_title" data-cms-label="Art & music · Title">Art &amp; music</h3>
+        <p style="margin-top:14px" data-cms="art_and_music_text" data-cms-label="Art & music · Text">Local artists on the walls and live music by the fire, all through the year.</p>
       </article>
     </div>
 
-    <div data-reveal class="hero__actions" style="margin-top:36px;justify-content:center">
-      <a class="btn btn--primary" href="index.html#visit">Plan your visit</a>
-      <a class="btn btn--ghost" href="menu.html">See the menus</a>
+    <div data-reveal="" class="hero__actions" style="margin-top:36px;justify-content:center">
+      <a class="btn btn--primary" href="index.html#visit" data-cms="button_1" data-cms-label="Button 1">Plan your visit</a>
+      <a class="btn btn--ghost" href="menu.html" data-cms="button_2" data-cms-label="Button 2">See the menus</a>
     </div>
   </div>
 </section>
@@ -234,7 +233,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -245,12 +244,12 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

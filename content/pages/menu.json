@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Food Menu | The Talisman Restaurant, Karen, Nairobi",
+    "description": "See The Talisman’s main menu, weekend breakfast and afternoon tea. Farm-grown produce, house-smoked salmon and eclectic dishes in Karen, Nairobi.",
+    "image": "/assets/img/menu-fish-herb.jpg",
+    "noindex": false
+  },
+  "food": {
+    "page_heading": "Our menus",
+    "text": "Our chef cooks specials every day from what the farm sends up. Come in and ask what’s on today.",
+    "main_menu_image": {
+      "src": "/assets/img/menu-fish-herb.jpg",
+      "alt": "Fish on a creamy sauce with herb oil"
+    },
+    "main_menu_title": "Main Menu",
+    "main_menu_text": "Lunch and dinner, from the farm and the fire.",
+    "main_menu_button_label": "See the menu",
+    "breakfast_image": {
+      "src": "/assets/img/menu-brunch-toast.jpg",
+      "alt": "Avocado toast at breakfast"
+    },
+    "breakfast_title": "Breakfast",
+    "breakfast_text": "Eggs, sourdough and strong coffee, weekends from nine.",
+    "breakfast_button_label": "See the menu",
+    "afternoon_tea_image": {
+      "src": "/assets/img/menu-creme-brulee.jpg",
+      "alt": "Crème brûlée with fresh berries"
+    },
+    "afternoon_tea_title": "Afternoon Tea",
+    "afternoon_tea_text": "Scones, cake and a pot for the table.",
+    "afternoon_tea_button_label": "See the menu"
+  },
+  "farmers": {
+    "image": {
+      "src": "/assets/img/food-peppers.jpg",
+      "alt": "A heap of fresh peppers for the Talisman kitchen"
+    },
+    "small_label": "Ingredients & Farmers",
+    "heading": "We know who\n*grows it.*",
+    "text": "Herbs and greens from our own farm, picked at dawn. The rest from smallholders we have known for years."
+  },
+  "preparation": {
+    "small_label": "Preparation",
+    "heading": "One fire,\n*kept deliberately low.*",
+    "text": "Salmon cured and smoked here. Stocks reduced overnight, bread baked at dawn.",
+    "image": {
+      "src": "/assets/img/smokehouse-salmon.jpg",
+      "alt": "Whole sides of salmon hanging over the fire in the Talisman smokehouse"
+    }
+  },
+  "afternoon-tea": {
+    "image": {
+      "src": "/assets/img/fireside-drink.jpg",
+      "alt": "A hot chocolate and a biscuit on a wooden table by the fire"
+    },
+    "small_label": "Afternoon Tea",
+    "heading": "Three o’clock,\n*in the green.*",
+    "text": "Sandwiches, warm scones and cakes, served from three until half past five.",
+    "button_label": "See the menu"
+  }
+}

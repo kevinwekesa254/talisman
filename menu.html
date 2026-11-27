@@ -23,7 +23,7 @@
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebPage", "url": "https://talisman-karen.vercel.app/menu.html", "name": "Food Menu | The Talisman Restaurant, Karen, Nairobi", "description": "See The Talisman’s main menu, weekend breakfast and afternoon tea. Farm-grown produce, house-smoked salmon and eclectic dishes in Karen, Nairobi.", "isPartOf": {"@id": "https://talisman-karen.vercel.app/#website"}, "about": {"@id": "https://talisman-karen.vercel.app/#restaurant"}, "mainEntity": {"@type": "Menu", "name": "The Talisman menus", "hasMenuSection": [{"@type": "MenuSection", "name": "Main Menu"}, {"@type": "MenuSection", "name": "Breakfast"}, {"@type": "MenuSection", "name": "Afternoon Tea"}]}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://talisman-karen.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Food menu", "item": "https://talisman-karen.vercel.app/menu.html"}]}]</script>
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
 </head>
@@ -45,12 +45,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html" aria-current="page">Food</a>
           <a href="beverages.html">Beverages</a>
         </div>
@@ -87,84 +87,84 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ MENUS ══════════════════ -->
-<section class="section section--pagetop" id="food">
+<section class="section section--pagetop" id="food" data-cms-section="food" data-cms-label="Menus (top of page)">
   <div class="wrap">
-    <div class="pageintro pageintro--centre" data-reveal>
-      <h1 class="visually-hidden">Our menus</h1>
-      <p>Our chef cooks specials every day from what the farm sends up.
+    <div class="pageintro pageintro--centre" data-reveal="">
+      <h1 class="visually-hidden" data-cms="page_heading" data-cms-label="Page heading (hidden, read by search engines)">Our menus</h1>
+      <p data-cms="text" data-cms-label="Text">Our chef cooks specials every day from what the farm sends up.
       Come in and ask what&rsquo;s on today.</p>
     </div>
 
     <div class="introcards introcards--even">
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/menu-fish-herb.jpg" alt="Fish on a creamy sauce with herb oil" loading="lazy" width="933" height="1400"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img src="assets/img/menu-fish-herb.jpg" alt="Fish on a creamy sauce with herb oil" loading="lazy" width="933" height="1400" data-cms="main_menu_image" data-cms-label="Main Menu · Image"></figure>
         <div class="introcard__body">
-          <h3>Main Menu</h3>
-          <p>Lunch and dinner, from the farm and the fire.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-main">See the menu</button>
+          <h3 data-cms="main_menu_title" data-cms-label="Main Menu · Title">Main Menu</h3>
+          <p data-cms="main_menu_text" data-cms-label="Main Menu · Text">Lunch and dinner, from the farm and the fire.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-main" data-cms="main_menu_button_label" data-cms-label="Main Menu · Button label">See the menu</button>
         </div>
       </article>
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/menu-brunch-toast.jpg" alt="Avocado toast at breakfast" loading="lazy" width="853" height="1280"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img src="assets/img/menu-brunch-toast.jpg" alt="Avocado toast at breakfast" loading="lazy" width="853" height="1280" data-cms="breakfast_image" data-cms-label="Breakfast · Image"></figure>
         <div class="introcard__body">
-          <h3>Breakfast</h3>
-          <p>Eggs, sourdough and strong coffee, weekends from nine.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-breakfast">See the menu</button>
+          <h3 data-cms="breakfast_title" data-cms-label="Breakfast · Title">Breakfast</h3>
+          <p data-cms="breakfast_text" data-cms-label="Breakfast · Text">Eggs, sourdough and strong coffee, weekends from nine.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-breakfast" data-cms="breakfast_button_label" data-cms-label="Breakfast · Button label">See the menu</button>
         </div>
       </article>
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/menu-creme-brulee.jpg" alt="Crème brûlée with fresh berries" loading="lazy" width="933" height="1400"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img src="assets/img/menu-creme-brulee.jpg" alt="Crème brûlée with fresh berries" loading="lazy" width="933" height="1400" data-cms="afternoon_tea_image" data-cms-label="Afternoon Tea · Image"></figure>
         <div class="introcard__body">
-          <h3>Afternoon Tea</h3>
-          <p>Scones, cake and a pot for the table.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-tea">See the menu</button>
+          <h3 data-cms="afternoon_tea_title" data-cms-label="Afternoon Tea · Title">Afternoon Tea</h3>
+          <p data-cms="afternoon_tea_text" data-cms-label="Afternoon Tea · Text">Scones, cake and a pot for the table.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-tea" data-cms="afternoon_tea_button_label" data-cms-label="Afternoon Tea · Button label">See the menu</button>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="farmers">
+<section class="section" id="farmers" data-cms-section="farmers" data-cms-label="Ingredients & Farmers">
   <div class="wrap">
     <div class="split">
-      <div class="split__media" data-reveal>
-        <figure class="solomedia"><img src="assets/img/food-peppers.jpg" alt="A heap of fresh peppers for the Talisman kitchen" loading="lazy" width="933" height="1400"></figure>
+      <div class="split__media" data-reveal="">
+        <figure class="solomedia"><img src="assets/img/food-peppers.jpg" alt="A heap of fresh peppers for the Talisman kitchen" loading="lazy" width="933" height="1400" data-cms="image" data-cms-label="Image"></figure>
       </div>
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Ingredients &amp; Farmers</p>
-        <h2>We know who<br><em>grows it.</em></h2>
-        <p style="margin-top:20px;max-width:40ch">Herbs and greens from our own farm, picked at dawn. The rest from smallholders we have known for years.</p>
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">Ingredients &amp; Farmers</p>
+        <h2 data-cms="heading" data-cms-label="Heading">We know who<br><em>grows it.</em></h2>
+        <p style="margin-top:20px;max-width:40ch" data-cms="text" data-cms-label="Text">Herbs and greens from our own farm, picked at dawn. The rest from smallholders we have known for years.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--cream" id="preparation">
+<section class="section section--cream" id="preparation" data-cms-section="preparation" data-cms-label="Preparation">
   <div class="wrap">
     <div class="split">
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Preparation</p>
-        <h2>One fire,<br><em>kept deliberately low.</em></h2>
-        <p style="margin-top:20px;max-width:40ch">Salmon cured and smoked here. Stocks reduced overnight, bread baked at dawn.</p>
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">Preparation</p>
+        <h2 data-cms="heading" data-cms-label="Heading">One fire,<br><em>kept deliberately low.</em></h2>
+        <p style="margin-top:20px;max-width:40ch" data-cms="text" data-cms-label="Text">Salmon cured and smoked here. Stocks reduced overnight, bread baked at dawn.</p>
       </div>
-      <div class="split__media" data-reveal>
-        <figure class="solomedia solomedia--natural" style="--r:0.982"><img src="assets/img/smokehouse-salmon.jpg" alt="Whole sides of salmon hanging over the fire in the Talisman smokehouse" loading="lazy" width="1768" height="1800"></figure>
+      <div class="split__media" data-reveal="">
+        <figure class="solomedia solomedia--natural" style="--r:0.982"><img src="assets/img/smokehouse-salmon.jpg" alt="Whole sides of salmon hanging over the fire in the Talisman smokehouse" loading="lazy" width="1768" height="1800" data-cms="image" data-cms-label="Image"></figure>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="afternoon-tea">
+<section class="section" id="afternoon-tea" data-cms-section="afternoon-tea" data-cms-label="Afternoon Tea">
   <div class="wrap">
     <div class="split">
-      <div class="split__media" data-reveal>
-        <figure class="solomedia solomedia--natural" style="--r:0.75"><img src="assets/img/fireside-drink.jpg" alt="A hot chocolate and a biscuit on a wooden table by the fire" loading="lazy" width="1421" height="1895"></figure>
+      <div class="split__media" data-reveal="">
+        <figure class="solomedia solomedia--natural" style="--r:0.75"><img src="assets/img/fireside-drink.jpg" alt="A hot chocolate and a biscuit on a wooden table by the fire" loading="lazy" width="1421" height="1895" data-cms="image" data-cms-label="Image"></figure>
       </div>
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Afternoon Tea</p>
-        <h2>Three o&rsquo;clock,<br><em>in the green.</em></h2>
-        <p style="margin-top:20px;max-width:40ch">Sandwiches, warm scones and cakes, served from three until half past five.</p>
-        <p style="margin-top:26px"><button class="btn btn--primary" type="button" data-menu-tab="tab-tea">See the menu</button></p>
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">Afternoon Tea</p>
+        <h2 data-cms="heading" data-cms-label="Heading">Three o&rsquo;clock,<br><em>in the green.</em></h2>
+        <p style="margin-top:20px;max-width:40ch" data-cms="text" data-cms-label="Text">Sandwiches, warm scones and cakes, served from three until half past five.</p>
+        <p style="margin-top:26px"><button class="btn btn--primary" type="button" data-menu-tab="tab-tea" data-cms="button_label" data-cms-label="Button label">See the menu</button></p>
       </div>
     </div>
   </div>
@@ -173,22 +173,19 @@ setTimeout(function () {
 </main>
 
 <!-- ══════════════════ MENU DIALOG ══════════════════ -->
-<div class="viewer" id="menu-viewer" data-viewer hidden>
-  <div class="viewer__backdrop" data-viewer-backdrop></div>
+<div class="viewer" id="menu-viewer" data-viewer="" hidden="">
+  <div class="viewer__backdrop" data-viewer-backdrop=""></div>
   <div class="viewer__panel" role="dialog" aria-modal="true" aria-label="Food menus">
     <div class="viewer__bar">
       <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
-      <button class="viewer__tab" role="tab" id="tab-main" aria-selected="true" aria-controls="viewer-stage"
-              data-pdf="assets/menus/talisman-main-menu.pdf" data-pages="assets/img/menus/main-menu-1.jpg,assets/img/menus/main-menu-2.jpg,assets/img/menus/main-menu-3.jpg" data-title="Main menu">Main Menu</button>
-      <button class="viewer__tab" role="tab" id="tab-breakfast" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-              data-pdf="assets/menus/talisman-breakfast.pdf" data-pages="assets/img/menus/breakfast-1.jpg,assets/img/menus/breakfast-2.jpg" data-title="Breakfast menu">Breakfast</button>
-      <button class="viewer__tab" role="tab" id="tab-tea" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-              data-pdf="assets/menus/talisman-afternoon-tea.pdf" data-pages="assets/img/menus/afternoon-tea-1.jpg,assets/img/menus/afternoon-tea-2.jpg" data-title="Afternoon tea menu">Afternoon Tea</button>
+      <button class="viewer__tab" role="tab" id="tab-main" aria-selected="true" aria-controls="viewer-stage" data-pdf="assets/menus/talisman-main-menu.pdf" data-pages="assets/img/menus/main-menu-1.jpg,assets/img/menus/main-menu-2.jpg,assets/img/menus/main-menu-3.jpg" data-title="Main menu">Main Menu</button>
+      <button class="viewer__tab" role="tab" id="tab-breakfast" aria-selected="false" aria-controls="viewer-stage" tabindex="-1" data-pdf="assets/menus/talisman-breakfast.pdf" data-pages="assets/img/menus/breakfast-1.jpg,assets/img/menus/breakfast-2.jpg" data-title="Breakfast menu">Breakfast</button>
+      <button class="viewer__tab" role="tab" id="tab-tea" aria-selected="false" aria-controls="viewer-stage" tabindex="-1" data-pdf="assets/menus/talisman-afternoon-tea.pdf" data-pages="assets/img/menus/afternoon-tea-1.jpg,assets/img/menus/afternoon-tea-2.jpg" data-title="Afternoon tea menu">Afternoon Tea</button>
       </div>
-      <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+      <button class="viewer__close" type="button" data-menu-close="" aria-label="Close the menus">&times;</button>
     </div>
     <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-main">
-      <div class="viewer__pages" data-viewer-pages></div>
+      <div class="viewer__pages" data-viewer-pages=""></div>
     </div>
   </div>
 </div>
@@ -216,7 +213,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -227,12 +224,12 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

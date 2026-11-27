@@ -1,0 +1,92 @@
+{
+  "seo": {
+    "title": "Art, Live Music & Events | The Talisman, Karen, Nairobi",
+    "description": "Local artists on our walls, live music and DJ nights at The Talisman in Karen, Nairobi. A hub for art and culture on Ngong Road.",
+    "image": "/assets/img/events-hero-lounge.jpg",
+    "noindex": false
+  },
+  "top": {
+    "hero_image": {
+      "src": "/assets/img/events-hero-lounge.jpg",
+      "alt": "The lounge hung with bold paintings by local artists"
+    },
+    "small_label": "Art & Events",
+    "page_heading": "A hub for art\n*and culture.*",
+    "intro": "Local artists on the walls, live music and DJs. Always more than a dining room."
+  },
+  "art": {
+    "small_label": "The Art",
+    "heading": "Local artists,\n*on our walls.*",
+    "intro": "We support local artists and feature their work regularly. Almost all of it is for sale.",
+    "gallery": [
+      {
+        "image": {
+          "src": "/assets/img/art-harbour.jpg",
+          "alt": "A large oil painting of dhows and a Kenyan flag, hung above a carved chest"
+        }
+      },
+      {
+        "image": {
+          "src": "/assets/img/art-bird-elephant.jpg",
+          "alt": "Bird and elephant canvases hung along the red dining room wall"
+        }
+      },
+      {
+        "image": {
+          "src": "/assets/img/art-easels-garden.jpg",
+          "alt": "Paintings shown on easels beside a table in the Talisman garden"
+        }
+      },
+      {
+        "image": {
+          "src": "/assets/img/art-elephant-easel.jpg",
+          "alt": "An elephant portrait on an easel beside the garden fountain"
+        }
+      },
+      {
+        "image": {
+          "src": "/assets/img/art-artist-painting.jpg",
+          "alt": "A local artist painting zebras on the terrace"
+        }
+      },
+      {
+        "image": {
+          "src": "/assets/img/art-interior.jpg",
+          "alt": "Carved pillars, stained glass and collected pieces in the dining room"
+        }
+      }
+    ]
+  },
+  "music": {
+    "small_label": "Live Nights",
+    "heading": "The band starts\n*when the plates clear.*",
+    "intro": "Jazz and soul by the fireplace. No stage, no tickets. Once the tables clear, the DJs take over.",
+    "image_1": {
+      "src": "/assets/img/music-guitarist-lamps.jpg",
+      "alt": "A guitarist singing under the warm lamps at Talisman"
+    },
+    "image_2": {
+      "src": "/assets/img/band-lion.jpg",
+      "alt": "A guitarist playing at Talisman"
+    }
+  },
+  "nights": {
+    "image_1": {
+      "src": "/assets/img/guitarist-stage.jpg",
+      "alt": "The guitarist playing beneath the wall art at Talisman"
+    },
+    "image_2": {
+      "src": "/assets/img/nights-singers-lights.jpg",
+      "alt": "Singers and saxophone under the fairy lights in the garden"
+    },
+    "image_3": {
+      "src": "/assets/img/bartender.jpg",
+      "alt": "The bar in full flow at Talisman"
+    },
+    "text": "Film nights and art openings run through the year alongside the music.",
+    "button": {
+      "label": "Plan your visit",
+      "href": "index.html#visit"
+    }
+  }
+}

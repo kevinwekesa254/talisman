@@ -1,10 +1,13 @@
 # The Talisman — Karen, Nairobi
 
-A four-page static site: **Home · Menu · Art & Events · Our Story**.
-No build step, no dependencies, no framework. Open the files or serve the folder.
+A static site: **Home · Menu · Beverages · Art & Events · Our Story**, plus legal,
+thank-you and 404 pages, with an admin at `/admin` (bookings, customers,
+page builder, team).
 
 ```bash
-python3 -m http.server 8787      # → http://localhost:8787
+npm install
+npm run dev      # site → http://localhost:8788   admin → http://localhost:8788/admin/
+npm run build    # writes the public site to dist/ (what Vercel serves)
 ```
 
 ---
@@ -111,10 +114,65 @@ garden. Both are asserted in the copy but not shown.
 
 ---
 
+## Admin (`/admin`)
+
+One place for the team: **Dashboard · Bookings · Customers · Pages ·
+Pictures · Menus · Contact and hours · Team**.
+
+- **Bookings.** The booking form on the home page posts to `/api/book`. Each request is
+  saved, the guest is added to Customers, and (if email is connected) the team gets an
+  email. Staff confirm, seat, cancel or mark no-shows; "Confirm on WhatsApp" opens
+  WhatsApp with a ready message. Phone and walk-in bookings can be added by hand.
+- **Customers.** Built from bookings, keyed by phone number. Tags, notes, CSV export,
+  and "Delete" removes a person and all their bookings (data-protection requests).
+- **Pages.** A visual editor: the page is shown live; click any text, picture or button
+  to edit it. Sections can be added from templates (`tools/cms/sections.js`), moved,
+  hidden and removed. Drafts autosave; *Publish* writes `content/pages/<page>.json`.
+  SEO tab: title, description, share picture, search-engine visibility, checks.
+- **Team.** Roles: Admin, Manager, Website editor, Front desk. Admins add
+  people and get a one-time password to pass on.
+
+**How pages are built.** The root `.html` files are templates. Editable elements carry
+`data-cms…` attributes; saved values live in `content/` (one JSON per page, plus
+`site.json` and `menus.json`). A page's optional `layout` list sets section order,
+hidden sections and added template sections. `tools/cms/build.js` writes it all into
+`dist/`. To make a new element editable, give it `data-cms="key" data-cms-label="Label"`
+inside a `data-cms-section`; it shows up in the editor straight away.
+
+**Code.** `admin/` (Preact + htm, no build step, vendored in `admin/vendor/`),
+`server/` (API: `api.js`, storage `store.js`, saving files `files.js`, booking
+emails `messages.js`), `api/` (the two Vercel functions).
+
+**On this computer** (`npm run dev`) everything runs in test mode: data is kept in
+`.data/` (git-ignored), and pages and pictures save into this folder.
+The first visit to `/admin` asks you to create the first admin account.
+Sample bookings can be loaded from the dashboard.
+
+### Admin: going live (one-time)
+
+In Vercel → talisman-karen:
+
+1. **Storage → Create → Upstash for Redis** (free tier), connect it to the project. This
+   sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`. Bookings, customers and team live here.
+2. **Settings → Environment Variables:**
+   - `SESSION_SECRET`: a long random string (`openssl rand -hex 32`).
+   - `ADMIN_SETUP_CODE`: any word; needed once to create the first admin account.
+   - `GITHUB_TOKEN`: a fine-grained token for `kevinwekesa254/talisman` with
+     *Contents: read and write*. Publishing commits to `main`, and Vercel redeploys.
+   - `NOTIFY_EMAIL`: where new table requests are emailed (optional).
+   - `BREVO_API_KEY` and `EMAIL_FROM` (e.g. `The Talisman <hello@talisman.co.ke>`, a
+     sender verified in Brevo): sends the booking emails (optional).
+3. Redeploy, open `/admin`, create the first account with the setup code, then add the
+   team from **Team**.
+
+Until step 1 is done the live booking form shows "could not send, please call us",
+so connect storage before (or with) the first deploy of this version.
+
 ## Deployment
 
 GitHub: `kevinwekesa254/talisman` → Vercel project **talisman-karen**, which deploys
-`main` automatically on every push. `vercel.json` sets a one-year immutable cache on
+`main` automatically on every push. Vercel runs `npm run build` and serves `dist/`;
+`api/admin.js` and `api/book.js` are the admin and booking form functions. `vercel.json` sets a one-year immutable cache on
 images, hourly revalidation on CSS/JS, `application/pdf` on the menus, and three security
 headers.
 

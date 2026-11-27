@@ -23,7 +23,7 @@
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Restaurant", "@id": "https://talisman-karen.vercel.app/#restaurant", "name": "The Talisman", "alternateName": "Talisman Restaurant Karen", "description": "Restaurant, bar and garden on Ngong Road in Karen, Nairobi, open since 2003. Eclectic cuisine from our own farm, a slow-fire smokehouse, local art and live music.", "url": "https://talisman-karen.vercel.app/", "image": ["https://talisman-karen.vercel.app/assets/img/home-hero-gazebos.jpg", "https://talisman-karen.vercel.app/assets/img/evening-lamplight.jpg", "https://talisman-karen.vercel.app/assets/img/story-hero-stained-glass.jpg"], "logo": "https://talisman-karen.vercel.app/assets/img/logo.png", "telephone": "+254705999997", "email": "hello@talisman.co.ke", "address": {"@type": "PostalAddress", "streetAddress": "320 Ngong Road", "addressLocality": "Karen, Nairobi", "addressRegion": "Nairobi", "addressCountry": "KE"}, "geo": {"@type": "GeoCoordinates", "latitude": -1.3230815, "longitude": 36.7031939}, "hasMap": "https://www.google.com/maps/search/?api=1&query=-1.3230815,36.7031939", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "11:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:30", "closes": "21:00"}], "servesCuisine": ["Eclectic", "International", "Kenyan", "Seafood", "Sushi"], "acceptsReservations": true, "hasMenu": "https://talisman-karen.vercel.app/menu.html", "foundingDate": "2003", "sameAs": ["https://www.instagram.com/talisman.nairobi/", "https://www.facebook.com/talismanrestaurant"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://talisman-karen.vercel.app/#website", "url": "https://talisman-karen.vercel.app/", "name": "The Talisman", "publisher": {"@id": "https://talisman-karen.vercel.app/#restaurant"}}]</script>
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="preload" as="image" href="assets/img/home-hero-gazebos.jpg" media="(min-width: 701px)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/home-hero-gazebos-m.jpg" media="(max-width: 700px)" fetchpriority="high">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -50,12 +50,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html" aria-current="page">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html">Food</a>
           <a href="beverages.html">Beverages</a>
         </div>
@@ -92,18 +92,18 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ 1 · HERO ══════════════════ -->
-<section class="bhero bhero--light" id="top">
+<section class="bhero bhero--light" id="top" data-cms-section="top" data-cms-label="Top of page">
   <picture>
     <source media="(max-width: 700px)" srcset="assets/img/home-hero-gazebos-m.jpg" width="933" height="1400">
-    <img class="bhero__media" src="assets/img/home-hero-gazebos.jpg" alt="Thatched gazebos in the Talisman garden by day" width="2400" height="1599" fetchpriority="high">
+    <img class="bhero__media" src="assets/img/home-hero-gazebos.jpg" alt="Thatched gazebos in the Talisman garden by day" width="2400" height="1599" fetchpriority="high" data-cms="hero_image" data-cms-label="Hero image">
   </picture>
   <div class="bhero__scrim"></div>
 
   <div class="bhero__body">
-    <p class="bhero__kicker">Ngong Road &middot; Karen &middot; Nairobi</p>
-    <p class="bhero__est">Est. 2003</p>
+    <p class="bhero__kicker" data-cms="small_label" data-cms-label="Small label">Ngong Road &middot; Karen &middot; Nairobi</p>
+    <p class="bhero__est" data-cms="established_line" data-cms-label="Established line">Est. 2003</p>
     <h1 class="bhero__title bhero__title--mark"><span class="bhero__the">The</span> TALISMAN</h1>
-    <p class="bhero__sub">An old house in Karen turned into one of Kenya&rsquo;s most loved restaurants. House-cured salmon, a garden farm, and thirty years of collected art.</p>
+    <p class="bhero__sub" data-cms="intro" data-cms-label="Intro">An old house in Karen turned into one of Kenya&rsquo;s most loved restaurants. House-cured salmon, a garden farm, and thirty years of collected art.</p>
 
     <div class="pillrow">
       <a class="pillrow__item pillrow__item--on" href="#visit">Plan your visit</a>
@@ -114,66 +114,65 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ 2 · OUR STORY ══════════════════ -->
-<section class="section section--story" id="about">
+<section class="section section--story" id="about" data-cms-section="about" data-cms-label="Our Story">
   <div class="wrap">
     <div class="split">
-      <div class="split__media" data-reveal>
+      <div class="split__media" data-reveal="">
         <figure class="solomedia">
-          <img class="crop-face" src="assets/img/story-guest-cocktail.jpg" alt="A guest laughing over cocktails at Talisman" loading="lazy" width="852" height="1280">
+          <img class="crop-face" src="assets/img/story-guest-cocktail.jpg" alt="A guest laughing over cocktails at Talisman" loading="lazy" width="852" height="1280" data-cms="image" data-cms-label="Image">
         </figure>
       </div>
 
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">Our Story</p>
-        <h2>A home for<br><em>every table.</em></h2>
-        <p style="margin-top:22px;max-width:40ch">
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">Our Story</p>
+        <h2 data-cms="heading" data-cms-label="Heading">A home for<br><em>every table.</em></h2>
+        <p style="margin-top:22px;max-width:40ch" data-cms="text" data-cms-label="Text">
           Since 2003, friends, families and neighbours from every corner of the world have gathered here.
           Stained glass, collected art and lanterns as the light goes.
         </p>
-        <p style="margin-top:28px"><a class="btn btn--primary" href="our-story.html">Read our story</a></p>
+        <p style="margin-top:28px"><a class="btn btn--primary" href="our-story.html" data-cms="button" data-cms-label="Button">Read our story</a></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════ 3 · ECLECTIC CUISINE ══════════════════ -->
-<section class="section" id="food">
+<section class="section" id="food" data-cms-section="food" data-cms-label="Eclectic Cuisine">
   <div class="wrap">
     <div class="section-head section-head--row">
-      <h2 data-reveal>Eclectic Cuisine<span class="subhead">from the farm, the fire and far away</span></h2>
-      <p data-reveal><a class="link-arrow" href="menu.html">See the menus</a></p>
+      <h2 data-reveal=""><span class="h2__main" data-cms="heading" data-cms-label="Heading">Eclectic Cuisine</span><span class="subhead" data-cms="subheading" data-cms-label="Subheading">from the farm, the fire and far away</span></h2>
+      <p data-reveal=""><a class="link-arrow" href="menu.html" data-cms="link" data-cms-label="Link">See the menus</a></p>
     </div>
 
     <div class="cuisine">
-      <figure data-reveal>
-        <img src="assets/img/cuisine-fish-wine.jpg" alt="Fish on a golden purée, served with a glass of white wine" loading="lazy" width="933" height="1400">
+      <figure data-reveal="">
+        <img src="assets/img/cuisine-fish-wine.jpg" alt="Fish on a golden purée, served with a glass of white wine" loading="lazy" width="933" height="1400" data-cms="image_1" data-cms-label="Image 1">
       </figure>
-      <figure data-reveal>
-        <img src="assets/img/cuisine-sashimi.jpg" alt="Tuna sashimi with pickled ginger and wasabi" loading="lazy" width="933" height="1400">
+      <figure data-reveal="">
+        <img src="assets/img/cuisine-sashimi.jpg" alt="Tuna sashimi with pickled ginger and wasabi" loading="lazy" width="933" height="1400" data-cms="image_2" data-cms-label="Image 2">
       </figure>
-      <figure data-reveal>
-        <img src="assets/img/cuisine-bowl-window.jpg" alt="A leafy bowl in the window light" loading="lazy" width="868" height="1280">
+      <figure data-reveal="">
+        <img src="assets/img/cuisine-bowl-window.jpg" alt="A leafy bowl in the window light" loading="lazy" width="868" height="1280" data-cms="image_3" data-cms-label="Image 3">
       </figure>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════ 4 · EVENING BANNER ══════════════════ -->
-<section class="band on-dark" id="evenings">
-  <img class="band__media" data-parallax="band" src="assets/img/evening-lamplight.jpg"
-       alt="Friends dining by lamplight in the Talisman garden" loading="lazy" width="2400" height="1599">
+<section class="band on-dark" id="evenings" data-cms-section="evenings" data-cms-label="Evening band (full-width photo)">
+  <img class="band__media" data-parallax="band" src="assets/img/evening-lamplight.jpg" alt="Friends dining by lamplight in the Talisman garden" loading="lazy" width="2400" height="1599" data-cms="background_image" data-cms-label="Background image">
   <div class="band__scrim"></div>
   <div class="band__body">
-    <h2 data-reveal style="font-size:clamp(2.125rem,5vw,4rem)">Evening falls,<br><em>and the lanterns take over.</em></h2>
+    <h2 data-reveal="" style="font-size:clamp(2.125rem,5vw,4rem)" data-cms="heading" data-cms-label="Heading">Evening falls,<br><em>and the lanterns take over.</em></h2>
   </div>
 </section>
 
 <!-- ══════════════════ 5 · PLAN YOUR VISIT ══════════════════ -->
-<section class="section" id="visit">
+<section class="section" id="visit" data-cms-section="visit" data-cms-label="Plan your visit">
   <div class="wrap">
     <div class="contact">
-      <div class="contact__aside" data-reveal>
-        <h2>Plan your<br><em>visit.</em></h2>
+      <div class="contact__aside" data-reveal="">
+        <h2 data-cms="heading" data-cms-label="Heading">Plan your<br><em>visit.</em></h2>
 
         <ul class="contact__list">
           <li>
@@ -186,7 +185,7 @@ setTimeout(function () {
             <span class="contact__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             </span>
-            <span class="contact__hours">
+            <span class="contact__hours" data-cms-site="hours_grid">
               <span>Tuesday to Friday</span><span>11:00 am to 10:00 pm</span>
               <span>Saturday</span><span>9:00 am to 9:00 pm</span>
               <span>Sunday</span><span>9:30 am to 9:00 pm</span>
@@ -199,57 +198,94 @@ setTimeout(function () {
           <a class="map__fallback" href="https://www.google.com/maps/search/?api=1&amp;query=-1.3230815,36.7031939" target="_blank" rel="noopener">Open the map</a>
         </div>
         <div class="map__actions">
-          <a class="btn btn--primary" data-directions href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939" target="_blank" rel="noopener">Get directions</a>
-          <button class="btn btn--ghost" type="button" data-share-location>Share location</button>
-          <span class="map__toast" data-share-toast role="status" aria-live="polite"></span>
+          <a class="btn btn--primary" data-directions="" href="https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939" target="_blank" rel="noopener" data-cms="button" data-cms-label="Button">Get directions</a>
+          <button class="btn btn--ghost" type="button" data-share-location="" data-cms="button_label" data-cms-label="Button label">Share location</button>
+          <span class="map__toast" data-share-toast="" role="status" aria-live="polite"></span>
         </div>
       </div>
 
-      <div class="contact__card" data-reveal>
-        <h3>Send us a message</h3>
+      <div class="contact__card" data-reveal="">
+        <h3 data-cms="title" data-cms-label="Title">Send us a message</h3>
 
-        <form class="form" data-validate data-redirect="thank-you.html" style="margin-top:26px" novalidate
-              data-success="Asante. We have your details and a member of our team will call you back to confirm your table.">
+        <form class="form" data-validate="" data-redirect="thank-you.html" style="margin-top:26px" novalidate="" data-success="Asante. We have your details and a member of our team will call you back to confirm your table.">
           <div class="form__status" role="status" aria-live="polite">
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 10-1.4 1.4l2 2a1 1 0 001.4 0l4-4z" clip-rule="evenodd"/></svg>
-            <span data-status-text></span>
+            <span data-status-text=""></span>
           </div>
 
           <div class="form__row">
             <div class="field">
               <label class="field__label" for="v-name">Full name <span class="field__req" aria-hidden="true">*</span></label>
-              <input class="field__input" id="v-name" name="name" type="text" autocomplete="name"
-                     required data-label="Full name" placeholder="Wanjiku Kamau">
+              <input class="field__input" id="v-name" name="name" type="text" autocomplete="name" required="" data-label="Full name" placeholder="Wanjiku Kamau">
               <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
             </div>
             <div class="field">
               <label class="field__label" for="v-phone">Contact number <span class="field__req" aria-hidden="true">*</span></label>
-              <input class="field__input" id="v-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"
-                     required data-label="Contact number" data-intl-tel placeholder="712 345 678">
+              <input class="field__input" id="v-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required="" data-label="Contact number" data-intl-tel="" placeholder="712 345 678">
               <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
             </div>
           </div>
 
           <div class="form__row">
             <div class="field">
-              <label class="field__label" for="v-date">Preferred date</label>
-              <input class="field__input" id="v-date" name="date" type="date" data-label="Preferred date" data-closed-days="1" aria-describedby="v-date-hint">
-              <p class="field__hint" id="v-date-hint">Tuesday to Sunday. We are closed on Mondays.</p>
+              <label class="field__label" for="v-email">Email</label>
+              <input class="field__input" id="v-email" name="email" type="email" autocomplete="email" data-label="Email" placeholder="wanjiku@example.com">
               <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
             </div>
             <div class="field">
+              <label class="field__label" for="v-date">Preferred date</label>
+              <input class="field__input" id="v-date" name="date" type="date" data-label="Preferred date" data-closed-days="1" data-closed-message="We are closed on Mondays. Please choose Tuesday to Sunday.">
+              <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="v-time">Preferred time</label>
+              <select class="field__input" id="v-time" name="time" data-label="Preferred time">
+                <option value="">Any time</option>
+                <option value="09:00">9:00 am</option>
+                <option value="09:30">9:30 am</option>
+                <option value="10:00">10:00 am</option>
+                <option value="10:30">10:30 am</option>
+                <option value="11:00">11:00 am</option>
+                <option value="11:30">11:30 am</option>
+                <option value="12:00">12:00 pm</option>
+                <option value="12:30">12:30 pm</option>
+                <option value="13:00">1:00 pm</option>
+                <option value="13:30">1:30 pm</option>
+                <option value="14:00">2:00 pm</option>
+                <option value="14:30">2:30 pm</option>
+                <option value="15:00">3:00 pm</option>
+                <option value="15:30">3:30 pm</option>
+                <option value="16:00">4:00 pm</option>
+                <option value="16:30">4:30 pm</option>
+                <option value="17:00">5:00 pm</option>
+                <option value="17:30">5:30 pm</option>
+                <option value="18:00">6:00 pm</option>
+                <option value="18:30">6:30 pm</option>
+                <option value="19:00">7:00 pm</option>
+                <option value="19:30">7:30 pm</option>
+                <option value="20:00">8:00 pm</option>
+                <option value="20:30">8:30 pm</option>
+                <option value="21:00">9:00 pm</option>
+                <option value="21:30">9:30 pm</option>
+              </select>
+            </div>
+            <div class="field">
               <label class="field__label" for="v-guests">How many of you?</label>
-              <input class="field__input" id="v-guests" name="guests" type="number" min="1" max="60" step="1"
-                     inputmode="numeric" data-label="Party size" placeholder="4">
+              <input class="field__input" id="v-guests" name="guests" type="number" min="1" max="60" step="1" inputmode="numeric" data-label="Party size" placeholder="4">
               <p class="field__error" role="alert"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 5h2v6H9V5zm0 8h2v2H9v-2z" clip-rule="evenodd"/></svg><span></span></p>
             </div>
           </div>
 
           <div class="field">
             <label class="field__label" for="v-notes">Message</label>
-            <textarea class="field__input" id="v-notes" name="notes" rows="3"
-                      placeholder="A birthday, a high chair, a table near the fire…"></textarea>
+            <textarea class="field__input" id="v-notes" name="notes" rows="3" placeholder="A birthday, a high chair, a table near the fire…"></textarea>
           </div>
+
+          <label class="consent"><input type="checkbox" name="marketing" value="yes"> <span>Keep me posted about events and offers by email or WhatsApp. You can stop at any time.</span></label>
+          <div class="hp" aria-hidden="true"><label for="v-company">Company</label><input id="v-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
 
           <button class="btn btn--primary" type="submit" style="justify-self:start">Send message</button>
         </form>
@@ -283,7 +319,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -294,14 +330,14 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-<script src="assets/vendor/intl-tel-input/js/intlTelInput.min.js" defer></script>
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer=""></script>
+<script src="assets/vendor/intl-tel-input/js/intlTelInput.min.js" defer=""></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

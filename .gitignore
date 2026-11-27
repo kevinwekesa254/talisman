@@ -13,3 +13,16 @@ Thumbs.db
 __probe.html
 __debug.html
 __harness.html
+
+# Build output and dependencies
+node_modules/
+dist/
+
+# Source photo drop folder (images are copied into assets/img)
+Talisman Website Images/
+
+# Admin data on this computer (bookings, users, drafts) and secrets
+.data/
+.env
+.env.local
+.vercel/

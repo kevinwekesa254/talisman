@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "The Talisman | Restaurant, Bar & Garden in Karen, Nairobi",
+    "description": "The Talisman on Ngong Road, Karen: a garden restaurant and bar since 2003. Eclectic cuisine from our own farm, cocktails, local art and live music in Nairobi.",
+    "image": "/assets/img/home-hero-gazebos.jpg",
+    "noindex": false
+  },
+  "top": {
+    "hero_image": {
+      "src": "/assets/img/home-hero-gazebos.jpg",
+      "alt": "Thatched gazebos in the Talisman garden by day",
+      "mobile_src": "/assets/img/home-hero-gazebos-m.jpg"
+    },
+    "small_label": "Ngong Road · Karen · Nairobi",
+    "established_line": "Est. 2003",
+    "intro": "An old house in Karen turned into one of Kenya’s most loved restaurants. House-cured salmon, a garden farm, and thirty years of collected art."
+  },
+  "about": {
+    "image": {
+      "src": "/assets/img/story-guest-cocktail.jpg",
+      "alt": "A guest laughing over cocktails at Talisman"
+    },
+    "small_label": "Our Story",
+    "heading": "A home for\n*every table.*",
+    "text": "Since 2003, friends, families and neighbours from every corner of the world have gathered here. Stained glass, collected art and lanterns as the light goes.",
+    "button": {
+      "label": "Read our story",
+      "href": "our-story.html"
+    }
+  },
+  "food": {
+    "heading": "Eclectic Cuisine",
+    "subheading": "from the farm, the fire and far away",
+    "link": {
+      "label": "See the menus",
+      "href": "menu.html"
+    },
+    "image_1": {
+      "src": "/assets/img/cuisine-fish-wine.jpg",
+      "alt": "Fish on a golden purée, served with a glass of white wine"
+    },
+    "image_2": {
+      "src": "/assets/img/cuisine-sashimi.jpg",
+      "alt": "Tuna sashimi with pickled ginger and wasabi"
+    },
+    "image_3": {
+      "src": "/assets/img/cuisine-bowl-window.jpg",
+      "alt": "A leafy bowl in the window light"
+    }
+  },
+  "evenings": {
+    "background_image": {
+      "src": "/assets/img/evening-lamplight.jpg",
+      "alt": "Friends dining by lamplight in the Talisman garden"
+    },
+    "heading": "Evening falls,\n*and the lanterns take over.*"
+  },
+  "visit": {
+    "heading": "Plan your\n*visit.*",
+    "button": {
+      "label": "Get directions",
+      "href": "https://www.google.com/maps/dir/?api=1&amp;destination=-1.3230815,36.7031939"
+    },
+    "button_label": "Share location",
+    "title": "Send us a message"
+  }
+}

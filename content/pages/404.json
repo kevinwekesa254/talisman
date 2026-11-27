@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Page not found | The Talisman, Karen, Nairobi",
+    "description": "This page could not be found. Find your way back to The Talisman in Karen, Nairobi.",
+    "image": "/assets/img/home-hero-gazebos.jpg",
+    "noindex": true
+  },
+  "message": {
+    "small_label": "Error 404",
+    "page_heading": "This page has *wandered into the garden.*",
+    "intro": "The page you were looking for has moved or no longer exists. Here are a few good places to start again.",
+    "button_1": {
+      "label": "Back to home",
+      "href": "/index.html"
+    },
+    "button_2": {
+      "label": "See the menus",
+      "href": "/menu.html"
+    },
+    "button_3": {
+      "label": "Plan your visit",
+      "href": "/index.html#visit"
+    }
+  }
+}

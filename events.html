@@ -23,7 +23,7 @@
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebPage", "url": "https://talisman-karen.vercel.app/events.html", "name": "Art, Live Music & Events | The Talisman, Karen, Nairobi", "description": "Local artists on our walls, live music and DJ nights at The Talisman in Karen, Nairobi. A hub for art and culture on Ngong Road.", "isPartOf": {"@id": "https://talisman-karen.vercel.app/#website"}, "about": {"@id": "https://talisman-karen.vercel.app/#restaurant"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://talisman-karen.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Art & Events", "item": "https://talisman-karen.vercel.app/events.html"}]}]</script>
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="preload" as="image" href="assets/img/events-hero-lounge.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
@@ -46,12 +46,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html">Food</a>
           <a href="beverages.html">Beverages</a>
         </div>
@@ -88,13 +88,13 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ HERO ══════════════════ -->
-<section class="bhero bhero--page">
-  <img class="bhero__media bhero__media--art" src="assets/img/events-hero-lounge.jpg" alt="The lounge hung with bold paintings by local artists" width="2400" height="1599" fetchpriority="high">
+<section class="bhero bhero--page" data-cms-section="top" data-cms-label="Top of page">
+  <img class="bhero__media bhero__media--art" src="assets/img/events-hero-lounge.jpg" alt="The lounge hung with bold paintings by local artists" width="2400" height="1599" fetchpriority="high" data-cms="hero_image" data-cms-label="Hero image">
   <div class="bhero__scrim"></div>
   <div class="bhero__body">
-    <p class="bhero__kicker">Art &amp; Events</p>
-    <h1 class="bhero__title">A hub for art<br><em>and culture.</em></h1>
-    <p class="bhero__sub">Local artists on the walls, live music and DJs. Always more than a dining room.</p>
+    <p class="bhero__kicker" data-cms="small_label" data-cms-label="Small label">Art &amp; Events</p>
+    <h1 class="bhero__title" data-cms="page_heading" data-cms-label="Page heading">A hub for art<br><em>and culture.</em></h1>
+    <p class="bhero__sub" data-cms="intro" data-cms-label="Intro">Local artists on the walls, live music and DJs. Always more than a dining room.</p>
 
     <div class="pillrow">
       <a class="pillrow__item pillrow__item--on" href="#art">The Art</a>
@@ -105,44 +105,44 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ THE ART ══════════════════ -->
-<section class="section" id="art">
+<section class="section" id="art" data-cms-section="art" data-cms-label="The Art">
   <div class="wrap">
     <div class="center" style="max-width:46ch;margin-inline:auto;margin-bottom:clamp(28px,4vw,48px)">
-      <p class="eyebrow eyebrow--wine" data-reveal>The Art</p>
-      <h2 data-reveal style="margin-top:14px">Local artists,<br><em>on our walls.</em></h2>
-      <p data-reveal class="lead" style="margin-top:20px">
+      <p class="eyebrow eyebrow--wine" data-reveal="" data-cms="small_label" data-cms-label="Small label">The Art</p>
+      <h2 data-reveal="" style="margin-top:14px" data-cms="heading" data-cms-label="Heading">Local artists,<br><em>on our walls.</em></h2>
+      <p data-reveal="" class="lead" style="margin-top:20px" data-cms="intro" data-cms-label="Intro">
         We support local artists and feature their work regularly. Almost all of it is for sale.
       </p>
     </div>
 
-    <div class="gallery gallery--auto" data-gallery data-gallery-auto>
-      <div class="gallery__track" data-gallery-track>
+    <div class="gallery gallery--auto" data-gallery="" data-gallery-auto="">
+      <div class="gallery__track" data-gallery-track="" data-cms-list="gallery" data-cms-label="Gallery" data-cms-item="Picture">
         <figure class="gallery__item">
-          <img src="assets/img/art-harbour.jpg" alt="A large oil painting of dhows and a Kenyan flag, hung above a carved chest" loading="lazy" width="1200" height="1600">
+          <img src="assets/img/art-harbour.jpg" alt="A large oil painting of dhows and a Kenyan flag, hung above a carved chest" loading="lazy" width="1200" height="1600" data-cms="image" data-cms-label="Picture">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-bird-elephant.jpg" alt="Bird and elephant canvases hung along the red dining room wall" loading="lazy" width="1200" height="1600">
+          <img src="assets/img/art-bird-elephant.jpg" alt="Bird and elephant canvases hung along the red dining room wall" loading="lazy" width="1200" height="1600" data-cms="image" data-cms-label="Picture">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-easels-garden.jpg" alt="Paintings shown on easels beside a table in the Talisman garden" loading="lazy" width="1200" height="1600">
+          <img src="assets/img/art-easels-garden.jpg" alt="Paintings shown on easels beside a table in the Talisman garden" loading="lazy" width="1200" height="1600" data-cms="image" data-cms-label="Picture">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-elephant-easel.jpg" alt="An elephant portrait on an easel beside the garden fountain" loading="lazy" width="1200" height="1600">
+          <img src="assets/img/art-elephant-easel.jpg" alt="An elephant portrait on an easel beside the garden fountain" loading="lazy" width="1200" height="1600" data-cms="image" data-cms-label="Picture">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-artist-painting.jpg" alt="A local artist painting zebras on the terrace" loading="lazy" width="933" height="1400">
+          <img src="assets/img/art-artist-painting.jpg" alt="A local artist painting zebras on the terrace" loading="lazy" width="933" height="1400" data-cms="image" data-cms-label="Picture">
         </figure>
         <figure class="gallery__item">
-          <img src="assets/img/art-interior.jpg" alt="Carved pillars, stained glass and collected pieces in the dining room" loading="lazy" width="1066" height="1600">
+          <img src="assets/img/art-interior.jpg" alt="Carved pillars, stained glass and collected pieces in the dining room" loading="lazy" width="1066" height="1600" data-cms="image" data-cms-label="Picture">
         </figure>
       </div>
 
       <div class="gallery__controls">
-        <button class="gallery__arrow" type="button" data-gallery-prev aria-label="Previous images">
+        <button class="gallery__arrow" type="button" data-gallery-prev="" aria-label="Previous images">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m0 0l6-6m-6 6l6 6"/></svg>
         </button>
-        <div class="gallery__bar"><span data-gallery-bar></span></div>
-        <button class="gallery__arrow" type="button" data-gallery-next aria-label="Next images">
+        <div class="gallery__bar"><span data-gallery-bar=""></span></div>
+        <button class="gallery__arrow" type="button" data-gallery-next="" aria-label="Next images">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
         </button>
       </div>
@@ -151,24 +151,24 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ MUSIC & DJs ══════════════════ -->
-<section class="section on-dark section--ember" id="music">
+<section class="section on-dark section--ember" id="music" data-cms-section="music" data-cms-label="Live Nights">
   <div class="wrap">
     <div class="alt__row" style="align-items:center">
-      <div class="alt__body" data-reveal>
-        <p class="eyebrow">Live Nights</p>
-        <h2 style="margin-top:16px">The band starts<br><em>when the plates clear.</em></h2>
-        <p class="lead" style="margin-top:24px">
+      <div class="alt__body" data-reveal="">
+        <p class="eyebrow" data-cms="small_label" data-cms-label="Small label">Live Nights</p>
+        <h2 style="margin-top:16px" data-cms="heading" data-cms-label="Heading">The band starts<br><em>when the plates clear.</em></h2>
+        <p class="lead" style="margin-top:24px" data-cms="intro" data-cms-label="Intro">
           Jazz and soul by the fireplace. No stage, no tickets.
           Once the tables clear, the DJs take over.
         </p>
       </div>
 
-      <div class="stack-pair" data-reveal>
-        <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
-          <img class="crop-face" src="assets/img/music-guitarist-lamps.jpg" alt="A guitarist singing under the warm lamps at Talisman" loading="lazy" width="933" height="1400">
+      <div class="stack-pair" data-reveal="">
+        <figure class="figure mono" data-tilt="" style="aspect-ratio:3/4">
+          <img class="crop-face" src="assets/img/music-guitarist-lamps.jpg" alt="A guitarist singing under the warm lamps at Talisman" loading="lazy" width="933" height="1400" data-cms="image_1" data-cms-label="Image 1">
         </figure>
-        <figure class="figure mono" data-tilt style="aspect-ratio:3/4">
-          <img class="crop-face" src="assets/img/band-lion.jpg" alt="A guitarist playing at Talisman" loading="lazy" width="1800" height="1200">
+        <figure class="figure mono" data-tilt="" style="aspect-ratio:3/4">
+          <img class="crop-face" src="assets/img/band-lion.jpg" alt="A guitarist playing at Talisman" loading="lazy" width="1800" height="1200" data-cms="image_2" data-cms-label="Image 2">
         </figure>
       </div>
     </div>
@@ -176,26 +176,26 @@ setTimeout(function () {
 </section>
 
 <!-- ══════════════════ NIGHTS GALLERY (part of Live Nights) ══════════════════ -->
-<section class="section section--cream" id="nights">
+<section class="section section--cream" id="nights" data-cms-section="nights" data-cms-label="Live Nights photos">
   <div class="wrap">
     <div class="grid grid--3">
-      <figure class="figure mono" data-reveal data-tilt>
-        <img class="crop-face" src="assets/img/guitarist-stage.jpg" alt="The guitarist playing beneath the wall art at Talisman" loading="lazy" width="1600" height="1067">
+      <figure class="figure mono" data-reveal="" data-tilt="">
+        <img class="crop-face" src="assets/img/guitarist-stage.jpg" alt="The guitarist playing beneath the wall art at Talisman" loading="lazy" width="1600" height="1067" data-cms="image_1" data-cms-label="Image 1">
       </figure>
-      <figure class="figure mono" data-reveal data-tilt>
-        <img class="crop-face" src="assets/img/nights-singers-lights.jpg" alt="Singers and saxophone under the fairy lights in the garden" loading="lazy" width="1120" height="1400">
+      <figure class="figure mono" data-reveal="" data-tilt="">
+        <img class="crop-face" src="assets/img/nights-singers-lights.jpg" alt="Singers and saxophone under the fairy lights in the garden" loading="lazy" width="1120" height="1400" data-cms="image_2" data-cms-label="Image 2">
       </figure>
-      <figure class="figure mono" data-reveal data-tilt>
-        <img class="crop-face" src="assets/img/bartender.jpg" alt="The bar in full flow at Talisman" loading="lazy" width="1066" height="1600">
+      <figure class="figure mono" data-reveal="" data-tilt="">
+        <img class="crop-face" src="assets/img/bartender.jpg" alt="The bar in full flow at Talisman" loading="lazy" width="1066" height="1600" data-cms="image_3" data-cms-label="Image 3">
       </figure>
     </div>
 
-    <p data-reveal class="center" style="margin-top:clamp(24px,3vw,36px);font-size:var(--t-small);color:var(--ink-3);max-width:52ch;margin-inline:auto">
+    <p data-reveal="" class="center" style="margin-top:clamp(24px,3vw,36px);font-size:var(--t-small);color:var(--ink-3);max-width:52ch;margin-inline:auto" data-cms="text" data-cms-label="Text">
       Film nights and art openings run through the year alongside the music.
     </p>
 
-    <div data-reveal class="hero__actions" style="margin-top:clamp(28px,4vw,40px);justify-content:center">
-      <a class="btn btn--primary" href="index.html#visit">Plan your visit</a>
+    <div data-reveal="" class="hero__actions" style="margin-top:clamp(28px,4vw,40px);justify-content:center">
+      <a class="btn btn--primary" href="index.html#visit" data-cms="button" data-cms-label="Button">Plan your visit</a>
     </div>
   </div>
 </section>
@@ -225,7 +225,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -236,12 +236,12 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

@@ -2649,3 +2649,68 @@ input.field__input, select.field__input { height: 58px; min-height: 58px; }
 .iti__search-input:focus { outline: none; }
 .iti__country.iti__highlight { background: rgba(107,34,42,.08); }
 .iti__dial-code { color: var(--ink-3); }
+
+/* ===== 51. Page-builder sections (tools/cms/sections.js) ===== */
+.btn--light { background: var(--cream); color: var(--ink); box-shadow: var(--e-2); }
+.btn--light:hover { background: #fff; color: var(--wine); }
+.blk--dark { background: var(--night); }
+.blk-cta--wine { background: var(--wine); }
+.blk__head { max-width: 46rem; margin-bottom: clamp(24px, 3vw, 40px); }
+.blk__head h2, .blk-split__words h2 { margin-top: 10px; }
+.blk__text { color: var(--ink-2); max-width: var(--measure); margin-top: 14px; }
+.blk .btn { margin-top: 26px; }
+.blk__ph { display: grid; place-items: center; aspect-ratio: 4/3; background: var(--sand); color: var(--ink-3); font-size: var(--t-small); }
+
+.blk-split__grid { display: grid; gap: clamp(28px, 5vw, 80px); align-items: center; }
+.blk-split__media { margin: 0; }
+.blk-split__media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+@media (min-width: 900px) {
+  .blk-split__grid { grid-template-columns: 1fr 1fr; }
+  .blk-split--left .blk-split__media { order: -1; }
+}
+
+.blk-banner { position: relative; display: grid; min-height: clamp(380px, 56vw, 640px); align-items: end; overflow: hidden; }
+.blk-banner__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.blk-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(23,19,16,.72), rgba(23,19,16,.08) 65%); }
+.blk-banner__inner { position: relative; z-index: 1; padding-block: clamp(36px, 6vw, 80px); }
+.blk-banner > .blk__ph { position: absolute; inset: 0; aspect-ratio: auto; }
+
+.blk-statement__quote { font-family: var(--serif); font-size: var(--t-h2); line-height: 1.12; color: var(--ink); margin-top: 10px; }
+.on-dark .blk-statement__quote { color: #F5F1E8; }
+.blk-statement__by { margin-top: 18px; color: var(--ink-3); font-size: var(--t-small); }
+
+.blk-cards__grid { display: grid; gap: clamp(20px, 2.5vw, 36px); }
+@media (min-width: 760px) { .blk-cards__grid { grid-template-columns: repeat(3, 1fr); } }
+.blk-cards__media { margin: 0 0 18px; }
+.blk-cards__media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.blk-cards__item h3 { font-size: var(--t-h4); }
+.blk-cards__item .blk__text { margin-top: 6px; }
+
+.blk-gallery__grid { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .blk-gallery__grid { grid-template-columns: repeat(3, 1fr); } .blk-gallery__item:nth-child(5n+1) { grid-column: span 2; } }
+.blk-gallery__item { margin: 0; }
+.blk-gallery__item img { width: 100%; height: 100%; min-height: 220px; max-height: 420px; object-fit: cover; }
+
+.blk-columns__grid { display: grid; gap: clamp(20px, 4vw, 64px); }
+@media (min-width: 800px) { .blk-columns__grid { grid-template-columns: 1fr 1fr; } }
+.blk-columns__grid .blk__text { margin-top: 0; }
+
+.blk-faq__list { border-top: 1px solid var(--linen); }
+.blk-faq__item { border-bottom: 1px solid var(--linen); }
+.blk-faq__item summary { cursor: pointer; list-style: none; padding: 20px 36px 20px 0; position: relative; font: 500 1.0625rem/1.4 var(--sans); color: var(--ink); }
+.blk-faq__item summary::-webkit-details-marker { display: none; }
+.blk-faq__item summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 1.4rem; color: var(--wine); transition: transform var(--d-fast) var(--ease); }
+.blk-faq__item[open] summary::after { transform: rotate(45deg); }
+.blk-faq__item .blk__text { margin: 0 0 20px; }
+
+.blk-cta__inner { display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; justify-content: space-between; }
+.blk-cta h2 { font-size: var(--t-h3); }
+.blk-cta .btn { margin-top: 0; }
+
+/* ===== 52. Booking form: time and marketing consent ===== */
+select.field__input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236F6656' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.consent { display: flex; gap: 12px; align-items: flex-start; font-size: .9375rem; line-height: 1.55; color: var(--ink-2); cursor: pointer; }
+.consent input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--wine); }
+.hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.form__status.is-error { background: #FBEDEC; border-color: #E8C4C0; }
+.form__status.is-error svg { color: #A33; }

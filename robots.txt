@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /thank-you.html
+Disallow: /admin/
 
 Sitemap: https://talisman-karen.vercel.app/sitemap.xml

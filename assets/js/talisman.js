@@ -220,7 +220,7 @@
         var closed = (input.dataset.closedDays || '').split(',').filter(Boolean).map(Number);
         if (isNaN(day)) msg = 'Please choose a date.';
         else if (day < today) msg = 'Please choose a date from today onwards.';
-        else if (closed.indexOf(day.getDay()) !== -1) msg = 'We are closed on Mondays. Please choose Tuesday to Sunday.';
+        else if (closed.indexOf(day.getDay()) !== -1) msg = input.dataset.closedMessage || 'We are closed that day. Please choose another date.';
       } else if (v && input.type === 'number') {
         var n = Number(v), min = Number(input.min || -Infinity), max = Number(input.max || Infinity);
         if (isNaN(n) || n < min || n > max) msg = 'Please enter a number between ' + input.min + ' and ' + input.max + '.';
@@ -286,8 +286,24 @@
         var label = btn ? btn.textContent : '';
         if (btn) { btn.disabled = true; btn.style.opacity = '.55'; btn.textContent = 'Sending…'; }
 
-        // No backend yet — WordPress will wire this to Contact Form 7 / admin-ajax.
-        window.setTimeout(function () {
+        // Save the table request, then go to the thank-you page.
+        var data = {};
+        new FormData(form).forEach(function (v, k) { data[k] = v; });
+        if (data.phone_full) data.phone = data.phone_full;
+        data.marketing = !!form.querySelector('input[name="marketing"]:checked');
+        data.page = location.pathname;
+        fetch('/api/book', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(function () { done(); })
+          .catch(function () {
+            if (btn) { btn.disabled = false; btn.style.opacity = ''; btn.textContent = label; }
+            if (status) {
+              var tel = document.querySelector('a[href^="tel:"]');
+              status.querySelector('[data-status-text]').textContent = 'We could not send that just now. Please try again, or call us' + (tel ? ' on ' + tel.textContent.trim() : '') + '.';
+              status.classList.add('is-visible', 'is-error');
+            }
+          });
+        function done() {
           if (form.dataset.redirect) { window.location.href = form.dataset.redirect; return; }
           if (status) {
             status.querySelector('[data-status-text]').textContent = form.dataset.success ||
@@ -300,7 +316,7 @@
             i.removeAttribute('aria-invalid');
           });
           if (btn) { btn.disabled = false; btn.style.opacity = ''; btn.textContent = label; }
-        }, 700);
+        }
       });
     });
   })();

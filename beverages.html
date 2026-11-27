@@ -23,7 +23,7 @@
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebPage", "url": "https://talisman-karen.vercel.app/beverages.html", "name": "Coffee, Wine & Cocktails | The Talisman Bar, Karen, Nairobi", "description": "Kenyan single-origin coffee, a short wine list and garden cocktails at The Talisman bar on Ngong Road, Karen, Nairobi. See the drinks menus.", "isPartOf": {"@id": "https://talisman-karen.vercel.app/#website"}, "about": {"@id": "https://talisman-karen.vercel.app/#restaurant"}, "mainEntity": {"@type": "Menu", "name": "The Talisman drinks", "hasMenuSection": [{"@type": "MenuSection", "name": "Coffee"}, {"@type": "MenuSection", "name": "Wine"}, {"@type": "MenuSection", "name": "Cocktails"}]}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://talisman-karen.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Beverages", "item": "https://talisman-karen.vercel.app/beverages.html"}]}]</script>
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/talisman.css?v=20261125h">
 </head>
@@ -45,12 +45,12 @@ setTimeout(function () {
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a class="nav__link" href="index.html">Home</a>
-      <div class="nav__group" data-nav-group>
-        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle>
+      <div class="nav__group" data-nav-group="">
+        <button class="nav__link--sub" type="button" aria-expanded="false" aria-haspopup="true" data-nav-toggle="">
           Menu
           <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M1 1.5L6 6.5l5-5"/></svg>
         </button>
-        <div class="nav__sub" data-nav-sub>
+        <div class="nav__sub" data-nav-sub="">
           <a href="menu.html">Food</a>
           <a href="beverages.html" aria-current="page">Beverages</a>
         </div>
@@ -87,50 +87,50 @@ setTimeout(function () {
 <main id="main">
 
 <!-- ══════════════════ THE THREE ══════════════════ -->
-<section class="section section--pagetop" id="beverages">
+<section class="section section--pagetop" id="beverages" data-cms-section="beverages" data-cms-label="Drinks (top of page)">
   <div class="wrap">
-    <h1 class="visually-hidden">Beverages</h1>
+    <h1 class="visually-hidden" data-cms="page_heading" data-cms-label="Page heading (hidden, read by search engines)">Beverages</h1>
 
     <div class="introcards introcards--even">
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/drink-espresso-machine.jpg" alt="A fresh shot of coffee in the portafilter at the Talisman espresso machine" loading="lazy" width="1170" height="1170"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img src="assets/img/drink-espresso-machine.jpg" alt="A fresh shot of coffee in the portafilter at the Talisman espresso machine" loading="lazy" width="1170" height="1170" data-cms="coffee_image" data-cms-label="Coffee · Image"></figure>
         <div class="introcard__body">
-          <h3>Coffee</h3>
-          <p>Kenyan single-origin, roasted locally.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-coffee">See the menu</button>
+          <h3 data-cms="coffee_title" data-cms-label="Coffee · Title">Coffee</h3>
+          <p data-cms="coffee_text" data-cms-label="Coffee · Text">Kenyan single-origin, roasted locally.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-coffee" data-cms="coffee_button_label" data-cms-label="Coffee · Button label">See the menu</button>
         </div>
       </article>
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img src="assets/img/drink-wine-pour.jpg" alt="White wine being poured into two glasses" loading="lazy" width="1120" height="1400"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img src="assets/img/drink-wine-pour.jpg" alt="White wine being poured into two glasses" loading="lazy" width="1120" height="1400" data-cms="wine_image" data-cms-label="Wine · Image"></figure>
         <div class="introcard__body">
-          <h3>Wine</h3>
-          <p>A short list, chosen to sit well outdoors.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-wine">See the menu</button>
+          <h3 data-cms="wine_title" data-cms-label="Wine · Title">Wine</h3>
+          <p data-cms="wine_text" data-cms-label="Wine · Text">A short list, chosen to sit well outdoors.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-wine" data-cms="wine_button_label" data-cms-label="Wine · Button label">See the menu</button>
         </div>
       </article>
-      <article class="introcard" data-reveal>
-        <figure class="introcard__media"><img class="crop-face" src="assets/img/drink-cucumber-cocktail.jpg" alt="The bartender pouring a cucumber cocktail at the Talisman bar" loading="lazy" width="1120" height="1400"></figure>
+      <article class="introcard" data-reveal="">
+        <figure class="introcard__media"><img class="crop-face" src="assets/img/drink-cucumber-cocktail.jpg" alt="The bartender pouring a cucumber cocktail at the Talisman bar" loading="lazy" width="1120" height="1400" data-cms="cocktails_image" data-cms-label="Cocktails · Image"></figure>
         <div class="introcard__body">
-          <h3>Cocktails</h3>
-          <p>Mint and lemongrass from the garden.</p>
-          <button class="link-arrow" type="button" data-menu-tab="tab-cocktails">See the menu</button>
+          <h3 data-cms="cocktails_title" data-cms-label="Cocktails · Title">Cocktails</h3>
+          <p data-cms="cocktails_text" data-cms-label="Cocktails · Text">Mint and lemongrass from the garden.</p>
+          <button class="link-arrow" type="button" data-menu-tab="tab-cocktails" data-cms="cocktails_button_label" data-cms-label="Cocktails · Button label">See the menu</button>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="bar">
+<section class="section" id="bar" data-cms-section="bar" data-cms-label="The Bar">
   <div class="wrap">
     <div class="split">
-      <div class="split__media" data-reveal>
-        <figure class="solomedia solomedia--natural solomedia--tall" style="--r:0.8"><img src="assets/img/bar-wine-conversation.jpg" alt="A guest laughing over a glass of white wine at the Talisman bar" loading="lazy" width="1280" height="1600"></figure>
+      <div class="split__media" data-reveal="">
+        <figure class="solomedia solomedia--natural solomedia--tall" style="--r:0.8"><img src="assets/img/bar-wine-conversation.jpg" alt="A guest laughing over a glass of white wine at the Talisman bar" loading="lazy" width="1280" height="1600" data-cms="image" data-cms-label="Image"></figure>
       </div>
-      <div class="split__body" data-reveal>
-        <p class="eyebrow eyebrow--wine">The Bar</p>
-        <h2>Once the meal<br><em>is over.</em></h2>
-        <p style="margin-top:20px;max-width:40ch">Wind down at the bar with the fire going. Ask to see the whisky, gin and rum shelf.</p>
-        <p style="margin-top:26px"><a class="btn btn--primary" href="menu.html">See the food menus</a></p>
+      <div class="split__body" data-reveal="">
+        <p class="eyebrow eyebrow--wine" data-cms="small_label" data-cms-label="Small label">The Bar</p>
+        <h2 data-cms="heading" data-cms-label="Heading">Once the meal<br><em>is over.</em></h2>
+        <p style="margin-top:20px;max-width:40ch" data-cms="text" data-cms-label="Text">Wind down at the bar with the fire going. Ask to see the whisky, gin and rum shelf.</p>
+        <p style="margin-top:26px"><a class="btn btn--primary" href="menu.html" data-cms="button" data-cms-label="Button">See the food menus</a></p>
       </div>
     </div>
   </div>
@@ -139,22 +139,19 @@ setTimeout(function () {
 </main>
 
 <!-- ══════════════════ MENU DIALOG ══════════════════ -->
-<div class="viewer" id="menu-viewer" data-viewer hidden>
-  <div class="viewer__backdrop" data-viewer-backdrop></div>
+<div class="viewer" id="menu-viewer" data-viewer="" hidden="">
+  <div class="viewer__backdrop" data-viewer-backdrop=""></div>
   <div class="viewer__panel" role="dialog" aria-modal="true" aria-label="Drinks menus">
     <div class="viewer__bar">
       <div class="viewer__tabs" role="tablist" aria-label="Choose a menu">
-      <button class="viewer__tab" role="tab" id="tab-coffee" aria-selected="true" aria-controls="viewer-stage"
-              data-pdf="assets/menus/talisman-coffee.pdf" data-pages="assets/img/menus/coffee-1.jpg" data-title="Coffee menu">Coffee</button>
-      <button class="viewer__tab" role="tab" id="tab-wine" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-              data-pdf="assets/menus/talisman-wine.pdf" data-pages="assets/img/menus/wine-1.jpg,assets/img/menus/wine-2.jpg" data-title="Wine list">Wine</button>
-      <button class="viewer__tab" role="tab" id="tab-cocktails" aria-selected="false" aria-controls="viewer-stage" tabindex="-1"
-              data-pdf="assets/menus/talisman-cocktails.pdf" data-pages="assets/img/menus/cocktails-1.jpg" data-title="Cocktail menu">Cocktails</button>
+      <button class="viewer__tab" role="tab" id="tab-coffee" aria-selected="true" aria-controls="viewer-stage" data-pdf="assets/menus/talisman-coffee.pdf" data-pages="assets/img/menus/coffee-1.jpg" data-title="Coffee menu">Coffee</button>
+      <button class="viewer__tab" role="tab" id="tab-wine" aria-selected="false" aria-controls="viewer-stage" tabindex="-1" data-pdf="assets/menus/talisman-wine.pdf" data-pages="assets/img/menus/wine-1.jpg,assets/img/menus/wine-2.jpg" data-title="Wine list">Wine</button>
+      <button class="viewer__tab" role="tab" id="tab-cocktails" aria-selected="false" aria-controls="viewer-stage" tabindex="-1" data-pdf="assets/menus/talisman-cocktails.pdf" data-pages="assets/img/menus/cocktails-1.jpg" data-title="Cocktail menu">Cocktails</button>
       </div>
-      <button class="viewer__close" type="button" data-menu-close aria-label="Close the menus">&times;</button>
+      <button class="viewer__close" type="button" data-menu-close="" aria-label="Close the menus">&times;</button>
     </div>
     <div class="viewer__stage" id="viewer-stage" role="tabpanel" aria-labelledby="tab-coffee">
-      <div class="viewer__pages" data-viewer-pages></div>
+      <div class="viewer__pages" data-viewer-pages=""></div>
     </div>
   </div>
 </div>
@@ -182,7 +179,7 @@ setTimeout(function () {
       </div>
       <div>
         <p class="site-footer__title">Hours</p>
-        <p style="font-size:var(--t-small)">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
+        <p style="font-size:var(--t-small)" data-cms-site="hours_footer">Tuesday to Friday: 11:00 am to 10:00 pm<br>Saturday: 9:00 am to 9:00 pm<br>Sunday: 9:30 am to 9:00 pm<br><span style="opacity:.6">Closed Mondays</span></p>
       </div>
       <div>
         <p class="site-footer__title">Say hello</p>
@@ -193,12 +190,12 @@ setTimeout(function () {
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>&copy; <span data-year>2026</span> The Talisman, Karen.</span>
+      <span>&copy; <span data-year="">2026</span> The Talisman, Karen.</span>
       <nav class="site-footer__legal" aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/talisman.js?v=20261125h" defer></script>
+<script src="assets/js/talisman.js?v=20261125h" defer=""></script>
 </body>
 </html>

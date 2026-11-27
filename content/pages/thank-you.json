@@ -1,0 +1,21 @@
+{
+  "seo": {
+    "title": "Thank you | The Talisman, Karen, Nairobi",
+    "description": "Thank you for your table request. The Talisman team will call you to confirm.",
+    "image": "/assets/img/home-hero-gazebos.jpg",
+    "noindex": true
+  },
+  "message": {
+    "small_label": "Request received",
+    "page_heading": "Asante. *We have your details.*",
+    "intro": "A member of our team will call you shortly to confirm your table. If your plans change, call us on [+254 705 999 997](tel:+254705999997).",
+    "button_1": {
+      "label": "See the menus",
+      "href": "menu.html"
+    },
+    "button_2": {
+      "label": "Back to home",
+      "href": "index.html"
+    }
+  }
+}
