@@ -56,7 +56,7 @@ function BookingsChart({ stats }) {
   return html`<div class="card">
     <div class="card__head"><h3><${I} n="chart-bar" /> Bookings</h3>
       <div class="seg">${[['monthly', 'Monthly'], ['weekly', 'Weekly'], ['next', 'Next 14 days']].map(([k, l]) => html`<button class=${range === k ? 'is-on' : ''} onClick=${() => { setRange(k); setHot(null); }}>${l}</button>`)}</div></div>
-    <div class="legend"><span><i class="dot" style="background:#B3BBF9"></i>First visit</span><span><i class="dot" style="background:#5B6BF5"></i>Returning guests</span></div>
+    <div class="legend"><span><i class="dot" style="background:var(--chart-a)"></i>First visit</span><span><i class="dot" style="background:var(--chart-b)"></i>Returning guests</span></div>
     <div class="chart" onMouseLeave=${() => setHot(null)}>
       <div class="chart__y">${ticks.map(t => html`<span>${t}</span>`)}</div>
       <div class="chart__plot">
@@ -67,8 +67,8 @@ function BookingsChart({ stats }) {
             <div class="bar__b" style=${'height:' + (k.back / data.max * 100) + '%'}></div>
           </div><span class="bar__x">${k.label}</span></div>`)}
         ${sel && html`<div class="tip" style=${'left:calc(' + ((hot + 1) / data.buckets.length * 100) + '% ' + (hot > data.buckets.length * .6 ? '- 230px' : '- 10px') + ');top:30%'}>
-          <div class="tip__row"><span><i class="dot" style="background:#B3BBF9"></i>First visit</span><b>${sel.fresh} booking${sel.fresh === 1 ? '' : 's'}</b></div>
-          <div class="tip__row"><span><i class="dot" style="background:#5B6BF5"></i>Returning guests</span><b>${sel.back} booking${sel.back === 1 ? '' : 's'}</b></div>
+          <div class="tip__row"><span><i class="dot" style="background:var(--chart-a)"></i>First visit</span><b>${sel.fresh} booking${sel.fresh === 1 ? '' : 's'}</b></div>
+          <div class="tip__row"><span><i class="dot" style="background:var(--chart-b)"></i>Returning guests</span><b>${sel.back} booking${sel.back === 1 ? '' : 's'}</b></div>
           <div class="tip__row"><span><${I} n="users" /> Guests</span><b>${num(sel.guests)}</b></div>
         </div>`}
       </div>
@@ -80,10 +80,10 @@ function PartySizes({ stats }) {
   const since = new Date(); since.setDate(since.getDate() - 90);
   const list = stats.live.filter(b => b.date >= isoDay(since) && b.date <= today());
   const groups = [
-    { label: 'Couples and solo (1–2)', test: g => g <= 2, color: '#F0B64B' },
-    { label: 'Small groups (3–4)', test: g => g >= 3 && g <= 4, color: '#E070C6' },
-    { label: 'Families (5–8)', test: g => g >= 5 && g <= 8, color: '#7B5DE5' },
-    { label: 'Large parties (9+)', test: g => g >= 9, color: '#4F63F0' }
+    { label: 'Couples and solo (1–2)', test: g => g <= 2, color: 'var(--gold)' },
+    { label: 'Small groups (3–4)', test: g => g >= 3 && g <= 4, color: '#8A2E37' },
+    { label: 'Families (5–8)', test: g => g >= 5 && g <= 8, color: '#6E7B4E' },
+    { label: 'Large parties (9+)', test: g => g >= 9, color: '#3E6E8E' }
   ].map(g => Object.assign(g, { n: list.filter(b => g.test(b.guests || 0)).length }));
   const total = list.length || 1;
   const R = 84, C = 2 * Math.PI * R, gap = list.length ? 10 : 0;
@@ -101,13 +101,13 @@ function PartySizes({ stats }) {
   </div>`;
 }
 
-const ACT = { booking: ['user-circle', '', 'New request', 'pill--accent'], website: ['globe', 'green', 'Website', 'pill--green'], campaign: ['megaphone', '', 'Campaign', 'pill--accent'], team: ['user-gear', 'grey', 'Team', ''], customer: ['user-minus', 'red', 'Customer', 'pill--red'], media: ['image', 'grey', 'Pictures', ''] };
+const ACT = { booking: ['user-circle', '', 'New request', 'pill--accent'], website: ['globe', 'green', 'Website', 'pill--green'], team: ['user-gear', 'grey', 'Team', ''], customer: ['user-minus', 'red', 'Customer', 'pill--red'], media: ['image', 'grey', 'Pictures', ''] };
 function Activity() {
   const [items, setItems] = useState(null);
   useEffect(() => { api('activity').then(d => setItems(d.activity)).catch(() => setItems([])); }, []);
   return html`<div class="card">
     <div class="card__head"><h3><${I} n="clock-counter-clockwise" /> Recent activity</h3></div>
-    ${!items ? html`<${Skeleton} rows=${4} />` : !items.length ? html`<${Empty} icon="clock" title="Nothing yet" text="Bookings, published pages and sent messages will show here." />` :
+    ${!items ? html`<${Skeleton} rows=${4} />` : !items.length ? html`<${Empty} icon="clock" title="Nothing yet" text="New bookings and published pages will show here." />` :
     html`<div class="acts">${items.slice(0, 4).map(a => {
       const [icon, tone, tag, cls] = ACT[a.type] || ACT.team;
       const isNew = a.type === 'booking' && /^New/.test(a.text);

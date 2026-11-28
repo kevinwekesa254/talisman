@@ -92,7 +92,7 @@ export function csv(rows, name) {
 
 /* ---------------- small UI ---------------- */
 export const I = ({ n, cls, style }) => html`<i class=${'ph ph-' + n + (cls ? ' ' + cls : '')} style=${style} aria-hidden="true"></i>`;
-const AV = ['#5B6BF5', '#E0769F', '#3BA58A', '#E3A13B', '#7B5DE5', '#3B9BE8', '#C2643F', '#5E8F3A'];
+const AV = ['#6B222A', '#9A6B3A', '#4E6B4A', '#3E6E8E', '#8A2E37', '#6F6656', '#A0703A', '#55473F'];
 export function Avatar({ name, size }) {
   const n = String(name || '?').trim();
   const ini = n.split(/\s+/).slice(0, 2).map(w => w[0]).join('').toUpperCase();

@@ -26,7 +26,7 @@ function Auth() {
   return html`<div class="auth">
     <div class="auth__art"><p>The words, pictures and bookings for The Talisman, in one place.</p></div>
     <div class="auth__form"><form class="auth__box" onSubmit=${submit}>
-      <img src="/assets/img/logo.png" alt="The Talisman" />
+      <div class="brand"><img src="/assets/img/logo.png" alt="" /><div><b>Talisman</b><small>Admin</small></div></div>
       <div><h1>${setup ? 'Create the first admin account' : 'Sign in'}</h1>
       <p class="muted" style="margin-top:6px">${setup ? 'This account can add the rest of the team later.' : 'Use the email and password your admin gave you.'}</p></div>
       ${err && html`<div class="err" role="alert">${err}</div>`}
@@ -67,8 +67,7 @@ function Sidebar() {
   const active = to => (to === '/' ? r === '/' : r === to || r.startsWith(to + '/'));
   const local = s.me.setup.local;
   return html`<aside class="side">
-    <div class="brand"><img src="/assets/img/logo.png" alt="" /><div><b>Talisman</b><small>Admin</small></div></div>
-    <a class="siteswitch" href="/" target="_blank" rel="noopener"><span class="dot">T</span><span>The Talisman<small>${local ? 'Preview on this computer' : 'talisman-karen.vercel.app'}</small></span><${I} n="arrow-square-out" /></a>
+    <a class="brand" href="#/" aria-label="Talisman admin, dashboard"><img src="/assets/img/logo.png" alt="" /><div><b>Talisman</b><small>Admin</small></div></a>
     ${NAV.map(g => {
       const items = g.items.filter(it => !it.area || can(it.area));
       if (!items.length) return null;
@@ -120,13 +119,6 @@ function UserMenu() {
       <button class="item" onClick=${out}><${I} n="sign-out" /> Sign out</button>
     </div>`}
   </div>`;
-}
-function TeamAvatars() {
-  const [team, setTeam] = useState(null);
-  useEffect(() => { if (can('team')) api('users').then(d => setTeam(d.users)).catch(() => {}); }, []);
-  if (!team || !team.length) return null;
-  return html`<div class="avatars">${team.slice(0, 3).map(u => html`<${Avatar} name=${u.name} />`)}${team.length > 3 && html`<span class="more">+${team.length - 3}</span>`}
-    <a class="iconbtn" href="#/team" aria-label="Add someone to the team" style="margin-left:6px;border-radius:50%;width:32px;height:32px"><${I} n="plus" /></a></div>`;
 }
 
 /* ---------------- search (Cmd/Ctrl K) ---------------- */
@@ -205,8 +197,6 @@ function Shell() {
       <header class="top">
         <button class="iconbtn menu-btn" aria-label="Menu" onClick=${() => document.querySelector('.app').classList.toggle('side-open')}><${I} n="list" /></button>
         <h1>${title}</h1>
-        <${TeamAvatars} />
-        <span class="divider-v"></span>
         <${Bell} />
         <button class="search" onClick=${() => setCmd(true)}><${I} n="magnifying-glass" /><span style="text-align:left">Search anything</span><span class="kbd">${/Mac/.test(navigator.platform) ? '⌘' : 'Ctrl'} K</span></button>
         <${UserMenu} />
